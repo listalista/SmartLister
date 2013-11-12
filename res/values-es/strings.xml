@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  LANGUAGE SPANISH -->
+<resources>
+    <string name="app_name">Lista Lista</string>
+    <string name="action_settings">Ajustes</string>
+	<!-- APP_ML "main_login.xm"l STRINGS start -->
+	<string name="app_ml_welcome">Bienvenido</string>
+	<string name="app_ml_email">Correo electrónico</string>
+	<string name="app_ml_password">Contraseña</string>
+	<string name="app_ml_logon">Iniciar Sesión</string>
+	<string name="app_ml_help">¿Necesitas Ayuda?</string>
+	<string name="app_ml_register">Crear una cuenta</string>
+	<!-- main_login.xml STRINGS end -->
+    <!-- PRODUCT CATEGORY STRINGS start -->
+    <string name="product_category_Cars">Coches</string>
+    <string name="product_category_Bikes">Bicis</string>
+    <string name="product_category_Computers">Informática</string>
+    <string name="product_category_Electronics">Electrónicos</string>
+    <string name="product_category_Mobile_Phones">Móviles</string>
+    <string name="product_category_Books">Libros</string>
+    <string name="product_category_Furniture">Muebles</string>
+    <string name="product_category_Appliances">Electrodomésticos</string>
+    <!-- PRODUCT CATEGORY STRINGS stop -->
+</resources>

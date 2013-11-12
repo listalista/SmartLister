@@ -1,0 +1,140 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+  <LinearLayout
+  	android:orientation="vertical"
+  	android:layout_width="match_parent"
+  	android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Update Product - 3"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use the Cameras(1,2,3) and take photos of your product: (max 3)"
+            android:textSize="15sp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+  			android:orientation="horizontal"
+  			android:layout_width="match_parent"
+  			android:layout_height="match_parent">
+  			
+            <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text = "            " />
+
+	        <ImageView
+	            android:id="@+id/cameraurl1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:contentDescription="Camera"
+	            android:src="@drawable/cammlogo" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text = "         " />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        
+	        <ImageView
+	            android:id="@+id/cameraurl2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:contentDescription="Camera"
+	            android:src="@drawable/cammlogo" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text = "         " />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        
+	        <ImageView
+	            android:id="@+id/cameraurl3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:contentDescription="Camera"
+	            android:src="@drawable/cammlogo" />
+	        
+	    </LinearLayout>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/updateurl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="textUri" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/updateurl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="textUri" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/updateurl3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="textUri" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <Button
+            android:id="@+id/prodlistupdate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="Update" />
+        
+    </LinearLayout>
+    
+
+</ScrollView>

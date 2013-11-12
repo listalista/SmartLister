@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    
+        
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Selected Product Details"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+   <TableLayout 
+    	android:layout_width="match_parent" 
+    	android:layout_height="match_parent" 
+   	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    	<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Title] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Description"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delproddesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Description] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Price"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delexpprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Expected Price] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buyer Travel Distance"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/deltravdist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Travel Distance] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quality"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodqual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Quality] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buyer Rating"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodqual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Rating Out of 5] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+        </TableLayout>
+
+   		
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text = "Product Images:" />
+
+   		<Gallery
+   		    android:id="@+id/productgallery"
+   		    android:layout_width="match_parent"
+   		    android:layout_height="wrap_content" />
+        
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If you are interested in this product, start negotiating with the buyer by initiating a chat" />
+   		
+   		<LinearLayout
+		  	android:orientation="horizontal"
+		  	android:layout_width="match_parent"
+		  	android:layout_height="match_parent">
+            
+   		    <Button
+	            android:id="@+id/startchat"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Start Chat" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="           " />
+   		    
+   		    <Button
+	            android:id="@+id/cancelprod"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Cancel" />
+   		    
+   		</LinearLayout>
+        
+    </LinearLayout>
+    
+
+</ScrollView>
+        

@@ -1,0 +1,195 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+  <LinearLayout
+  	android:orientation="vertical"
+  	android:layout_width="match_parent"
+  	android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Delete Confirmation Page"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+   <TableLayout 
+    	android:layout_width="match_parent" 
+    	android:layout_height="match_parent" 
+   	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    	<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Title] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Description"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delproddesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Description] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Price"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delproddesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Expected Price] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+        </TableLayout>
+        
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+   		
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Are you sure you want to delete this product" />
+   		
+   		<LinearLayout
+		  	android:orientation="horizontal"
+		  	android:layout_width="match_parent"
+		  	android:layout_height="match_parent">
+            
+   		    <Button
+	            android:id="@+id/deleteprod"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Delete" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="           " />
+   		    
+   		    <Button
+	            android:id="@+id/canceldeleteprod"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Cancel" />
+   		    
+   		</LinearLayout>
+        
+    </LinearLayout>
+    
+
+</ScrollView>

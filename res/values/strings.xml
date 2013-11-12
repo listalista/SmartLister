@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smartlist</string>
+    <string name="action_settings">Settings</string>
+	<!-- APP_ML "main_login.xm"l STRINGS start -->
+	<string name="app_ml_welcome">Welcome</string>
+	<string name="app_ml_email">Email</string>
+	<string name="app_ml_password">Password</string>
+	<string name="app_ml_logon">Log on</string>
+	<string name="app_ml_help">Need help?</string>
+	<string name="app_ml_register">Create an account</string>
+	<!-- main_login.xml STRINGS end -->
+    <!-- PRODUCT CATEGORY STRINGS start -->
+    <string name="product_category_Cars">Cars</string>
+    <string name="product_category_Bikes">Bikes</string>
+    <string name="product_category_Computers">Computers</string>
+    <string name="product_category_Electronics">Electronics</string>
+    <string name="product_category_Mobile_Phones">Mobile Phones</string>
+    <string name="product_category_Books">Books</string>
+    <string name="product_category_Furniture">Furniture</string>
+    <string name="product_category_Appliances">Appliances</string>
+    <!-- PRODUCT CATEGORY STRINGS stop -->
+</resources>
