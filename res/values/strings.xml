@@ -3,7 +3,7 @@
     <string name="app_name">Smartlist</string>
     <string name="action_settings">Settings</string>
 	<!-- APP_ML "main_login.xm"l STRINGS start -->
-	<string name="app_ml_welcome">Welcome SmartLister GIT</string>
+	<string name="app_ml_welcome">Welcome</string>
 	<string name="app_ml_email">Email</string>
 	<string name="app_ml_password">Password</string>
 	<string name="app_ml_logon">Log on</string>
