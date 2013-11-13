@@ -37,7 +37,7 @@ public class MainLogon extends Activity implements OnClickListener {
         lo.setOnClickListener(this);
         
         /*Forgot Password is declared for onClickListener*/
-        Button fp = (Button) findViewById(R.id.forgotpassword);
+        Button fp = (Button) findViewById(R.id.help);
         fp.setOnClickListener(this);
         
         /*Register is declared for onClickListener*/
@@ -57,8 +57,8 @@ public class MainLogon extends Activity implements OnClickListener {
     		//logOnIntent.putExtra("usernameEmail", usernameEmail.getText().toString());
     		//logOnIntent.putExtra("passwordEmail", passwordEmail.getText().toString());
     		
-    	} else if(v.getId() == R.id.forgotpassword) {  /*Calling the forget_password when Forgot Password is clicked*/
-    		startActivity(new Intent(MainLogon.this, ForgotPassword.class)); /*New Intent is called*/
+    	} else if(v.getId() == R.id.help) {  /*Calling the LogonHelp when help is clicked*/
+    		startActivity(new Intent(MainLogon.this, LogonHelp.class)); /*New Intent is called*/
     	} else if(v.getId() == R.id.registeruser) {  /*Calling the new_user_register when Register is clicked*/
     		startActivity(new Intent(MainLogon.this, RegisterUser.class)); /*New Intent is called*/
     	}

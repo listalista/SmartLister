@@ -145,13 +145,15 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/forgotpassword"
+                    android:id="@+id/help"
+                    style="@style/AppTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/app_ml_help" />
                 
                 <Button
                     android:id="@+id/registeruser"
+                    style="@style/AppTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/app_ml_register" />

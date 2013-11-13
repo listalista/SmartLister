@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ForgotPassword extends Activity implements OnClickListener {
+public class LogonHelp extends Activity implements OnClickListener {
 	
 	/*Default Method which will run first*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.forgot_password);  /*Retrieving the contents of the layout forgot_password*/
+        setContentView(R.layout.logon_help);  /*Retrieving the contents of the layout forgot_password*/
     
         /*Submit button in Password Help is declared for onClickListener*/
         Button sp = (Button) findViewById(R.id.submitsec);
@@ -25,7 +25,7 @@ public class ForgotPassword extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {	
 		if(v.getId() == R.id.submitsec) {  /*Calling the reset_password when Submit is clicked*/
-			startActivity(new Intent(ForgotPassword.this, ChangePassword.class)); /*New Intent is called*/
+			startActivity(new Intent(LogonHelp.this, ChangePassword.class)); /*New Intent is called*/
 		}
     }
 

@@ -63,7 +63,7 @@ public final class R {
         public static final int expPrice=0x7f090029;
         public static final int exppricefrom=0x7f090017;
         public static final int exppriceto=0x7f090018;
-        public static final int forgotpassword=0x7f09004d;
+        public static final int help=0x7f09004d;
         public static final int imageView1=0x7f090023;
         public static final int keyword=0x7f090016;
         public static final int listnewprodbutton=0x7f09004a;
@@ -139,8 +139,8 @@ public final class R {
         public static final int buyer_search=0x7f030001;
         public static final int delete_list_view=0x7f030002;
         public static final int delete_product_confirm=0x7f030003;
-        public static final int forgot_password=0x7f030004;
-        public static final int main_login=0x7f030005;
+        public static final int logon_help=0x7f030004;
+        public static final int logon_main=0x7f030005;
         public static final int new_list_create_1=0x7f030006;
         public static final int new_list_create_2=0x7f030007;
         public static final int new_list_create_3=0x7f030008;
