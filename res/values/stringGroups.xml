@@ -10,6 +10,15 @@
 		<item>@string/product_category_Appliances</item>
 		<item>@string/product_category_Electronics</item>
 	</string-array>
+	<string-array name="Logon_Register">
+		<item>@string/logon_register_email</item>
+		<item>@string/logon_register_password</item>
+		<item>@string/logon_register_password_again</item>
+		<item>@string/logon_register_alias</item>
+		<item>@string/logon_register_user_location</item>
+		<item>@string/logon_register_register</item>
+		<item>@string/logon_register_title</item>
+	</string-array>
 	<string-array name="Product_Quality">
 		<item>Excellent</item>
 		<item>Good</item>

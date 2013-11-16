@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 public class MainLogon extends Activity implements OnClickListener {
 	public static final String USER_PREFS = "UserPrefs";
+	private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
 	
 	/*Default Method which will run first*/
     @Override

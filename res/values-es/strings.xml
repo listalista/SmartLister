@@ -3,6 +3,14 @@
 <resources>
     <string name="app_name">Lista Lista</string>
     <string name="action_settings">Ajustes</string>
+    <!-- ERROR CATEGORY STRINGS start -->
+    <string name="ERROR_REGISTER_ATTRIBUTES_MISSING">Hay Que Llenar Todos Los Campos</string>
+    <string name="ERROR_USER_EXISTS">¡Ya Existe Ese Usuario!</string>
+    <string name="ERROR_INVALID_INPUT">¡Datos Invalidos!</string>
+    <!-- ERROR CATEGORY STRINGS stop -->
+    <!-- SUCCESS CATEGORY STRINGS start -->
+    <string name="SUCCESS_REGISTER">Registración Efectivo</string>
+    <!-- SUCCESS CATEGORY STRINGS stop -->
 	<!-- APP_ML "main_login.xm"l STRINGS start -->
 	<string name="app_ml_welcome">Bienvenido</string>
 	<string name="app_ml_email">Correo electrónico</string>
@@ -21,4 +29,13 @@
     <string name="product_category_Furniture">Muebles</string>
     <string name="product_category_Appliances">Electrodomésticos</string>
     <!-- PRODUCT CATEGORY STRINGS stop -->
+    <!-- LOGON_REGISTER STRING start -->
+	<string name="logon_register_email">Correo Electrónico</string>
+	<string name="logon_register_password">Contraseña</string>
+	<string name="logon_register_password_again">Contraseña de Nuevo</string>
+	<string name="logon_register_alias">Nombre de Usuario</string>
+	<string name="logon_register_user_location">Lugar Preferido</string>
+	<string name="logon_register_register">Crear Cuenta</string>
+	<string name="logon_register_title">Registración de Cuenta</string>
+    <!-- LOGON_REGISTER STRING  stop -->
 </resources>
