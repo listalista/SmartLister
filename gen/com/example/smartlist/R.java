@@ -9,13 +9,12 @@ package com.example.smartlist;
 
 public final class R {
     public static final class array {
-        public static final int Logon_Register=0x7f090002;
-        public static final int New_Listing=0x7f090001;
+        public static final int Logon_Register=0x7f090001;
         public static final int Product_Category=0x7f090000;
-        public static final int Product_Location=0x7f090004;
-        public static final int Product_Quality=0x7f090003;
-        public static final int Smartlister_Menu=0x7f090005;
-        public static final int Temp_Prod_List=0x7f090006;
+        public static final int Product_Location=0x7f090003;
+        public static final int Product_Quality=0x7f090002;
+        public static final int Smartlister_Menu=0x7f090004;
+        public static final int Temp_Prod_List=0x7f090005;
     }
     public static final class attr {
         /** 
