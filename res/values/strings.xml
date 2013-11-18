@@ -2,6 +2,14 @@
 <resources>
     <string name="app_name">Smartlist</string>
     <string name="action_settings">Settings</string>
+    <!-- ERROR CATEGORY STRINGS start -->
+    <string name="ERROR_REGISTER_ATTRIBUTES_MISSING">Fill In All Fields</string>
+    <string name="ERROR_USER_EXISTS">User Already Exists!</string>
+    <string name="ERROR_INVALID_INPUT">Invalid Input!</string>
+    <!-- ERROR CATEGORY STRINGS stop -->
+    <!-- SUCCESS CATEGORY STRINGS start -->
+    <string name="SUCCESS_REGISTER">You\'re Registered!</string>
+    <!-- SUCCESS CATEGORY STRINGS stop -->
 	<!-- APP_ML "main_login.xm"l STRINGS start -->
 	<string name="app_ml_welcome">Welcome</string>
 	<string name="app_ml_email">Email</string>
@@ -20,4 +28,14 @@
     <string name="product_category_Furniture">Furniture</string>
     <string name="product_category_Appliances">Appliances</string>
     <!-- PRODUCT CATEGORY STRINGS stop -->
+    <!-- LOGON_REGISTER STRING start -->
+	<string name="logon_register_email">Email Address</string>
+	<string name="logon_register_password">Password</string>
+	<string name="logon_register_password_again">Retype Password</string>
+	<string name="logon_register_alias">Display Name</string>
+	<string name="logon_register_user_location">Preferred Location</string>
+	<string name="logon_register_register">Create Account</string>
+	<string name="logon_register_title">New User Registration</string>
+    <!-- LOGON_REGISTER STRING  stop -->
+    
 </resources>

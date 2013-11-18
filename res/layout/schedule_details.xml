@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    
+        
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Schedule Details"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+   <TableLayout 
+    	android:layout_width="match_parent" 
+    	android:layout_height="match_parent" 
+   	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    	<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule Date"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/scheduledate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Date] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+          
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule Time"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/scheduletime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Time] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule Location"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/schlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Location] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodqual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Title] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Allow Tracking"
+                    android:textSize="15sp" />
+                
+                <ToggleButton
+   		    		android:id="@+id/trackloctoggle"
+   		    		android:layout_width="200px"
+   		    		android:layout_height="wrap_content"
+   		    		android:text="Track Location" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+        </TableLayout>
+
+        
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If you are not sure of the other person's status, track their location" />
+   		
+   		<LinearLayout
+		  	android:orientation="horizontal"
+		  	android:layout_width="match_parent"
+		  	android:layout_height="match_parent">
+            
+   		    <Button
+	            android:id="@+id/tracklocation"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Track Location" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+   		    
+   		    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="           " />
+   		    
+   		    <Button
+	            android:id="@+id/cancelprod"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Cancel" />
+   		    
+   		</LinearLayout>
+        
+    </LinearLayout>
+    
+
+</ScrollView>
+        
