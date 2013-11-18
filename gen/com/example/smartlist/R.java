@@ -221,7 +221,8 @@ containing a value of this type.
         public static final int smartlisterlogo=0x7f02001f;
     }
     public static final class id {
-        public static final int action_settings=0x7f05005d;
+        public static final int Button01=0x7f05004a;
+        public static final int action_settings=0x7f05005e;
         public static final int buyertravdist=0x7f05001e;
         public static final int cameraurl1=0x7f050038;
         public static final int cameraurl2=0x7f050039;
@@ -248,7 +249,7 @@ containing a value of this type.
         public static final int expPrice=0x7f050033;
         public static final int exppricefrom=0x7f05001c;
         public static final int exppriceto=0x7f05001d;
-        public static final int help=0x7f05004a;
+        public static final int help=0x7f05004b;
         public static final int hybrid=0x7f050004;
         public static final int imageView1=0x7f050028;
         public static final int keyword=0x7f05001b;
@@ -269,7 +270,7 @@ containing a value of this type.
         public static final int pageHeader=0x7f050005;
         public static final int preflocation=0x7f050020;
         public static final int prefmiles=0x7f050035;
-        public static final int prodlistupdate=0x7f050056;
+        public static final int prodlistupdate=0x7f050057;
         public static final int prodtitle=0x7f050031;
         public static final int productgallery=0x7f050017;
         public static final int qualityspinner=0x7f050034;
@@ -280,7 +281,7 @@ containing a value of this type.
         public static final int retypenewpswd=0x7f050043;
         public static final int satellite=0x7f050002;
         public static final int searchproduct=0x7f050021;
-        public static final int slmenu=0x7f05004b;
+        public static final int slmenu=0x7f05004c;
         public static final int startchat=0x7f050018;
         public static final int submitsec=0x7f050027;
         public static final int tableRow1=0x7f050006;
@@ -297,24 +298,24 @@ containing a value of this type.
         public static final int textView4=0x7f050010;
         public static final int textView5=0x7f050013;
         public static final int textView6=0x7f050016;
-        public static final int updatedispname=0x7f05005a;
-        public static final int updatelocation=0x7f05005b;
+        public static final int updatedispname=0x7f05005b;
+        public static final int updatelocation=0x7f05005c;
         public static final int updatepass=0x7f050044;
         public static final int updateprodbutton=0x7f050045;
-        public static final int updateprodlist=0x7f050057;
-        public static final int updateprodnext1=0x7f05004d;
-        public static final int updateprodnext2=0x7f050052;
-        public static final int updateprof=0x7f05005c;
-        public static final int updatesecans=0x7f050059;
-        public static final int updatesecques=0x7f050058;
-        public static final int updateurl1=0x7f050053;
-        public static final int updateurl2=0x7f050054;
-        public static final int updateurl3=0x7f050055;
-        public static final int upexpPrice=0x7f05004e;
-        public static final int uppreflocation=0x7f050051;
-        public static final int upprefmiles=0x7f05004f;
-        public static final int upprodtitle=0x7f05004c;
-        public static final int uptagnames=0x7f050050;
+        public static final int updateprodlist=0x7f050058;
+        public static final int updateprodnext1=0x7f05004e;
+        public static final int updateprodnext2=0x7f050053;
+        public static final int updateprof=0x7f05005d;
+        public static final int updatesecans=0x7f05005a;
+        public static final int updatesecques=0x7f050059;
+        public static final int updateurl1=0x7f050054;
+        public static final int updateurl2=0x7f050055;
+        public static final int updateurl3=0x7f050056;
+        public static final int upexpPrice=0x7f05004f;
+        public static final int uppreflocation=0x7f050052;
+        public static final int upprefmiles=0x7f050050;
+        public static final int upprodtitle=0x7f05004d;
+        public static final int uptagnames=0x7f050051;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
@@ -346,31 +347,38 @@ containing a value of this type.
         public static final int main_logon=0x7f0b0000;
     }
     public static final class string {
-        public static final int ERROR_INVALID_INPUT=0x7f06001e;
+        public static final int ERROR_INVALID_INPUT=0x7f06002c;
         /**  ERROR CATEGORY STRINGS start 
  ERROR CATEGORY STRINGS start 
          */
-        public static final int ERROR_REGISTER_ATTRIBUTES_MISSING=0x7f06001c;
-        public static final int ERROR_USER_EXISTS=0x7f06001d;
+        public static final int ERROR_REGISTER_ATTRIBUTES_MISSING=0x7f06002a;
+        public static final int ERROR_USER_EXISTS=0x7f06002b;
+        public static final int IO_Exception_getFromLocation=0x7f060050;
         /**  ERROR CATEGORY STRINGS stop 
  SUCCESS CATEGORY STRINGS start 
  ERROR CATEGORY STRINGS stop 
  SUCCESS CATEGORY STRINGS start 
          */
-        public static final int SUCCESS_REGISTER=0x7f06001f;
-        public static final int action_settings=0x7f06001b;
-        public static final int app_ml_email=0x7f060021;
-        public static final int app_ml_help=0x7f060024;
-        public static final int app_ml_logon=0x7f060023;
-        public static final int app_ml_password=0x7f060022;
-        public static final int app_ml_register=0x7f060025;
+        public static final int SUCCESS_REGISTER=0x7f06002d;
+        /**  Menu title 
+         */
+        public static final int action_settings=0x7f060029;
+        public static final int address=0x7f060046;
+        /**  Address format 
+         */
+        public static final int address_output_string=0x7f060043;
+        public static final int app_ml_email=0x7f06002f;
+        public static final int app_ml_help=0x7f060032;
+        public static final int app_ml_logon=0x7f060031;
+        public static final int app_ml_password=0x7f060030;
+        public static final int app_ml_register=0x7f060033;
         /**  SUCCESS CATEGORY STRINGS stop 
  APP_ML "main_login.xm"l STRINGS start 
  SUCCESS CATEGORY STRINGS stop 
  APP_ML "main_login.xm"l STRINGS start 
          */
-        public static final int app_ml_welcome=0x7f060020;
-        public static final int app_name=0x7f06001a;
+        public static final int app_ml_welcome=0x7f06002e;
+        public static final int app_name=0x7f060028;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -465,31 +473,82 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int logon_register_alias=0x7f060031;
+        /**  Messages 
+         */
+        public static final int connected=0x7f060047;
+        public static final int connection_error_code=0x7f06001a;
+        public static final int connection_error_code_unknown=0x7f060048;
+        public static final int connection_error_disabled=0x7f06001b;
+        public static final int connection_error_internal=0x7f06001c;
+        public static final int connection_error_invalid=0x7f06001d;
+        public static final int connection_error_invalid_account=0x7f06001e;
+        public static final int connection_error_license_check_failed=0x7f06001f;
+        public static final int connection_error_message=0x7f060020;
+        public static final int connection_error_misconfigured=0x7f060021;
+        public static final int connection_error_missing=0x7f060022;
+        public static final int connection_error_needs_resolution=0x7f060023;
+        public static final int connection_error_network=0x7f060024;
+        public static final int connection_error_outdated=0x7f060025;
+        public static final int connection_error_sign_in_required=0x7f060026;
+        public static final int connection_error_unknown=0x7f060027;
+        public static final int connection_failed=0x7f060049;
+        public static final int disconnected=0x7f06004a;
+        public static final int get_address=0x7f06004b;
+        public static final int get_location=0x7f06004c;
+        public static final int illegal_argument_exception=0x7f06004d;
+        public static final int invalid_action=0x7f06004e;
+        public static final int invalid_integer_id=0x7f06004f;
+        /**  Latitude, longitude format 
+         */
+        public static final int latitude_longitude=0x7f060044;
+        /**  Labels 
+         */
+        public static final int latlng=0x7f060045;
+        public static final int location_requested=0x7f060051;
+        public static final int location_update_error=0x7f060053;
+        public static final int location_update_error_detail=0x7f060054;
+        public static final int location_update_missing_update=0x7f060055;
+        public static final int location_updated=0x7f060052;
+        public static final int location_updates_stopped=0x7f060056;
+        public static final int log_new_location=0x7f060057;
+        public static final int logon_register_alias=0x7f06003f;
         /**  PRODUCT CATEGORY STRINGS stop 
  LOGON_REGISTER STRING start 
  PRODUCT CATEGORY STRINGS stop 
  LOGON_REGISTER STRING start 
          */
-        public static final int logon_register_email=0x7f06002e;
-        public static final int logon_register_password=0x7f06002f;
-        public static final int logon_register_password_again=0x7f060030;
-        public static final int logon_register_register=0x7f060033;
-        public static final int logon_register_title=0x7f060034;
-        public static final int logon_register_user_location=0x7f060032;
-        public static final int product_category_Appliances=0x7f06002d;
-        public static final int product_category_Bikes=0x7f060027;
-        public static final int product_category_Books=0x7f06002b;
+        public static final int logon_register_email=0x7f06003c;
+        public static final int logon_register_password=0x7f06003d;
+        public static final int logon_register_password_again=0x7f06003e;
+        public static final int logon_register_register=0x7f060041;
+        public static final int logon_register_title=0x7f060042;
+        public static final int logon_register_user_location=0x7f060040;
+        public static final int no_address_found=0x7f060058;
+        public static final int no_connection=0x7f060059;
+        public static final int no_geocoder_available=0x7f06005a;
+        public static final int no_location_available=0x7f06005b;
+        public static final int no_resolution=0x7f06005d;
+        public static final int periodic_update_stop=0x7f06005e;
+        public static final int play_services_available=0x7f06005f;
+        public static final int product_category_Appliances=0x7f06003b;
+        public static final int product_category_Bikes=0x7f060035;
+        public static final int product_category_Books=0x7f060039;
         /**  main_login.xml STRINGS end 
  PRODUCT CATEGORY STRINGS start 
  main_login.xml STRINGS end 
  PRODUCT CATEGORY STRINGS start 
          */
-        public static final int product_category_Cars=0x7f060026;
-        public static final int product_category_Computers=0x7f060028;
-        public static final int product_category_Electronics=0x7f060029;
-        public static final int product_category_Furniture=0x7f06002c;
-        public static final int product_category_Mobile_Phones=0x7f06002a;
+        public static final int product_category_Cars=0x7f060034;
+        public static final int product_category_Computers=0x7f060036;
+        public static final int product_category_Electronics=0x7f060037;
+        public static final int product_category_Furniture=0x7f06003a;
+        public static final int product_category_Mobile_Phones=0x7f060038;
+        public static final int request_location_updates_in_progress=0x7f060060;
+        public static final int resolved=0x7f06005c;
+        public static final int start_updates=0x7f060061;
+        public static final int stop_updates=0x7f060062;
+        public static final int unknown=0x7f060063;
+        public static final int unknown_activity_request_code=0x7f060064;
     }
     public static final class style {
         /** 
