@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content" />
         
         <Button
-            android:id="@+id/searchproduct"
+            android:id="@+id/viewexistingsch"
             android:layout_width="325px"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"

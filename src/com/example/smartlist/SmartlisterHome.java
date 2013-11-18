@@ -58,6 +58,10 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	Intent intent = new Intent(SmartlisterHome.this, SearchProduct.class);
    	     	startActivity(intent);             
     	}
+    	else if (GetLabel.toString().equals("Scheduled Transactions")) {
+   	     	Intent intent = new Intent(SmartlisterHome.this, ScheduleMenu.class);
+   	     	startActivity(intent);             
+    	}
     }
     /*
     private void LogOn(String username, String password){

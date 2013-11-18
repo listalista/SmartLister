@@ -68,6 +68,16 @@
          <activity android:name="com.example.smartlist.RefinedProdList" />
          
          <activity android:name="com.example.smartlist.SelectedProduct" />
+         
+         <activity android:name="com.example.smartlist.NewSchedule" />
+         
+         <activity android:name="com.example.smartlist.ScheduleList" />
+         
+         <activity android:name="com.example.smartlist.ScheduleMenu" />
+         
+         <activity android:name="com.example.smartlist.ScheduleDetails" />
+         
+         <activity android:name="com.example.smartlist.CreateSchedule" />
         
     </application>
 
