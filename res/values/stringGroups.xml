@@ -10,6 +10,9 @@
 		<item>@string/product_category_Appliances</item>
 		<item>@string/product_category_Electronics</item>
 	</string-array>
+	<string-array name="New_Listing">
+		<item>@string/new_listing_Cars</item>
+	</string-array>
 	<string-array name="Logon_Register">
 		<item>@string/logon_register_email</item>
 		<item>@string/logon_register_password</item>

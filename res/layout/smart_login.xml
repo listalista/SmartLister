@@ -145,14 +145,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
-    		<Button
-    		    android:id="@+id/Button01"
-    		    style="@style/AppTheme"
-    		    android:layout_width="wrap_content"
-    		    android:layout_height="match_parent"
-    		    android:onClick="getAddress"
-    		    android:text="GET ADDRESS" />
-
                 <Button
                     android:id="@+id/help"
                     style="@style/AppTheme"

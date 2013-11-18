@@ -33,7 +33,7 @@ public class SellerMenu extends Activity implements OnClickListener  {
     @Override
     public void onClick(View v) {	
 		if(v.getId() == R.id.listnewprodbutton) {  /*Calling the new_list_create_1 when List New Product is clicked*/
-			startActivity(new Intent(SellerMenu.this, NewProdTitle.class)); /*New Intent is called*/
+			startActivity(new Intent(SellerMenu.this, NewProd.class)); /*New Intent is called*/
 		}
 		else if(v.getId() == R.id.updateprodbutton) {  /*Calling the update_list_view when List New Product is clicked*/
 			startActivity(new Intent(SellerMenu.this, UpdateProdView.class)); /*New Intent is called*/
