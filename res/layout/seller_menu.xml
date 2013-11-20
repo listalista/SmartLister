@@ -40,7 +40,7 @@
         
         <Button
             android:id="@+id/listnewprodbutton"
-            android:layout_width="360px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:text="List a new Product" />
@@ -49,13 +49,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
         
-        <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
         
         <Button
             android:id="@+id/updateprodbutton"
-            android:layout_width="360px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:text="Edit my existing Product" />
@@ -70,10 +67,25 @@
         
         <Button
             android:id="@+id/deleteprodbutton"
-            android:layout_width="360px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:text="Delete an existing Product" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <Button
+            android:id="@+id/addimagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="Add Image to a Product" />
         
     </LinearLayout>
     

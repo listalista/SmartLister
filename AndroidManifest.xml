@@ -7,10 +7,11 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19" />
+    
+    <uses-feature android:name = "android.hardware.camera" />
+    
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera" />
-	<uses-feature android:name="android.hardware.camera.autofocus" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     
     <application
@@ -78,6 +79,10 @@
          <activity android:name="com.example.smartlist.ScheduleDetails" />
          
          <activity android:name="com.example.smartlist.CreateSchedule" />
+         
+         <activity android:name="com.example.smartlist.AddImageProdList" />
+         
+         <activity android:name="com.example.smartlist.AddImageToProd" />
         
     </application>
 

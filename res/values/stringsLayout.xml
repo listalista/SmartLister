@@ -33,6 +33,8 @@
 	<string name="logon_register_password">Password</string>
 	<string name="logon_register_password_again">Retype Password</string>
 	<string name="logon_register_alias">Display Name</string>
+	<string name="logon_register_sec_ques">Security Question</string>
+	<string name="logon_register_sec_ans">Security Answer</string>
 	<string name="logon_register_user_location">Preferred Location</string>
 	<string name="logon_register_register">Create Account</string>
 	<string name="logon_register_title">New User Registration</string>

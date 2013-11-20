@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/locationspinner"
         android:layout_below="@+id/editText3"
-        android:text="Next" />
+        android:text="Create" />
 
     <TextView
         android:id="@+id/textView5"

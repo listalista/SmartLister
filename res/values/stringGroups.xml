@@ -31,6 +31,11 @@
 		<item>Current Location</item>
 		<item>Other Location</item>
 	</string-array>
+	<string-array name="Add_Picture">
+		<item>Slot 1</item>
+		<item>Slot 2</item>
+		<item>Slot 3</item>
+	</string-array>
 	<string-array name="Smartlister_Menu">
 		<item>Seller Menu</item>
 		<item>Buy a Product</item>
@@ -52,5 +57,19 @@
 		<item>Product 10</item>
 		<item>Product 11</item>
 		<item>Product 12</item>
+	</string-array>
+	<string-array name="Temp_Sched_List">
+		<item>Schedule 1</item>
+		<item>Schedule 2</item>
+		<item>Schedule 3</item>
+		<item>Schedule 4</item>
+		<item>Schedule 5</item>
+		<item>Schedule 6</item>
+		<item>Schedule 7</item>
+		<item>Schedule 8</item>
+		<item>Schedule 9</item>
+		<item>Schedule 10</item>
+		<item>Schedule 11</item>
+		<item>Schedule 12</item>
 	</string-array>
 </resources>

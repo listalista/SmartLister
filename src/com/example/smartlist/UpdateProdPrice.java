@@ -23,7 +23,7 @@ public class UpdateProdPrice extends Activity implements OnClickListener {
         Spinner pls = (Spinner) findViewById(R.id.locationspinner);
     
         /*Next button in New Product Creation 2 is declared for onClickListener*/
-        Button upn2 = (Button) findViewById(R.id.updateprodnext2);
+        Button upn2 = (Button) findViewById(R.id.updateprodconfirm);
         upn2.setOnClickListener(this);
     }
 
@@ -31,8 +31,8 @@ public class UpdateProdPrice extends Activity implements OnClickListener {
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.updateprodnext2) {  /*Calling the update_list_prod_3 when Next is clicked*/
-			startActivity(new Intent(UpdateProdPrice.this, UpdateProdImage.class)); /*New Intent is called*/
+		if(v.getId() == R.id.updateprodconfirm) {  /*Calling the update_list_prod_3 when Next is clicked*/
+			startActivity(new Intent(UpdateProdPrice.this, SellerMenu.class)); /*New Intent is called*/
 		}
     }
 }

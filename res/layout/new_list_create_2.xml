@@ -209,11 +209,11 @@
        </TableLayout>
 
         <Button
-            android:id="@+id/newprodnext2"
+            android:id="@+id/newprodconfirm"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:text="Next" />
+            android:text="Create" />
         
  </LinearLayout>
 
