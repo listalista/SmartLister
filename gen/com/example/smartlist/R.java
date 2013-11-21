@@ -401,8 +401,6 @@ containing a value of this type.
  SUCCESS CATEGORY STRINGS start 
          */
         public static final int SUCCESS_REGISTER=0x7f06002d;
-        /**  Menu title 
-         */
         public static final int action_settings=0x7f060029;
         public static final int address=0x7f060048;
         /**  Address format 
@@ -542,7 +540,8 @@ containing a value of this type.
         /**  Latitude, longitude format 
          */
         public static final int latitude_longitude=0x7f060046;
-        /**  Labels 
+        /**  Menu title 
+ Labels 
          */
         public static final int latlng=0x7f060047;
         public static final int location_requested=0x7f060053;

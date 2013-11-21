@@ -248,4 +248,5 @@
             android:text="@string/logon_register_register" />
         
     </LinearLayout>
+    
 </ScrollView>
