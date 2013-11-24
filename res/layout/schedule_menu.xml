@@ -40,7 +40,7 @@
         
         <Button
             android:id="@+id/createnewsch"
-            android:layout_width="325px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:text="Create New Schedule" />
@@ -55,7 +55,7 @@
         
         <Button
             android:id="@+id/viewexistingsch"
-            android:layout_width="325px"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:text="View Existing Schedule" />

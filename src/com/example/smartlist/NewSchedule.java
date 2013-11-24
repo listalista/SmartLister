@@ -25,7 +25,7 @@ public class NewSchedule extends Activity implements OnClickListener  {
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.createnewsch) {  /*Calling the create_schedule when New Schedule is clicked*/
+		if(v.getId() == R.id.searchkeycode) {  /*Calling the create_schedule when New Schedule is clicked*/
 			startActivity(new Intent(NewSchedule.this, CreateSchedule.class)); /*New Intent is called*/
 		}
     }
