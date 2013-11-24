@@ -46,13 +46,16 @@ GooglePlayServicesClient.OnConnectionFailedListener {
      *
      */
     boolean mUpdatesRequested = false;
-
+    private ResponseHandler listener;
+    
     /*
      * Initialize the Activity
      */
     // Constructor called by the system to instantiate the task
-    public CurrentLocation(Context context, Activity activity) {
-        super();// Required by the semantics of AsyncTask
+    public CurrentLocation(Context context, Activity activity, ResponseHandler listener){
+    	super();
+    	this.listener = listener;
+    	// Required by the semantics of AsyncTask
         // Set a Context for the background task
         localContext = context;
         localActivity = activity;
@@ -87,26 +90,26 @@ GooglePlayServicesClient.OnConnectionFailedListener {
         mLocationClient.connect();
         
         //-----imported done
+    
+    }
+    public CurrentLocation(Context context, Activity activity) {
+        this(context, activity, new ResponseHandler(){
+	    	@Override
+	    	public void callBack(){}
+	    });
     }
 	@Override
 	protected Location doInBackground(TextView... params) {
-		while(!mPrefs.contains("latlonTS") ||( mPrefs.contains("latlonTS") && location == null)){ /* wait - eventually should add check to make sure that is recent */}
+		while(location==null){ /* wait - eventually should add check to make sure that is recent */}
 		return this.location;
 	}
 	@Override
 	protected void onPostExecute(Location result){
-		Log.v("ERROR",result.toString());
+		listener.callBack();
 		mLocationClient.disconnect();
 	}
 	@Override
 	public void onConnectionFailed(ConnectionResult connectionResult) {
-
-        /*
-         * Google Play services can resolve some errors it detects.
-         * If the error has a resolution, try sending an Intent to
-         * start a Google Play services activity that can resolve
-         * error.
-         */
         if (connectionResult.hasResolution()) {
             try {
                 // Start an Activity that tries to resolve the error
@@ -118,7 +121,7 @@ GooglePlayServicesClient.OnConnectionFailedListener {
                 * PendingIntent
                 */
             } catch (IntentSender.SendIntentException e) {
-                // Log the error
+            	Log.v("PRINTING STACK TRACE","FROM CURRENT LOCATION");
                 e.printStackTrace();
             }
         } else {
@@ -130,16 +133,10 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 	}
 	@Override
 	public void onConnected(Bundle bundle) {
-		 //mConnectionStatus.setText(R.string.connected);
-		Log.v("GPSACTIVTY",localContext.getString(R.string.connected));
-		Log.v("WHA","HAPPEN!");
-		location = getLocation();
-		mEditor.putString("lat", Location.convert(location.getLatitude(), Location.FORMAT_DEGREES));
-		mEditor.putString("lon", Location.convert(location.getLongitude(), Location.FORMAT_DEGREES));
-		//http://stackoverflow.com/questions/8077530/android-get-current-timestamp
-		mEditor.putString("latlonTS", Long.toString(System.nanoTime()));
-		Log.v("GOT LOCATION",location.toString());
-		//getAddress(location);
+		Log.v("GOT onconnected","GOT HERE!");
+		Location loc = getLocation();
+		if(loc == null){return;}
+		setLocation(loc);
 	}
 	@Override
 	public void onDisconnected() {
@@ -158,6 +155,15 @@ GooglePlayServicesClient.OnConnectionFailedListener {
      *
      * @return true if Google Play services is available, otherwise false
      */
+	private void setLocation(Location loc){
+		//set location to preferences
+		mEditor.putFloat("lat", (float)loc.getLatitude());
+		mEditor.putFloat("lon", (float)loc.getLongitude());
+		//http://stackoverflow.com/questions/8077530/android-get-current-timestamp
+		mEditor.putString("latlonTS", Long.toString(System.nanoTime()));
+		mEditor.commit();
+		location = loc;
+	}
     private boolean servicesConnected() {
 
         // Check that Google Play services is available
@@ -196,7 +202,6 @@ GooglePlayServicesClient.OnConnectionFailedListener {
         if (servicesConnected()) {
             // Get the current location
             Location currentLocation = mLocationClient.getLastLocation();
-            
             return currentLocation;
         }else{ return null;}
     }

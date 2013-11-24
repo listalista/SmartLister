@@ -23,7 +23,7 @@
            android:value="@integer/google_play_services_version" />
         
         <activity
-            android:name="com.example.smartlist.MainLogon"
+            android:name="com.example.smartlist.Listings"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
