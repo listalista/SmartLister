@@ -11,5 +11,25 @@
           android:title="Search"
           android:showAsAction="ifRoom" />
     
+    <item android:id="@+id/action_Prod_cam"
+          android:icon="@drawable/ic_action_photo"
+          android:title="Camera"
+          android:showAsAction="always" />
+    
+    <item android:id="@+id/action_Prod_setting"
+          android:icon="@drawable/ic_action_settings"
+          android:title="Setting"
+          android:showAsAction="ifRoom" />
+    
+    <item android:id="@+id/action_new_schedule"
+          android:icon="@drawable/ic_action_new_event"
+          android:title="Schedule"
+          android:showAsAction="always" />
+    
+    <item android:id="@+id/action_go_home"
+          android:icon="@drawable/ic_action_home"
+          android:title="Home"
+          android:showAsAction="ifRoom" />
+    
 
 </menu>

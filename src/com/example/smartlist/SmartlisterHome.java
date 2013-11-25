@@ -59,7 +59,7 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	startActivity(intent);             
     	}
     	else if (GetLabel.toString().equals("Scheduled Transactions")) {
-   	     	Intent intent = new Intent(SmartlisterHome.this, ScheduleMenu.class);
+   	     	Intent intent = new Intent(SmartlisterHome.this, ScheduleList.class);
    	     	startActivity(intent);             
     	}
     }
