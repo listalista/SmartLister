@@ -46,15 +46,7 @@
          
          <activity android:name="com.example.smartlist.NewProd" />
          
-         <activity android:name="com.example.smartlist.NewProdPrice" />
-         
-         <activity android:name="com.example.smartlist.NewProdImage" />
-         
          <activity android:name="com.example.smartlist.UpdateProdTitle" />
-         
-         <activity android:name="com.example.smartlist.UpdateProdPrice" />
-         
-         <activity android:name="com.example.smartlist.UpdateProdImage" />
          
          <activity android:name="com.example.smartlist.UpdateProdView" />
          
@@ -70,19 +62,17 @@
          
          <activity android:name="com.example.smartlist.SelectedProduct" />
          
-         <activity android:name="com.example.smartlist.NewSchedule" />
+         <activity android:name="com.example.smartlist.CreateSchedule" />
          
-         <activity android:name="com.example.smartlist.ScheduleList" />
-         
-         <activity android:name="com.example.smartlist.ScheduleMenu" />
+         <activity android:name="com.example.smartlist.ScheduleList" />  
          
          <activity android:name="com.example.smartlist.ScheduleDetails" />
          
-         <activity android:name="com.example.smartlist.CreateSchedule" />
-         
-         <activity android:name="com.example.smartlist.AddImageProdList" />
+         <activity android:name="com.example.smartlist.ChatApplication" />
          
          <activity android:name="com.example.smartlist.AddImageToProd" />
+         
+         <activity android:name="com.example.smartlist.ChatList" />
         
     </application>
 

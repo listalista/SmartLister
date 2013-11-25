@@ -27,6 +27,7 @@ public class UpdateProfile extends Activity implements OnClickListener {
     public void onClick(View v) {	
     	if(v.getId() == R.id.updateprof) {  /*Calling the home_page when Update is clicked*/
     		startActivity(new Intent(UpdateProfile.this, SmartlisterHome.class)); /*New Intent is called*/
+    		finish();
     	}
     }
 

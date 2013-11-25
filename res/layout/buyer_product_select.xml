@@ -15,7 +15,7 @@
             android:layout_height="fill_parent"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
-            android:text="Selected Product Details"
+            android:text="@string/buyer_select_header"
             android:textAppearance="?android:attr/textAppearanceMedium" />
    
    	<TableLayout 
@@ -43,11 +43,11 @@
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Product Title"
+                    android:text="@string/buyer_prod_title"
                     android:textSize="15sp" />
                 
                 <TextView
-                    android:id="@+id/delprodtitle"
+                    android:id="@+id/selprodtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" [Product Title] "
@@ -74,11 +74,11 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Product Description"
+                    android:text="@string/buyer_prod_desc"
                     android:textSize="15sp" />
                 
                 <TextView
-                    android:id="@+id/delproddesc"
+                    android:id="@+id/selproddesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" [Product Description] "
@@ -125,11 +125,11 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expected Price"
+                    android:text="@string/buyer_exp_price"
                     android:textSize="15sp" />
                 
                 <TextView
-                    android:id="@+id/delexpprice"
+                    android:id="@+id/selexpprice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" [Expected Price] "
@@ -167,7 +167,7 @@
    		<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text = "Product Images:" />
+                    android:text = "@string/buyer_prod_images" />
 
    		<Gallery
    		    android:id="@+id/productgallery"
@@ -177,7 +177,7 @@
    		<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="If you are interested in this product, start negotiating with the buyer by initiating a chat" />
+                    android:text="@string/buyer_chat_info" />
    		
    		<LinearLayout
 		  	android:orientation="horizontal"
@@ -188,7 +188,7 @@
 	            android:id="@+id/startchat"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="Start Chat" />
+	            android:text="@string/buyer_select_start_chat" />
    		    
    		    <TextView
                     android:layout_width="wrap_content"
@@ -203,7 +203,7 @@
 	            android:id="@+id/cancelprod"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="Cancel" />
+	            android:text="@string/buyer_select_cancel" />
    		    
    		</LinearLayout>
         

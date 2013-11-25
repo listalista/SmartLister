@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -45,8 +46,21 @@ public class AddImageToProd extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_logon, menu);
+        getMenuInflater().inflate(R.menu.go_home, menu);
         return true;
     }
     
+    /* Performing action upon selecting a Menu Item */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      switch(item.getItemId()) {
+        case R.id.action_go_home:
+            startActivity(new Intent(AddImageToProd.this, SmartlisterHome.class));
+            finish();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+      }
+      return true;
+    }
 }

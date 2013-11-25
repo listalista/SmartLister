@@ -26,6 +26,7 @@ public class ChangePassword extends Activity implements OnClickListener {
     public void onClick(View v) {	
 		if(v.getId() == R.id.updatepass) {  /*Calling the home_page when Update is clicked*/
 			startActivity(new Intent(ChangePassword.this, SmartlisterHome.class)); /*New Intent is called*/
+			finish();
 		}
     }
 

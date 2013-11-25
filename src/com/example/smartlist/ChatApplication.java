@@ -19,7 +19,7 @@ public class ChatApplication extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_logon, menu);
+        getMenuInflater().inflate(R.menu.chat_options, menu);
         return true;
     }
     
@@ -29,11 +29,12 @@ public class ChatApplication extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
         case R.id.action_new_schedule:
-         startActivity(new Intent(ChatApplication.this, CreateSchedule.class));
+        	startActivity(new Intent(ChatApplication.this, CreateSchedule.class));
             break;
         case R.id.action_go_home:
             startActivity(new Intent(ChatApplication.this, SmartlisterHome.class));
-               break;
+            finish();
+            break;
         default:
             return super.onOptionsItemSelected(item);
         }

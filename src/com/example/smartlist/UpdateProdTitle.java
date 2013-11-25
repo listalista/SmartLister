@@ -32,6 +32,7 @@ public class UpdateProdTitle extends Activity implements OnClickListener {
     public void onClick(View v) {	
 		if(v.getId() == R.id.updateprodconfirm) {  /*Calling the seller_menu when Update is clicked*/
 			startActivity(new Intent(UpdateProdTitle.this, SellerMenu.class)); /*New Intent is called*/
+			finish();
 		}
     }
     
@@ -39,7 +40,7 @@ public class UpdateProdTitle extends Activity implements OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_logon, menu);
+        getMenuInflater().inflate(R.menu.product_options, menu);
         return true;
     }
     
@@ -49,11 +50,15 @@ public class UpdateProdTitle extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
         case R.id.action_Prod_cam:
-         startActivity(new Intent(UpdateProdTitle.this, AddImageToProd.class));
+        	startActivity(new Intent(UpdateProdTitle.this, AddImageToProd.class));
             break;
-        case R.id.action_Prod_setting:
+        case R.id.action_prod_setting:
             startActivity(new Intent(UpdateProdTitle.this, UpdateProfile.class));
                break;
+        case R.id.action_go_home:
+            startActivity(new Intent(UpdateProdTitle.this, SmartlisterHome.class));
+            finish();
+            break;
         default:
             return super.onOptionsItemSelected(item);
         }
