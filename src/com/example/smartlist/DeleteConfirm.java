@@ -30,6 +30,7 @@ public class DeleteConfirm extends Activity implements OnClickListener {
     public void onClick(View v) {	
 		if(v.getId() == R.id.deleteprod) {  /*Calling the seller_menu when Submit is clicked*/
 			startActivity(new Intent(DeleteConfirm.this, SellerMenu.class)); /*New Intent is called*/
+			finish();
 		}
 		else if(v.getId() == R.id.canceldeleteprod) {  /*Calling the seller_menu when Submit is clicked*/
 			startActivity(new Intent(DeleteConfirm.this, SellerMenu.class)); /*New Intent is called*/

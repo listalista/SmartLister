@@ -28,16 +28,29 @@
     <string name="product_category_Furniture">Furniture</string>
     <string name="product_category_Appliances">Appliances</string>
     <!-- PRODUCT CATEGORY STRINGS stop -->
+    <!-- PREFERRED CURRENCY STRINGS start -->
+    <string name="currency_usd">USD</string>
+    <string name="currency_cad">CAD</string>
+    <string name="currency_eur">EUR</string>
+    <string name="currency_gbp">GBP</string>
+    <!-- PREFERRED CURRENCY STRINGS stOP -->
     <!-- LOGON_REGISTER STRING start -->
 	<string name="logon_register_email">Email Address</string>
 	<string name="logon_register_password">Password</string>
 	<string name="logon_register_password_again">Retype Password</string>
 	<string name="logon_register_alias">Display Name</string>
-	<string name="logon_register_sec_ques">Security Question</string>
-	<string name="logon_register_sec_ans">Security Answer</string>
-	<string name="logon_register_user_location">Preferred Location</string>
 	<string name="logon_register_register">Create Account</string>
 	<string name="logon_register_title">New User Registration</string>
     <!-- LOGON_REGISTER STRING  stop -->
+    
+    <!-- String values of buyer_product_select.xml  -->
+    <string name="buyer_select_header">Selected Product Details</string>
+    <string name="buyer_prod_title">Product Title</string>
+    <string name="buyer_prod_desc">Product Description</string>
+    <string name="buyer_exp_price">Expected Price</string>
+    <string name="buyer_prod_images">Product Images</string>
+    <string name="buyer_chat_info">If you are interested in this product, start negotiating with the buyer by initiating a chat</string>
+    <string name="buyer_select_start_chat">Start Chat</string>
+    <string name="buyer_select_cancel">Cancel</string>
     
 </resources>

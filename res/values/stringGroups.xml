@@ -44,6 +44,14 @@
 		<item>Update Profile Information</item>
 		<item>Change Password</item>
 	</string-array>
+	
+	<string-array name="Preferred_Currency">
+		<item>@string/currency_usd</item>
+		<item>@string/currency_cad</item>
+		<item>@string/currency_eur</item>
+		<item>@string/currency_gbp</item>
+	</string-array>
+	
 	<string-array name="Temp_Prod_List">
 		<item>Product 1</item>
 		<item>Product 2</item>
@@ -71,5 +79,19 @@
 		<item>Schedule 10</item>
 		<item>Schedule 11</item>
 		<item>Schedule 12</item>
+	</string-array>
+	<string-array name="Temp_Chat_List">
+		<item>Chat 1</item>
+		<item>Chat 2</item>
+		<item>Chat 3</item>
+		<item>Chat 4</item>
+		<item>Chat 5</item>
+		<item>Chat 6</item>
+		<item>Chat 7</item>
+		<item>Chat 8</item>
+		<item>Chat 9</item>
+		<item>Chat 10</item>
+		<item>Chat 11</item>
+		<item>Chat 12</item>
 	</string-array>
 </resources>

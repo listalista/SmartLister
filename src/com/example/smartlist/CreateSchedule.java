@@ -27,6 +27,7 @@ public class CreateSchedule extends Activity implements OnClickListener  {
     public void onClick(View v) {	
 		if(v.getId() == R.id.createschedule) {  /*Calling the chat_application back when Create Schedule is clicked*/
 			startActivity(new Intent(CreateSchedule.this, ChatApplication.class)); /*New Intent is called*/
+			finish();
 		}
     }
 

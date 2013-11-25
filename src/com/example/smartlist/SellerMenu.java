@@ -3,6 +3,8 @@ package com.example.smartlist;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -42,6 +44,29 @@ public class SellerMenu extends Activity implements OnClickListener  {
 		else if(v.getId() == R.id.deleteprodbutton) {  /*Calling the delete_list_view when List New Product is clicked*/
 			startActivity(new Intent(SellerMenu.this, DeleteProdView.class)); /*New Intent is called*/
 		}
+    }
+    
+    /* Inflating the Menu options */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.go_home, menu);
+        return true;
+    }
+    
+    
+    /* Performing action upon selecting a Menu Item */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+        case R.id.action_go_home:
+            startActivity(new Intent(SellerMenu.this, SmartlisterHome.class));
+            finish();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
 }

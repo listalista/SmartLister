@@ -11,12 +11,14 @@ public final class R {
     public static final class array {
         public static final int Add_Picture=0x7f090004;
         public static final int Logon_Register=0x7f090001;
+        public static final int Preferred_Currency=0x7f090006;
         public static final int Product_Category=0x7f090000;
         public static final int Product_Location=0x7f090003;
         public static final int Product_Quality=0x7f090002;
         public static final int Smartlister_Menu=0x7f090005;
-        public static final int Temp_Prod_List=0x7f090006;
-        public static final int Temp_Sched_List=0x7f090007;
+        public static final int Temp_Chat_List=0x7f090009;
+        public static final int Temp_Prod_List=0x7f090007;
+        public static final int Temp_Sched_List=0x7f090008;
     }
     public static final class attr {
         /** 
@@ -239,102 +241,100 @@ containing a value of this type.
     }
     public static final class id {
         public static final int action_Prod_cam=0x7f05005d;
-        public static final int action_Prod_setting=0x7f05005e;
-        public static final int action_go_home=0x7f050060;
+        public static final int action_go_home=0x7f05005a;
         public static final int action_new_prod=0x7f05005c;
-        public static final int action_new_schedule=0x7f05005f;
+        public static final int action_new_schedule=0x7f050059;
+        public static final int action_prod_setting=0x7f05005e;
         public static final int action_settings=0x7f05005b;
-        public static final int broddist=0x7f050059;
-        public static final int buyertravdist=0x7f050016;
-        public static final int canceldeleteprod=0x7f05002c;
+        public static final int broddist=0x7f050056;
+        public static final int canceldeleteprod=0x7f050028;
         public static final int cancelprod=0x7f050011;
-        public static final int cancelsch=0x7f050047;
-        public static final int capturedimage=0x7f05001e;
+        public static final int cancelsch=0x7f050044;
+        public static final int capturedimage=0x7f050018;
         public static final int categoryspinner=0x7f050012;
-        public static final int chatinputmsg=0x7f050023;
-        public static final int chatlist=0x7f050022;
-        public static final int chatsend=0x7f050024;
-        public static final int createnewsch=0x7f050049;
-        public static final int createschedule=0x7f050029;
-        public static final int createuser=0x7f05003a;
-        public static final int deleteprod=0x7f05002b;
-        public static final int deleteprodbutton=0x7f05004d;
-        public static final int deleteprodlist=0x7f05002a;
-        public static final int delexpprice=0x7f05000e;
-        public static final int delproddesc=0x7f05000b;
-        public static final int delprodqual=0x7f050044;
-        public static final int delprodtitle=0x7f050008;
-        public static final int dispname=0x7f050039;
-        public static final int editText1=0x7f050031;
-        public static final int expPrice=0x7f05003c;
+        public static final int chatinputmsg=0x7f05001d;
+        public static final int chatlist=0x7f05001c;
+        public static final int chatsend=0x7f05001e;
+        public static final int createnewsch=0x7f050046;
+        public static final int createschedule=0x7f050023;
+        public static final int createuser=0x7f050037;
+        public static final int deleteprod=0x7f050027;
+        public static final int deleteprodbutton=0x7f05004a;
+        public static final int deleteprodlist=0x7f050024;
+        public static final int delproddesc=0x7f050026;
+        public static final int delprodqual=0x7f050041;
+        public static final int delprodtitle=0x7f050025;
+        public static final int dispname=0x7f050036;
+        public static final int editText1=0x7f05002d;
+        public static final int expPrice=0x7f050039;
         public static final int exppricefrom=0x7f050014;
         public static final int exppriceto=0x7f050015;
-        public static final int gotocamera=0x7f05001d;
-        public static final int gridview=0x7f05002f;
-        public static final int help=0x7f050051;
+        public static final int gotocamera=0x7f050017;
+        public static final int gridview=0x7f05002b;
+        public static final int help=0x7f05004e;
         public static final int hybrid=0x7f050004;
-        public static final int imageprodlist=0x7f050021;
+        public static final int imageprodlist=0x7f05001b;
         public static final int keyword=0x7f050013;
-        public static final int listnewprodbutton=0x7f05004b;
-        public static final int locationspinner=0x7f050019;
-        public static final int logon=0x7f050050;
-        public static final int logonemail=0x7f05004e;
-        public static final int logonpswd=0x7f05004f;
-        public static final int newpassword=0x7f050034;
-        public static final int newprodconfirm=0x7f05003d;
-        public static final int newpswd=0x7f050040;
-        public static final int newretypepswd=0x7f050037;
-        public static final int newtypemail=0x7f050033;
+        public static final int listnewprodbutton=0x7f050048;
+        public static final int logon=0x7f05004d;
+        public static final int logonemail=0x7f05004b;
+        public static final int logonpswd=0x7f05004c;
+        public static final int newpassword=0x7f050030;
+        public static final int newprodconfirm=0x7f05003a;
+        public static final int newpswd=0x7f05003d;
+        public static final int newretypepswd=0x7f050033;
+        public static final int newtypemail=0x7f05002f;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int pageHeader=0x7f050005;
-        public static final int preflocation=0x7f05001b;
-        public static final int prodtitle=0x7f05003b;
+        public static final int preferredcurrency=0x7f050057;
+        public static final int prodtitle=0x7f050038;
         public static final int productgallery=0x7f05000f;
-        public static final int refinedlist=0x7f05003e;
-        public static final int registeredemail=0x7f05003f;
-        public static final int registeruser=0x7f050052;
-        public static final int retrievesecques=0x7f050030;
-        public static final int retypenewpswd=0x7f050041;
+        public static final int refinedlist=0x7f05003b;
+        public static final int registeredemail=0x7f05003c;
+        public static final int registeruser=0x7f05004f;
+        public static final int retrievesecques=0x7f05002c;
+        public static final int retypenewpswd=0x7f05003e;
         public static final int satellite=0x7f050002;
-        public static final int scheduledate=0x7f050025;
-        public static final int schedulelist=0x7f050048;
-        public static final int schedulelocation=0x7f050027;
-        public static final int scheduletime=0x7f050026;
-        public static final int schlocation=0x7f050043;
-        public static final int searchproduct=0x7f05001c;
-        public static final int sellproduct=0x7f050028;
-        public static final int sendimageoption=0x7f05001f;
-        public static final int sendpicture=0x7f050020;
-        public static final int slmenu=0x7f050053;
+        public static final int scheduledate=0x7f05001f;
+        public static final int schedulelist=0x7f050045;
+        public static final int schedulelocation=0x7f050021;
+        public static final int scheduletime=0x7f050020;
+        public static final int schlocation=0x7f050040;
+        public static final int searchproduct=0x7f050016;
+        public static final int selexpprice=0x7f05000e;
+        public static final int sellproduct=0x7f050022;
+        public static final int selproddesc=0x7f05000b;
+        public static final int selprodtitle=0x7f050008;
+        public static final int sendimageoption=0x7f050019;
+        public static final int sendpicture=0x7f05001a;
+        public static final int slmenu=0x7f050050;
         public static final int startchat=0x7f050010;
-        public static final int submitsec=0x7f050032;
+        public static final int submitsec=0x7f05002e;
         public static final int tableRow1=0x7f050006;
         public static final int tableRow2=0x7f050009;
         public static final int tableRow3=0x7f05000c;
-        public static final int tableRow4=0x7f050035;
-        public static final int tableRow5=0x7f050017;
-        public static final int tableRow6=0x7f05001a;
+        public static final int tableRow4=0x7f050031;
+        public static final int tableRow5=0x7f050034;
         public static final int terrain=0x7f050003;
         public static final int textView1=0x7f050007;
         public static final int textView2=0x7f05000a;
         public static final int textView3=0x7f05000d;
-        public static final int textView4=0x7f050036;
-        public static final int textView5=0x7f050038;
-        public static final int textView6=0x7f050018;
-        public static final int tileImage=0x7f05002d;
-        public static final int tileText=0x7f05002e;
-        public static final int tracklocation=0x7f050046;
-        public static final int trackloctoggle=0x7f050045;
-        public static final int updatedispname=0x7f050058;
-        public static final int updatepass=0x7f050042;
-        public static final int updateprodbutton=0x7f05004c;
-        public static final int updateprodconfirm=0x7f050057;
-        public static final int updateprodlist=0x7f050054;
-        public static final int updateprof=0x7f05005a;
-        public static final int upexpPrice=0x7f050056;
-        public static final int upprodtitle=0x7f050055;
-        public static final int viewexistingsch=0x7f05004a;
+        public static final int textView4=0x7f050032;
+        public static final int textView5=0x7f050035;
+        public static final int tileImage=0x7f050029;
+        public static final int tileText=0x7f05002a;
+        public static final int tracklocation=0x7f050043;
+        public static final int trackloctoggle=0x7f050042;
+        public static final int updatedispname=0x7f050055;
+        public static final int updatepass=0x7f05003f;
+        public static final int updateprodbutton=0x7f050049;
+        public static final int updateprodconfirm=0x7f050054;
+        public static final int updateprodlist=0x7f050051;
+        public static final int updateprof=0x7f050058;
+        public static final int upexpPrice=0x7f050053;
+        public static final int upprodtitle=0x7f050052;
+        public static final int viewexistingsch=0x7f050047;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
@@ -345,28 +345,32 @@ containing a value of this type.
         public static final int capture_image=0x7f030002;
         public static final int capture_image_prod_list=0x7f030003;
         public static final int chat_application=0x7f030004;
-        public static final int create_schedule=0x7f030005;
-        public static final int delete_list_view=0x7f030006;
-        public static final int delete_product_confirm=0x7f030007;
-        public static final int listing_tile=0x7f030008;
-        public static final int listings=0x7f030009;
-        public static final int logon_help=0x7f03000a;
-        public static final int logon_register=0x7f03000b;
-        public static final int new_listing=0x7f03000c;
-        public static final int refined_list=0x7f03000d;
-        public static final int reset_password=0x7f03000e;
-        public static final int schedule_details=0x7f03000f;
-        public static final int schedule_list=0x7f030010;
-        public static final int schedule_menu=0x7f030011;
-        public static final int seller_menu=0x7f030012;
-        public static final int smart_login=0x7f030013;
-        public static final int smartlister_main_menu=0x7f030014;
-        public static final int update_list_view=0x7f030015;
-        public static final int update_product=0x7f030016;
-        public static final int update_user_profile=0x7f030017;
+        public static final int chat_list=0x7f030005;
+        public static final int create_schedule=0x7f030006;
+        public static final int delete_list_view=0x7f030007;
+        public static final int delete_product_confirm=0x7f030008;
+        public static final int listing_tile=0x7f030009;
+        public static final int listings=0x7f03000a;
+        public static final int logon_help=0x7f03000b;
+        public static final int logon_register=0x7f03000c;
+        public static final int new_listing=0x7f03000d;
+        public static final int refined_list=0x7f03000e;
+        public static final int reset_password=0x7f03000f;
+        public static final int schedule_details=0x7f030010;
+        public static final int schedule_list=0x7f030011;
+        public static final int schedule_menu=0x7f030012;
+        public static final int seller_menu=0x7f030013;
+        public static final int smart_login=0x7f030014;
+        public static final int smartlister_main_menu=0x7f030015;
+        public static final int update_list_view=0x7f030016;
+        public static final int update_product=0x7f030017;
+        public static final int update_user_profile=0x7f030018;
     }
     public static final class menu {
-        public static final int main_logon=0x7f0b0000;
+        public static final int chat_options=0x7f0b0000;
+        public static final int go_home=0x7f0b0001;
+        public static final int main_logon=0x7f0b0002;
+        public static final int product_options=0x7f0b0003;
     }
     public static final class string {
         public static final int ERROR_INVALID_INPUT=0x7f06002c;
@@ -375,7 +379,7 @@ containing a value of this type.
          */
         public static final int ERROR_REGISTER_ATTRIBUTES_MISSING=0x7f06002a;
         public static final int ERROR_USER_EXISTS=0x7f06002b;
-        public static final int IO_Exception_getFromLocation=0x7f060052;
+        public static final int IO_Exception_getFromLocation=0x7f06005c;
         /**  ERROR CATEGORY STRINGS stop 
  SUCCESS CATEGORY STRINGS start 
  ERROR CATEGORY STRINGS stop 
@@ -383,10 +387,10 @@ containing a value of this type.
          */
         public static final int SUCCESS_REGISTER=0x7f06002d;
         public static final int action_settings=0x7f060029;
-        public static final int address=0x7f060048;
+        public static final int address=0x7f060052;
         /**  Address format 
          */
-        public static final int address_output_string=0x7f060045;
+        public static final int address_output_string=0x7f06004f;
         public static final int app_ml_email=0x7f06002f;
         public static final int app_ml_help=0x7f060032;
         public static final int app_ml_logon=0x7f060031;
@@ -422,6 +426,17 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f060014;
+        public static final int buyer_chat_info=0x7f06004c;
+        public static final int buyer_exp_price=0x7f06004a;
+        public static final int buyer_prod_desc=0x7f060049;
+        public static final int buyer_prod_images=0x7f06004b;
+        public static final int buyer_prod_title=0x7f060048;
+        public static final int buyer_select_cancel=0x7f06004e;
+        /**  LOGON_REGISTER STRING  stop 
+ String values of buyer_product_select.xml  
+         */
+        public static final int buyer_select_header=0x7f060047;
+        public static final int buyer_select_start_chat=0x7f06004d;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -495,9 +510,9 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f060013;
         /**  Messages 
          */
-        public static final int connected=0x7f060049;
+        public static final int connected=0x7f060053;
         public static final int connection_error_code=0x7f06001a;
-        public static final int connection_error_code_unknown=0x7f06004a;
+        public static final int connection_error_code_unknown=0x7f060054;
         public static final int connection_error_disabled=0x7f06001b;
         public static final int connection_error_internal=0x7f06001c;
         public static final int connection_error_invalid=0x7f06001d;
@@ -511,48 +526,53 @@ containing a value of this type.
         public static final int connection_error_outdated=0x7f060025;
         public static final int connection_error_sign_in_required=0x7f060026;
         public static final int connection_error_unknown=0x7f060027;
-        public static final int connection_failed=0x7f06004b;
-        public static final int disconnected=0x7f06004c;
-        public static final int get_address=0x7f06004d;
-        public static final int get_location=0x7f06004e;
-        public static final int illegal_argument_exception=0x7f06004f;
-        public static final int invalid_action=0x7f060050;
-        public static final int invalid_integer_id=0x7f060051;
+        public static final int connection_failed=0x7f060055;
+        public static final int currency_cad=0x7f060044;
+        public static final int currency_eur=0x7f060045;
+        public static final int currency_gbp=0x7f060046;
+        /**  PRODUCT CATEGORY STRINGS stop 
+ PREFERRED CURRENCY STRINGS start 
+         */
+        public static final int currency_usd=0x7f060043;
+        public static final int disconnected=0x7f060056;
+        public static final int get_address=0x7f060057;
+        public static final int get_location=0x7f060058;
+        public static final int illegal_argument_exception=0x7f060059;
+        public static final int invalid_action=0x7f06005a;
+        public static final int invalid_integer_id=0x7f06005b;
         /**  Latitude, longitude format 
          */
-        public static final int latitude_longitude=0x7f060046;
+        public static final int latitude_longitude=0x7f060050;
         /**  Menu title 
  Labels 
          */
-        public static final int latlng=0x7f060047;
-        public static final int location_requested=0x7f060053;
-        public static final int location_update_error=0x7f060055;
-        public static final int location_update_error_detail=0x7f060056;
-        public static final int location_update_missing_update=0x7f060057;
-        public static final int location_updated=0x7f060054;
-        public static final int location_updates_stopped=0x7f060058;
-        public static final int log_new_location=0x7f060059;
+        public static final int latlng=0x7f060051;
+        public static final int location_requested=0x7f06005d;
+        public static final int location_update_error=0x7f06005f;
+        public static final int location_update_error_detail=0x7f060060;
+        public static final int location_update_missing_update=0x7f060061;
+        public static final int location_updated=0x7f06005e;
+        public static final int location_updates_stopped=0x7f060062;
+        public static final int log_new_location=0x7f060063;
         public static final int logon_register_alias=0x7f06003f;
         /**  PRODUCT CATEGORY STRINGS stop 
  LOGON_REGISTER STRING start 
- PRODUCT CATEGORY STRINGS stop 
+ PREFERRED CURRENCY STRINGS stOP 
  LOGON_REGISTER STRING start 
          */
         public static final int logon_register_email=0x7f06003c;
         public static final int logon_register_password=0x7f06003d;
         public static final int logon_register_password_again=0x7f06003e;
         public static final int logon_register_register=0x7f060041;
-        public static final int logon_register_sec_ans=0x7f060044;
-        public static final int logon_register_sec_ques=0x7f060043;
         public static final int logon_register_title=0x7f060042;
         public static final int logon_register_user_location=0x7f060040;
-        public static final int no_address_found=0x7f06005a;
-        public static final int no_connection=0x7f06005b;
-        public static final int no_geocoder_available=0x7f06005c;
-        public static final int no_location_available=0x7f06005d;
-        public static final int no_resolution=0x7f06005f;
-        public static final int periodic_update_stop=0x7f060060;
-        public static final int play_services_available=0x7f060061;
+        public static final int no_address_found=0x7f060064;
+        public static final int no_connection=0x7f060065;
+        public static final int no_geocoder_available=0x7f060066;
+        public static final int no_location_available=0x7f060067;
+        public static final int no_resolution=0x7f060069;
+        public static final int periodic_update_stop=0x7f06006a;
+        public static final int play_services_available=0x7f06006b;
         public static final int product_category_Appliances=0x7f06003b;
         public static final int product_category_Bikes=0x7f060035;
         public static final int product_category_Books=0x7f060039;
@@ -566,12 +586,12 @@ containing a value of this type.
         public static final int product_category_Electronics=0x7f060037;
         public static final int product_category_Furniture=0x7f06003a;
         public static final int product_category_Mobile_Phones=0x7f060038;
-        public static final int request_location_updates_in_progress=0x7f060062;
-        public static final int resolved=0x7f06005e;
-        public static final int start_updates=0x7f060063;
-        public static final int stop_updates=0x7f060064;
-        public static final int unknown=0x7f060065;
-        public static final int unknown_activity_request_code=0x7f060066;
+        public static final int request_location_updates_in_progress=0x7f06006c;
+        public static final int resolved=0x7f060068;
+        public static final int start_updates=0x7f06006d;
+        public static final int stop_updates=0x7f06006e;
+        public static final int unknown=0x7f06006f;
+        public static final int unknown_activity_request_code=0x7f060070;
     }
     public static final class style {
         /** 
