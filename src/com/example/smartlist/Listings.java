@@ -52,17 +52,23 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	    gridview.setAdapter(listingAdapter);
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id){
-	        	Listing listing = (Listing) parent.getItemAtPosition(position);
-	        	Listing another = listings.get(position);
-	        	if(listing != null ){
-	        		Toast.makeText(Listings.this, listing.getTitle().toUpperCase(), Toast.LENGTH_SHORT).show();
-	        	}else if(another != null){
+	        	ListingForSale listing = (ListingForSale)listings.get(position);
+	        	if(listing != null){
+	        		//look at this later http://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-android-activity-to-another-using-intents
 	        		//Listing listing = (Listing) parent.getAdapter().getItem(position);
-	        		Toast.makeText(Listings.this, another.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
-	        	}else {
-	        		//Listing listing = (Listing) parent.getAdapter().getItem(position);
-	        		Toast.makeText(Listings.this, "position:"+position+",id:"+id, Toast.LENGTH_SHORT).show();
+	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
+	        		Intent listingDetail = new Intent(Listings.this, SelectedProduct.class);
+	        		listingDetail.putExtra("lat", listing.getLocLat());
+	        		listingDetail.putExtra("lon", listing.getLocLon());
+	        		listingDetail.putExtra("title", listing.getTitle());
+	        		listingDetail.putExtra("description", listing.getDescription());
+	        		listingDetail.putExtra("fee", listing.getFee());
+	        		listingDetail.putExtra("currency", listing.getCurrency());
+	        		listingDetail.putExtra("category", listing.getCategory());
+	        		listingDetail.putExtra("obo", listing.getObo());
+	        		listingDetail.putExtra("created", listing.getCreationTimeStamp());
 	        		
+	        		startActivity(listingDetail);
 	        	}
 	        }
 	    });
