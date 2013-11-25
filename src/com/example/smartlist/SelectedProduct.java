@@ -22,6 +22,20 @@ public class SelectedProduct extends Activity implements OnClickListener {
         /*Cancel button in Product Select page is declared for onClickListener*/
         Button cdp = (Button) findViewById(R.id.cancelprod);
         cdp.setOnClickListener(this);
+        
+        Intent intent = getIntent();
+
+		float lat = intent.getFloatExtra("lat", 0);
+		float lon = intent.getFloatExtra("lon", 0);
+		String title = intent.getStringExtra("title");
+		String description = intent.getStringExtra("description");
+		String currency = intent.getStringExtra("currency");
+		int fee = intent.getIntExtra("fee", 0);
+		String category = intent.getStringExtra("category");
+		boolean obo = intent.getBooleanExtra("obo",false);
+		String created = intent.getStringExtra("created");
+		
+	
     }
 
 
