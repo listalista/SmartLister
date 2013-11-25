@@ -27,9 +27,6 @@ public class SellerMenu extends Activity implements OnClickListener  {
         Button dp = (Button) findViewById(R.id.deleteprodbutton);
         dp.setOnClickListener(this);
         
-        /*Add Image button in Seller Menu is declared for onClickListener*/
-        Button aip = (Button) findViewById(R.id.addimagebutton);
-        aip.setOnClickListener(this);
     }
 
 
@@ -44,9 +41,6 @@ public class SellerMenu extends Activity implements OnClickListener  {
 		}
 		else if(v.getId() == R.id.deleteprodbutton) {  /*Calling the delete_list_view when List New Product is clicked*/
 			startActivity(new Intent(SellerMenu.this, DeleteProdView.class)); /*New Intent is called*/
-		}
-		else if(v.getId() == R.id.addimagebutton) {  /*Calling the capture_image_prod_list when List New Product is clicked*/
-			startActivity(new Intent(SellerMenu.this, AddImageProdList.class)); /*New Intent is called*/
 		}
     }
 

@@ -15,7 +15,7 @@ public class CreateSchedule extends Activity implements OnClickListener  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_schedule);  /*Retrieving the contents of the layout seller_menu*/
     
-        /*Search button in Schedule Menu is declared for onClickListener*/
+        /*Create button in Schedule Menu is declared for onClickListener*/
         Button cs = (Button) findViewById(R.id.createschedule);
         cs.setOnClickListener(this);
         
@@ -25,8 +25,8 @@ public class CreateSchedule extends Activity implements OnClickListener  {
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.createschedule) {  /*Calling the create_schedule when New Schedule is clicked*/
-			startActivity(new Intent(CreateSchedule.this, ScheduleMenu.class)); /*New Intent is called*/
+		if(v.getId() == R.id.createschedule) {  /*Calling the chat_application back when Create Schedule is clicked*/
+			startActivity(new Intent(CreateSchedule.this, ChatApplication.class)); /*New Intent is called*/
 		}
     }
 
