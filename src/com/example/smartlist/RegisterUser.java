@@ -101,19 +101,15 @@ public class RegisterUser extends Activity implements OnClickListener {
        				try {
        					//parse JSON string into JSON object
        					JSONObject responseObj = new JSONObject(response);
-       					if(responseObj.getBoolean("registered")){
-       						//show success message
-       						sendAlert(getStringResourceByName(responseObj.getString("status")));
-               	    		//clear preferences
-           					SharedPreferences settings = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
-               	    		SharedPreferences.Editor prefEditor = settings.edit();
-           					prefEditor.clear();
-           					//go to Logon Screen
-       						startActivity(new Intent(RegisterUser.this, MainLogon.class)); /*New Intent is called*/
-       	       	    		finish();//hopefully prevents an activity from coming back here
-       					}else{
-       						//show failure message and reason
-       					}
+   						//show success message
+   						sendAlert(getResources().getString(R.string.SUCCESS_REGISTER));
+           	    		//clear preferences
+       					SharedPreferences settings = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
+           	    		SharedPreferences.Editor prefEditor = settings.edit();
+       					prefEditor.clear();
+       					//go to Logon Screen
+   						startActivity(new Intent(RegisterUser.this, MainLogon.class)); /*New Intent is called*/
+   	       	    		finish();//hopefully prevents an activity from coming back here
        				} catch (JSONException e) {
        					// TODO Auto-generated catch block
        					Log.v("PUTS","I'M here you putz");
