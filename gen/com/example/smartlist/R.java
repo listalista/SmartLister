@@ -240,13 +240,13 @@ containing a value of this type.
         public static final int smartlisterlogo=0x7f02002e;
     }
     public static final class id {
-        public static final int action_Prod_cam=0x7f05005d;
-        public static final int action_go_home=0x7f05005a;
-        public static final int action_new_prod=0x7f05005c;
-        public static final int action_new_schedule=0x7f050059;
-        public static final int action_prod_setting=0x7f05005e;
-        public static final int action_settings=0x7f05005b;
-        public static final int broddist=0x7f050056;
+        public static final int action_Prod_cam=0x7f05005f;
+        public static final int action_go_home=0x7f05005c;
+        public static final int action_new_prod=0x7f05005e;
+        public static final int action_new_schedule=0x7f05005b;
+        public static final int action_prod_setting=0x7f050060;
+        public static final int action_settings=0x7f05005d;
+        public static final int broddist=0x7f050058;
         public static final int canceldeleteprod=0x7f050028;
         public static final int cancelprod=0x7f050011;
         public static final int cancelsch=0x7f050044;
@@ -276,9 +276,11 @@ containing a value of this type.
         public static final int imageprodlist=0x7f05001b;
         public static final int keyword=0x7f050013;
         public static final int listnewprodbutton=0x7f050048;
+        public static final int locinfo=0x7f050052;
         public static final int logon=0x7f05004d;
         public static final int logonemail=0x7f05004b;
         public static final int logonpswd=0x7f05004c;
+        public static final int map=0x7f050051;
         public static final int newpassword=0x7f050030;
         public static final int newprodconfirm=0x7f05003a;
         public static final int newpswd=0x7f05003d;
@@ -287,7 +289,7 @@ containing a value of this type.
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int pageHeader=0x7f050005;
-        public static final int preferredcurrency=0x7f050057;
+        public static final int preferredcurrency=0x7f050059;
         public static final int prodtitle=0x7f050038;
         public static final int productgallery=0x7f05000f;
         public static final int refinedlist=0x7f05003b;
@@ -326,14 +328,14 @@ containing a value of this type.
         public static final int tileText=0x7f05002a;
         public static final int tracklocation=0x7f050043;
         public static final int trackloctoggle=0x7f050042;
-        public static final int updatedispname=0x7f050055;
+        public static final int updatedispname=0x7f050057;
         public static final int updatepass=0x7f05003f;
         public static final int updateprodbutton=0x7f050049;
-        public static final int updateprodconfirm=0x7f050054;
-        public static final int updateprodlist=0x7f050051;
-        public static final int updateprof=0x7f050058;
-        public static final int upexpPrice=0x7f050053;
-        public static final int upprodtitle=0x7f050052;
+        public static final int updateprodconfirm=0x7f050056;
+        public static final int updateprodlist=0x7f050053;
+        public static final int updateprof=0x7f05005a;
+        public static final int upexpPrice=0x7f050055;
+        public static final int upprodtitle=0x7f050054;
         public static final int viewexistingsch=0x7f050047;
     }
     public static final class integer {
@@ -362,15 +364,17 @@ containing a value of this type.
         public static final int seller_menu=0x7f030013;
         public static final int smart_login=0x7f030014;
         public static final int smartlister_main_menu=0x7f030015;
-        public static final int update_list_view=0x7f030016;
-        public static final int update_product=0x7f030017;
-        public static final int update_user_profile=0x7f030018;
+        public static final int tracking_map=0x7f030016;
+        public static final int update_list_view=0x7f030017;
+        public static final int update_product=0x7f030018;
+        public static final int update_user_profile=0x7f030019;
     }
     public static final class menu {
         public static final int chat_options=0x7f0b0000;
         public static final int go_home=0x7f0b0001;
-        public static final int main_logon=0x7f0b0002;
-        public static final int product_options=0x7f0b0003;
+        public static final int main_action=0x7f0b0002;
+        public static final int main_logon=0x7f0b0003;
+        public static final int product_options=0x7f0b0004;
     }
     public static final class string {
         public static final int ERROR_INVALID_INPUT=0x7f06002c;

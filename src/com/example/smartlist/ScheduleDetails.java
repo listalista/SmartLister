@@ -31,7 +31,7 @@ public class ScheduleDetails extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {	
 		if(v.getId() == R.id.tracklocation) {  /*Calling the seller_menu when Submit is clicked*/
-			/*Track Location Code user Construction*/
+			startActivity(new Intent(ScheduleDetails.this, TrackLocation.class)); /*New Intent is called*/
 		}
 		else if(v.getId() == R.id.cancelsch) {  /*Calling the seller_menu when Submit is clicked*/
 			startActivity(new Intent(ScheduleDetails.this, ScheduleList.class)); /*New Intent is called*/
