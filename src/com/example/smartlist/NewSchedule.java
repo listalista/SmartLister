@@ -13,11 +13,11 @@ public class NewSchedule extends Activity implements OnClickListener  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_schedule);  /*Retrieving the contents of the layout seller_menu*/
+        //setContentView(R.layout.new_schedule);  /*Retrieving the contents of the layout seller_menu*/
     
         /*Search button in Schedule Menu is declared for onClickListener*/
-        Button skc = (Button) findViewById(R.id.searchkeycode);
-        skc.setOnClickListener(this);
+       // Button skc = (Button) findViewById(R.id.searchkeycode);
+       // skc.setOnClickListener(this);
         
     }
 
@@ -25,9 +25,9 @@ public class NewSchedule extends Activity implements OnClickListener  {
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.searchkeycode) {  /*Calling the create_schedule when New Schedule is clicked*/
-			startActivity(new Intent(NewSchedule.this, CreateSchedule.class)); /*New Intent is called*/
-		}
+		//if(v.getId() == R.id.searchkeycode) {  /*Calling the create_schedule when New Schedule is clicked*/
+		//	startActivity(new Intent(NewSchedule.this, CreateSchedule.class)); /*New Intent is called*/
+		//}
     }
 
 }
