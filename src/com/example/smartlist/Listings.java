@@ -75,7 +75,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	    (new CurrentLocation(this,this, new ResponseHandler(){
 	    	@Override
 	    	public void callBack(){
-	    		getListings((double)prefs.getFloat("lat",0),(double)prefs.getFloat("lon",0),prefs.getInt("dist", 10000));
+	    		getListings((double)prefs.getFloat("lat",0),(double)prefs.getFloat("lon",0),prefs.getInt("dist", 50));
 	    	}
 	    })).execute();
 	    
