@@ -141,15 +141,15 @@ public class MainLogon extends FragmentActivity {
        						}else if(responseObj.get(key) instanceof Boolean){
        							prefEditor.putBoolean(key, responseObj.getBoolean(key));
        						}else if(responseObj.get(key) instanceof Float){
+       							prefEditor.putFloat(key, (float)responseObj.getDouble(key));
+       						}else if(responseObj.get(key) instanceof Integer){
        							prefEditor.putInt(key, responseObj.getInt(key));
-       						}else{//prefEditor.putString(key, responseObj.get(key).toString());
+       						}else{
        							Log.v("LOGON","JSON response not added to pref: " + responseObj.get(key).toString());
        							continue;
        						}
        						Log.v("PREF-SENSE",responseObj.getString(key));
        					}
-       					//prefEditor.putString("alias", responseObj.getString("alias"));
-       					//prefEditor.putString("lang", jsonResponse.getString("lang"));
        					//A] Step 4: commit 
        					prefEditor.commit();
        				} catch (JSONException e) {

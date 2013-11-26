@@ -48,12 +48,8 @@ public class NewProd extends FragmentActivity {
 		setContentView(R.layout.new_listing);
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
 		prefsEditor = prefs.edit();
-		myCookieStore = new PersistentCookieStore(this);
-		confirmLogon();
-		(new CurrentLocation(this, this)).execute();
 
 	}
-
 	public void clickCreateProd(View v) {
 		/* Category Spinner is declared */
 		Spinner categoryOption = (Spinner) findViewById(R.id.categoryspinner);
@@ -109,7 +105,8 @@ public class NewProd extends FragmentActivity {
 	@Override
 	public void onResume() {
 		super.onResume();
-
+		(new CurrentLocation(this, this)).execute();
+		myCookieStore = new PersistentCookieStore(this);
 	}
 
 	// LifeCycle end
@@ -141,7 +138,6 @@ public class NewProd extends FragmentActivity {
 		}
 		return true;
 	}
-
 	private void confirmLogon() {
 		JSONObject jsonParams = new JSONObject();
 		StringEntity entity;
@@ -170,7 +166,6 @@ public class NewProd extends FragmentActivity {
 			e.printStackTrace();
 		}
 	}
-
 	private void CreateProduct(String category, String title,
 			String description, String exprice) {
 		if (!prefs.getBoolean(AUTHORIZED, false)) {

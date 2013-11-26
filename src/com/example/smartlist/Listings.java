@@ -26,7 +26,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
@@ -41,6 +40,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	public ListingAdapter listingAdapter;
 	GridView gridview;
 	private static final String USER_PREFS = "UserPrefs";
+	public static final String AUTHORIZED = "authenticated";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -181,12 +181,22 @@ public class Listings extends FragmentActivity implements OnScrollListener{
         case R.id.action_new_prod:
         	startActivity(new Intent(Listings.this, NewProd.class));
             break;
+        case R.id.action_search:
+        	startActivity(new Intent(Listings.this, SearchProduct.class));
+        	break;
+        case R.id.action_user_home:
+        	if(!prefs.getBoolean(AUTHORIZED,false)){
+        		startActivity(new Intent(Listings.this, MainLogon.class));
+        	}else{
+        		startActivity(new Intent(Listings.this, SmartlisterHome.class));
+        	}
+            break;
         default:
             return super.onOptionsItemSelected(item);
         }
         return true;
     }
-	private void setCurrentPage(int currentPage){ this.currentPage = currentPage; }
+	//private void setCurrentPage(int currentPage){ this.currentPage = currentPage; }
 	private int getCurrentPage(){ return this.currentPage; }
 	private int getListingsPerPage(){ return this.listingsPerPage; }
 }

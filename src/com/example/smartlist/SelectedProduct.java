@@ -1,6 +1,7 @@
 package com.example.smartlist;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,9 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import com.loopj.android.http.PersistentCookieStore;
 
 public class SelectedProduct extends Activity implements OnClickListener {
-	
+	private SharedPreferences prefs;
+	private SharedPreferences.Editor prefsEditor;
+	public static final String AUTHORIZED = "authenticated";
 	/*Default Method which will run first*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +81,11 @@ public class SelectedProduct extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
         case R.id.action_go_home:
-            startActivity(new Intent(SelectedProduct.this, SmartlisterHome.class));
+        	if(!prefs.getBoolean(AUTHORIZED,false)){
+        		startActivity(new Intent(SelectedProduct.this, MainLogon.class));
+        	}else{
+        		startActivity(new Intent(SelectedProduct.this, SmartlisterHome.class));
+        	}
             break;
         default:
             return super.onOptionsItemSelected(item);
