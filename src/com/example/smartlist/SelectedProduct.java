@@ -71,6 +71,7 @@ public class SelectedProduct extends Activity implements OnClickListener {
     @Override 
     public void onResume(){
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
+		super.onResume();
     }
     
     /* Inflating the Menu options */
@@ -87,10 +88,9 @@ public class SelectedProduct extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
         case R.id.action_go_home:
-        	Log.v("For Test", "For Testing Purpose");
-        	boolean test = prefs.getBoolean(AUTHORIZED,false);
-        	Log.v("Authentication", String.valueOf(test));
-        	if(test == false){
+        	boolean autStatus = prefs.getBoolean(AUTHORIZED,false);
+        	Log.v("Authentication", String.valueOf(autStatus));
+        	if(autStatus == false){
         		startActivity(new Intent(SelectedProduct.this, MainLogon.class));
         	}else{
         		startActivity(new Intent(SelectedProduct.this, SmartlisterHome.class));
