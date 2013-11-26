@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -29,6 +30,7 @@ public class NewProd extends FragmentActivity {
 	public static final String USER_PREFS = "UserPrefs";
 	public static final String P_LATITUDE = "lat";
 	public static final String P_LONGITUDE = "lon";
+	public static final String LOCATION = "location";
 	public static final String LAT_LON_TS = "lat_lon_ts";
 	public static final String OBO_IND = "obo_ind";
 	public static final String P_RADIUS = "radius";
@@ -60,7 +62,7 @@ public class NewProd extends FragmentActivity {
 	}
 
 	public void clickCreateProd(View v) {
-
+Log.v("HERE _____ I ____ AM","YEP");
 		/* Category Spinner is declared */
 		Spinner categoryOption = (Spinner) findViewById(R.id.categoryspinner);
 
@@ -68,6 +70,7 @@ public class NewProd extends FragmentActivity {
 		EditText prodTitle = (EditText) findViewById(R.id.prodtitle);
 		EditText prodDesc = (EditText) findViewById(R.id.proddesc);
 		EditText expPrice = (EditText) findViewById(R.id.expPrice);
+		expPrice.setRawInputType(Configuration.KEYBOARD_12KEY);
 
 		/* Calling a method based on the input */
 		this.CreateProduct(categoryOption.getSelectedItem().toString(),
@@ -149,7 +152,6 @@ public class NewProd extends FragmentActivity {
 	}
 
 	private void confirmLogon() {
-		Log.v("ConfirmLogon HERE<-----------", "YEP");
 		JSONObject jsonParams = new JSONObject();
 		StringEntity entity;
 		try {
@@ -179,25 +181,35 @@ public class NewProd extends FragmentActivity {
 	}
 
 	private void CreateProduct(String category, String title,
-			String description, String expprice) {
+			String description, String exprice) {
 		if (!prefs.getBoolean(AUTHORIZED, false)) {
 			startActivity(new Intent(NewProd.this, Logon.class));
 			return;
 		}
+		int fee;
+		try{
+			fee = (int)Double.parseDouble(exprice);
+		}catch(Error e){
+			fee = 0;
+		}
 		try {
 			JSONObject jsonParams = new JSONObject();
-			jsonParams.put(CATEG, category);
+			JSONObject jsonLocParams = new JSONObject();
+			jsonLocParams.put(P_LATITUDE, this.prefs.getFloat(P_LATITUDE,(float) 0.0));
+			jsonLocParams.put(P_LONGITUDE, this.prefs.getFloat(P_LONGITUDE,(float) 0.0));
+			jsonParams.put(LOCATION, jsonLocParams);
+			jsonParams.put("listing_type", "for_sale");
+			jsonParams.put(CATEG, category.toLowerCase());
 			jsonParams.put(TITLE, title);
 			jsonParams.put(DESCR, description);
-			jsonParams.put(FEE, expprice);
-			jsonParams.put(P_LATITUDE, this.prefs.getFloat(P_LATITUDE, 0));
-			jsonParams.put(P_LONGITUDE, this.prefs.getFloat(P_LONGITUDE, 0));
-			jsonParams.put(P_RADIUS, this.prefs.getInt(P_RADIUS, 0));
-			jsonParams.put(P_LANG, this.prefs.getString(P_LANG, "en"));
-			jsonParams.put(P_CURRENCY, this.prefs.getString(P_CURRENCY, "USD"));
+			jsonParams.put(FEE, fee);
+			jsonParams.put(P_RADIUS, this.prefs.getInt(P_RADIUS, 50));
+			jsonParams.put(P_LANG, this.prefs.getString(P_LANG, "en").toLowerCase());
+			jsonParams.put(P_CURRENCY, this.prefs.getString(P_CURRENCY, "USD").toLowerCase());
 			jsonParams.put(OBO_IND, false);// defaulting for now
 
 			StringEntity entity = new StringEntity(jsonParams.toString());
+			Log.v("JSON SENDING",jsonParams.toString());
 			AsyncHttpClient client = new AsyncHttpClient();
 			client.setCookieStore(myCookieStore);
 			client.put(getApplicationContext(),
@@ -207,14 +219,12 @@ public class NewProd extends FragmentActivity {
 						public void onSuccess(String response) {
 							finish();
 						}
-
 						@Override
 						public void onFailure(int statusCode,
 								org.apache.http.Header[] headers,
 								byte[] responseBody, Throwable error) {
 							try {
-								String response = new String(responseBody,
-										"UTF-8");
+								String response = new String(responseBody,"UTF-8");
 								Log.v("RESPONSE",
 										"code["
 												+ Integer.valueOf(statusCode)
