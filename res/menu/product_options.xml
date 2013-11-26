@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/action_Prod_cam"
+          android:icon="@drawable/ic_action_photo"
+          android:title="Camera"
+          android:showAsAction="always" />
+    
+    <item android:id="@+id/action_prod_setting"
+          android:icon="@drawable/ic_action_settings"
+          android:title="Setting"
+          android:showAsAction="always" />
+
+    
+    <item android:id="@+id/action_go_home"
+          android:icon="@drawable/ic_action_home"
+          android:title="Home"
+          android:showAsAction="always" />
+
+</menu>

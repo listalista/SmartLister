@@ -108,7 +108,7 @@
                     android:textSize="15sp" />
                 
                 <EditText
-                    android:id="@+id/prodtitle"
+                    android:id="@+id/proddesc"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:ems="5"
@@ -165,7 +165,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:text="Create" />
+            android:text="Create"
+            android:onClick="clickCreateProd" />
         
     </LinearLayout>
     
