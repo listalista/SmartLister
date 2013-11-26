@@ -69,6 +69,7 @@ public class SelectedProduct extends Activity implements OnClickListener {
     }
     @Override 
     public void onResume(){
+    	super.onResume();
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
     }
     
