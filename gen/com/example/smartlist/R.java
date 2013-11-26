@@ -10,6 +10,7 @@ package com.example.smartlist;
 public final class R {
     public static final class array {
         public static final int Add_Picture=0x7f090004;
+        public static final int Deal_Closure=0x7f09000a;
         public static final int Logon_Register=0x7f090001;
         public static final int Preferred_Currency=0x7f090006;
         public static final int Product_Category=0x7f090000;

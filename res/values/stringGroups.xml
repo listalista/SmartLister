@@ -94,4 +94,8 @@
 		<item>Chat 11</item>
 		<item>Chat 12</item>
 	</string-array>
+	<string-array name="Deal_Closure">
+		<item>Yes</item>
+		<item>No</item>
+	</string-array>
 </resources>
