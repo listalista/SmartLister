@@ -240,12 +240,8 @@ containing a value of this type.
         public static final int smartlisterlogo=0x7f02002e;
     }
     public static final class id {
-        public static final int action_Prod_cam=0x7f05005d;
-        public static final int action_go_home=0x7f05005a;
-        public static final int action_new_prod=0x7f05005c;
-        public static final int action_new_schedule=0x7f050059;
-        public static final int action_prod_setting=0x7f05005e;
-        public static final int action_settings=0x7f05005b;
+        public static final int action_new_prod=0x7f05005a;
+        public static final int action_settings=0x7f050059;
         public static final int broddist=0x7f050056;
         public static final int canceldeleteprod=0x7f050028;
         public static final int cancelprod=0x7f050011;
@@ -345,32 +341,28 @@ containing a value of this type.
         public static final int capture_image=0x7f030002;
         public static final int capture_image_prod_list=0x7f030003;
         public static final int chat_application=0x7f030004;
-        public static final int chat_list=0x7f030005;
-        public static final int create_schedule=0x7f030006;
-        public static final int delete_list_view=0x7f030007;
-        public static final int delete_product_confirm=0x7f030008;
-        public static final int listing_tile=0x7f030009;
-        public static final int listings=0x7f03000a;
-        public static final int logon_help=0x7f03000b;
-        public static final int logon_register=0x7f03000c;
-        public static final int new_listing=0x7f03000d;
-        public static final int refined_list=0x7f03000e;
-        public static final int reset_password=0x7f03000f;
-        public static final int schedule_details=0x7f030010;
-        public static final int schedule_list=0x7f030011;
-        public static final int schedule_menu=0x7f030012;
-        public static final int seller_menu=0x7f030013;
-        public static final int smart_login=0x7f030014;
-        public static final int smartlister_main_menu=0x7f030015;
-        public static final int update_list_view=0x7f030016;
-        public static final int update_product=0x7f030017;
-        public static final int update_user_profile=0x7f030018;
+        public static final int create_schedule=0x7f030005;
+        public static final int delete_list_view=0x7f030006;
+        public static final int delete_product_confirm=0x7f030007;
+        public static final int listing_tile=0x7f030008;
+        public static final int listings=0x7f030009;
+        public static final int logon_help=0x7f03000a;
+        public static final int logon_register=0x7f03000b;
+        public static final int new_listing=0x7f03000c;
+        public static final int refined_list=0x7f03000d;
+        public static final int reset_password=0x7f03000e;
+        public static final int schedule_details=0x7f03000f;
+        public static final int schedule_list=0x7f030010;
+        public static final int schedule_menu=0x7f030011;
+        public static final int seller_menu=0x7f030012;
+        public static final int smart_login=0x7f030013;
+        public static final int smartlister_main_menu=0x7f030014;
+        public static final int update_list_view=0x7f030015;
+        public static final int update_product=0x7f030016;
+        public static final int update_user_profile=0x7f030017;
     }
     public static final class menu {
-        public static final int chat_options=0x7f0b0000;
-        public static final int go_home=0x7f0b0001;
-        public static final int main_logon=0x7f0b0002;
-        public static final int product_options=0x7f0b0003;
+        public static final int main_logon=0x7f0b0000;
     }
     public static final class string {
         public static final int ERROR_INVALID_INPUT=0x7f06002c;
