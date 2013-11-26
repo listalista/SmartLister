@@ -58,8 +58,8 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	        		//Listing listing = (Listing) parent.getAdapter().getItem(position);
 	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
 	        		Intent listingDetail = new Intent(Listings.this, SelectedProduct.class);
-	        		listingDetail.putExtra("lat", listing.getLocLat());
-	        		listingDetail.putExtra("lon", listing.getLocLon());
+	        		listingDetail.putExtra("lat", (float)listing.getLocLat());
+	        		listingDetail.putExtra("lon", (float)listing.getLocLon());
 	        		listingDetail.putExtra("title", listing.getTitle());
 	        		listingDetail.putExtra("description", listing.getDescription());
 	        		listingDetail.putExtra("fee", listing.getFee());
@@ -71,15 +71,17 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	        		startActivity(listingDetail);
 	        	}
 	        }
-	    });
-	    (new CurrentLocation(this,this, new ResponseHandler(){
+	    });  
+	}
+	@Override
+	public void onResume(){
+	    super.onResume();
+		(new CurrentLocation(this,this, new ResponseHandler(){
 	    	@Override
 	    	public void callBack(){
 	    		getListings((double)prefs.getFloat("lat",0),(double)prefs.getFloat("lon",0),prefs.getInt("dist", 50));
 	    	}
 	    })).execute();
-	    
-	    
 	}
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
@@ -118,6 +120,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
        						return;
        					}
        					JSONArray listingsJson = responseObj.getJSONArray("listing");
+       					listingAdapter.clear();
        					for (int i = 0; i < listingsJson.length(); ++i) {
        					    JSONObject curListing = listingsJson.getJSONObject(i);
        					    if(!curListing.getString("listing_type").equals("listingforsale")){ continue;
@@ -133,10 +136,10 @@ public class Listings extends FragmentActivity implements OnScrollListener{
    					    	int newRadius = curListing.getInt("radius");
    					    	String newTitle = curListing.getString("title");
    					    	listingAdapter.add(new ListingForSale(newCategory,newCreated,newCurrency,newDescription,newFee,newLocLat,newLocLon,newObo,newRadius,newTitle));   
+   	       					listingAdapter.notifyDataSetChanged();
        					}
 
-       					listingAdapter.addAll(listings);
-       					listingAdapter.notifyDataSetChanged();
+       					//listingAdapter.addAll(listings);
        				} catch (JSONException e) {
        					Log.v("JSONException","Listings");
        					Log.v("ERROR",e.toString());

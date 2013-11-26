@@ -28,6 +28,7 @@ import android.widget.EditText;
 
 public class MainLogon extends FragmentActivity {
 	public static final String USER_PREFS = "UserPrefs";
+	public static final String AUTHORIZED = "authenticated";
 
 	/*Default Method which will run first*/
     @Override
@@ -126,6 +127,7 @@ public class MainLogon extends FragmentActivity {
        					//A] step 1: gain access to particular prefs
        					SharedPreferences settings = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
        					SharedPreferences.Editor prefEditor = settings.edit();
+       					prefEditor.putBoolean(AUTHORIZED, true);
        					//A] step 2: create iterator of JSON keys
        					Iterator<?> jsonKeys = responseObj.keys();
        					//A] Step 3: iterate over 
@@ -156,8 +158,9 @@ public class MainLogon extends FragmentActivity {
        					Log.v("ERROR-MESSAGE",e.getMessage());
        				}
        				Log.v("RECEIVED", response);
-       				Intent logOnIntent = new Intent(MainLogon.this, SmartlisterHome.class);
-       	    		startActivity(logOnIntent); /*New Intent is called*/
+       				//Intent logOnIntent = new Intent(MainLogon.this, SmartlisterHome.class);
+       	    		//startActivity(logOnIntent); /*New Intent is called*/
+       				finish();
        			}
        			@Override
        			public void onFailure(int statusCode, org.apache.http.Header[] headers, byte[] responseBody, Throwable error)

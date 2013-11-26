@@ -1,7 +1,6 @@
 package com.example.smartlist;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Iterator;
 
 import org.apache.http.entity.StringEntity;
 import org.json.JSONException;
@@ -9,17 +8,14 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -49,10 +45,7 @@ public class NewProd extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.new_listing); /*
-											 * Retrieving the contents of the
-											 * layout new_list_create_1
-											 */
+		setContentView(R.layout.new_listing);
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
 		prefsEditor = prefs.edit();
 		myCookieStore = new PersistentCookieStore(this);
@@ -62,7 +55,6 @@ public class NewProd extends FragmentActivity {
 	}
 
 	public void clickCreateProd(View v) {
-Log.v("HERE _____ I ____ AM","YEP");
 		/* Category Spinner is declared */
 		Spinner categoryOption = (Spinner) findViewById(R.id.categoryspinner);
 
@@ -70,7 +62,6 @@ Log.v("HERE _____ I ____ AM","YEP");
 		EditText prodTitle = (EditText) findViewById(R.id.prodtitle);
 		EditText prodDesc = (EditText) findViewById(R.id.proddesc);
 		EditText expPrice = (EditText) findViewById(R.id.expPrice);
-		expPrice.setRawInputType(Configuration.KEYBOARD_12KEY);
 
 		/* Calling a method based on the input */
 		this.CreateProduct(categoryOption.getSelectedItem().toString(),
@@ -183,7 +174,7 @@ Log.v("HERE _____ I ____ AM","YEP");
 	private void CreateProduct(String category, String title,
 			String description, String exprice) {
 		if (!prefs.getBoolean(AUTHORIZED, false)) {
-			startActivity(new Intent(NewProd.this, Logon.class));
+			startActivity(new Intent(NewProd.this, MainLogon.class));
 			return;
 		}
 		int fee;
@@ -209,7 +200,6 @@ Log.v("HERE _____ I ____ AM","YEP");
 			jsonParams.put(OBO_IND, false);// defaulting for now
 
 			StringEntity entity = new StringEntity(jsonParams.toString());
-			Log.v("JSON SENDING",jsonParams.toString());
 			AsyncHttpClient client = new AsyncHttpClient();
 			client.setCookieStore(myCookieStore);
 			client.put(getApplicationContext(),
@@ -232,6 +222,8 @@ Log.v("HERE _____ I ____ AM","YEP");
 												+ "] headers:"
 												+ headers.toString() + " body:"
 												+ response);
+
+								startActivity(new Intent(NewProd.this, MainLogon.class));
 							} catch (UnsupportedEncodingException e) {
 								// TODO Auto-generated catch block
 								Log.v("ERROR", e.toString());

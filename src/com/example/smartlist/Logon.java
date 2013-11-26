@@ -1,5 +1,5 @@
 package com.example.smartlist;
-
+/*
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,8 +20,8 @@ import java.util.zip.GZIPInputStream;
 import android.os.AsyncTask;
 import android.os.NetworkOnMainThreadException;
 import android.util.Log;
-
-public class Logon extends AsyncTask<HashMap<String,String>, Void, String>{
+*/
+public class Logon /*extends AsyncTask<HashMap<String,String>, Void, String>*/{/*
 	private boolean authenticated;
 	@Override
 	protected String doInBackground(HashMap<String, String>... params){
@@ -52,13 +52,13 @@ public class Logon extends AsyncTask<HashMap<String,String>, Void, String>{
 		HttpURLConnection httpcon = (HttpURLConnection) ((new URL("http://www.marcstreeter.com/sl/logon").openConnection()));
 	    
 		String jsonLogonString = "{\"username\": \"" + username +"\",\"password\":\""+ password+"\"}";
-		/* SET HTTP HEADERS and PROPERTIES */
+		// SET HTTP HEADERS and PROPERTIES 
 		//if (cookie != null) { httpcon.setRequestProperty("Cookie", cookie);Log.v("COOKIE-SET",cookie);} // SESSION boot-up
 		httpcon.setDoOutput(true); // for POST or PUT requests that have body
 		httpcon.setRequestProperty("Content-Type", "application/json");
 		httpcon.setRequestProperty("Accept", "application/json");
 		httpcon.setRequestMethod("PUT");
-		/* CONNECTING */
+		// CONNECTING 
 		Log.v("STATUS","connecting");
 		try{
     		httpcon.connect();
@@ -96,5 +96,5 @@ public class Logon extends AsyncTask<HashMap<String,String>, Void, String>{
     	}finally{
     		httpcon.disconnect();
     	}
-    }
+    }*/
 }
