@@ -28,6 +28,9 @@ GooglePlayServicesClient.ConnectionCallbacks,
 GooglePlayServicesClient.OnConnectionFailedListener {
 
 	public static final String USER_PREFS = "UserPrefs";
+	public static final String LATITUDE = "lat";
+	public static final String LONGITUDE = "lon";
+	public static final String LAT_LON_TS = "lat_lon_ts";
 	private Location location;
 	// Store the context passed to the AsyncTask when the system instantiates it.
     private Context localContext;
@@ -133,7 +136,6 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 	}
 	@Override
 	public void onConnected(Bundle bundle) {
-		Log.v("GOT onconnected","GOT HERE!");
 		Location loc = getLocation();
 		if(loc == null){return;}
 		setLocation(loc);
@@ -141,7 +143,6 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 	@Override
 	public void onDisconnected() {
 		//mConnectionStatus.setText(R.string.disconnected);
-		Log.v("GPSACTIVITY",localContext.getString(R.string.disconnected));
 	}
 	@Override
 	public void onLocationChanged(Location location) {
@@ -157,10 +158,10 @@ GooglePlayServicesClient.OnConnectionFailedListener {
      */
 	private void setLocation(Location loc){
 		//set location to preferences
-		mEditor.putFloat("lat", (float)loc.getLatitude());
-		mEditor.putFloat("lon", (float)loc.getLongitude());
+		mEditor.putFloat(LATITUDE, (float)loc.getLatitude());
+		mEditor.putFloat(LONGITUDE, (float)loc.getLongitude());
 		//http://stackoverflow.com/questions/8077530/android-get-current-timestamp
-		mEditor.putString("latlonTS", Long.toString(System.nanoTime()));
+		mEditor.putString(LAT_LON_TS, Long.toString(System.nanoTime()));
 		mEditor.commit();
 		location = loc;
 	}
