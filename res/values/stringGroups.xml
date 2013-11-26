@@ -38,11 +38,11 @@
 	</string-array>
 	<string-array name="Smartlister_Menu">
 		<item>Seller Menu</item>
-		<item>Buy a Product</item>
 		<item>Active Chat History</item>
 		<item>Scheduled Transactions</item>
 		<item>Update Profile Information</item>
 		<item>Change Password</item>
+		<item>Sign Out</item>
 	</string-array>
 	
 	<string-array name="Preferred_Currency">

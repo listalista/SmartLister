@@ -4,6 +4,8 @@ package com.example.smartlist;
 import java.io.UnsupportedEncodingException;
 
 import org.apache.http.entity.StringEntity;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -21,6 +23,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
  
 public class SmartlisterHome extends Activity implements OnItemClickListener {
 	public static final String USER_PREFS = "UserPrefs";
@@ -38,7 +41,6 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
         setContentView(R.layout.smartlister_main_menu); 
         listView = (ListView) findViewById(R.id.slmenu);
         String[] smartlistermenu = getResources().getStringArray(R.array.Smartlister_Menu);
-        prefs = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
         //confirmLogon();
         
         //Pushing the array content into list view and capture the onClick action
@@ -63,10 +65,6 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	Intent intent = new Intent(SmartlisterHome.this, SellerMenu.class);
    	     	startActivity(intent);             
     	}
-    	else if (GetLabel.toString().equals("Buy a Product")) {
-   	     	Intent intent = new Intent(SmartlisterHome.this, SearchProduct.class);
-   	     	startActivity(intent);             
-    	}
     	else if (GetLabel.toString().equals("Active Chat History")) {
    	     	Intent intent = new Intent(SmartlisterHome.this, ChatList.class);
    	     	startActivity(intent);             
@@ -75,10 +73,16 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	Intent intent = new Intent(SmartlisterHome.this, ScheduleList.class);
    	     	startActivity(intent);             
     	}
+    	else if (GetLabel.toString().equals("Sign Out")) {
+    		
+   	     	logOff();            
+    	}
     }
     @Override
     public void onResume(){
     	super.onResume();
+    	prefs = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
+    	prefsEditor = prefs.edit();
     	if(!prefs.getBoolean(AUTHORIZED, false)){
     		startActivity(new Intent(SmartlisterHome.this,MainLogon.class));
         }else{
@@ -86,33 +90,35 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
             userAlias.setText(prefs.getString("alias", "nothing"));
         }
     }
-    private void confirmLogon() {
-		JSONObject jsonParams = new JSONObject();
-		StringEntity entity;
-		try {
-			entity = new StringEntity(jsonParams.toString());
-			AsyncHttpClient client = new AsyncHttpClient();
-			client.setCookieStore(myCookieStore);
-			client.put(getApplicationContext(),
-					"http://www.marcstreeter.com/sl/authorized", entity,
-					"application/json", new AsyncHttpResponseHandler() {
-						@Override
-						public void onSuccess(String response) {
-							prefsEditor.putBoolean(AUTHORIZED, true);
-							prefsEditor.commit();
-						}
-
-						@Override
-						public void onFailure(int statusCode,
-								org.apache.http.Header[] headers,
-								byte[] responseBody, Throwable error) {
-							prefsEditor.putBoolean(AUTHORIZED, false);
-							prefsEditor.commit();
-							startActivity(new Intent(SmartlisterHome.this, MainLogon.class));
-						}
-					});
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
+    private void logOff(){
+    		StringEntity entity;
+			try {
+				entity = new StringEntity("{}");
+				AsyncHttpClient client = new AsyncHttpClient();
+	    		PersistentCookieStore myCookieStore = new PersistentCookieStore(this);
+	    		client.setCookieStore(myCookieStore);
+	   			client.put(getApplicationContext(),"http://www.marcstreeter.com/sl/logout", entity, "application/json",new AsyncHttpResponseHandler() {
+	       			@Override
+	       			public void onSuccess(String response) {
+	       				Intent intent = new Intent(SmartlisterHome.this, Listings.class);
+	       	   	     	startActivity(intent); 
+	       	   	     	prefsEditor.clear();
+	       	   	     	prefsEditor.commit();
+	       			}
+	       			@Override
+	       			public void onFailure(int statusCode, org.apache.http.Header[] headers, byte[] responseBody, Throwable error)
+	       			{
+	       				Log.v("ERROR","ON LOGGING OUT");
+	       				Intent intent = new Intent(SmartlisterHome.this, Listings.class);
+	       	   	     	startActivity(intent); 
+	       	   	     	prefsEditor.clear();
+	       	   	     	prefsEditor.commit();
+	       			}
+	    		});
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+    		
+    	
+    }
 }
