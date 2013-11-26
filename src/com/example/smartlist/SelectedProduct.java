@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -81,7 +82,10 @@ public class SelectedProduct extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
         case R.id.action_go_home:
-        	if(!prefs.getBoolean(AUTHORIZED,false)){
+        	Log.v("For Test", "For Testing Purpose");
+        	boolean test = prefs.getBoolean(AUTHORIZED,false);
+        	Log.v("Authentication", String.valueOf(test));
+        	if(test == false){
         		startActivity(new Intent(SelectedProduct.this, MainLogon.class));
         	}else{
         		startActivity(new Intent(SelectedProduct.this, SmartlisterHome.class));
