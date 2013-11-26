@@ -113,6 +113,10 @@ public class Listings extends FragmentActivity implements OnScrollListener{
        			public void onSuccess(String response) {
        				try {
        					JSONObject responseObj = new JSONObject(response);
+       					if(!responseObj.has("listing")){
+       						Toast.makeText(Listings.this, "No listings in your area. Post one!", Toast.LENGTH_SHORT).show();
+       						return;
+       					}
        					JSONArray listingsJson = responseObj.getJSONArray("listing");
        					for (int i = 0; i < listingsJson.length(); ++i) {
        					    JSONObject curListing = listingsJson.getJSONObject(i);
