@@ -29,12 +29,14 @@ import android.widget.EditText;
 public class MainLogon extends FragmentActivity {
 	public static final String USER_PREFS = "UserPrefs";
 	public static final String AUTHORIZED = "authenticated";
+	public SharedPreferences prefs;
 
 	/*Default Method which will run first*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smart_login);
+        
         (new CurrentLocation(this,this)).execute();
     }
     public void clickLogon(View v) {
@@ -85,6 +87,12 @@ public class MainLogon extends FragmentActivity {
     @Override
     public void onResume() {
         super.onResume();
+        prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
+        if(prefs.getBoolean(AUTHORIZED,false)){
+    		finish();
+    	}else{
+    		return;
+    	}
 
     }
     //LifeCycle end

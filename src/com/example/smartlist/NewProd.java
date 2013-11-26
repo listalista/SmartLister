@@ -46,8 +46,6 @@ public class NewProd extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.new_listing);
-		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
-		prefsEditor = prefs.edit();
 
 	}
 	public void clickCreateProd(View v) {
@@ -107,6 +105,8 @@ public class NewProd extends FragmentActivity {
 		super.onResume();
 		(new CurrentLocation(this, this)).execute();
 		myCookieStore = new PersistentCookieStore(this);
+		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
+		prefsEditor = prefs.edit();
 	}
 
 	// LifeCycle end
@@ -130,9 +130,12 @@ public class NewProd extends FragmentActivity {
 			startActivity(new Intent(NewProd.this, UpdateProfile.class));
 			break;
 		case R.id.action_go_home:
-			startActivity(new Intent(NewProd.this, SmartlisterHome.class));
-			finish();
-			break;
+			if(!prefs.getBoolean(AUTHORIZED,false)){
+        		startActivity(new Intent(NewProd.this, MainLogon.class));
+        	}else{
+        		startActivity(new Intent(NewProd.this, SmartlisterHome.class));
+        	}
+            break;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
