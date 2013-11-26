@@ -50,8 +50,11 @@ public class ListingAdapter extends ArrayAdapter<Listing>{
         TextView tv = (TextView)listingView.findViewById(R.id.tileText);
         Listing item = items.get(position);
         if(item != null){
-        	tv.setText(item.toString());
+        	tv.setText(item.getTitle());
         }
+        /*if(item instanceof ListingForSale){
+        	((ListingForSale) item).getFee();
+        }*/
         ImageView iv = (ImageView)listingView.findViewById(R.id.tileImage);
         int max = mThumbIds.length;
         int index = (int)(Math.floor(Math.random() * max));
