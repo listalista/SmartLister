@@ -15,6 +15,7 @@ import com.loopj.android.http.PersistentCookieStore;
 public class SelectedProduct extends Activity implements OnClickListener {
 	private SharedPreferences prefs;
 	private SharedPreferences.Editor prefsEditor;
+	public static final String USER_PREFS = "UserPrefs";
 	public static final String AUTHORIZED = "authenticated";
 	/*Default Method which will run first*/
     @Override
@@ -65,6 +66,10 @@ public class SelectedProduct extends Activity implements OnClickListener {
 		else if(v.getId() == R.id.cancelprod) {  /*Calling the seller_menu when Submit is clicked*/
 			startActivity(new Intent(SelectedProduct.this, RefinedProdList.class)); /*New Intent is called*/
 		}
+    }
+    @Override 
+    public void onResume(){
+		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
     }
     
     /* Inflating the Menu options */
