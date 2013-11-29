@@ -90,7 +90,7 @@ public class UpdateProfile extends FragmentActivity {
 	public void onResume() {
 		super.onResume();
 		
-		//retrieveDetails();
+		retrieveDetails();
 		
 	}
 
@@ -102,21 +102,21 @@ public class UpdateProfile extends FragmentActivity {
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
 		prefsEditor = prefs.edit();
 		
-		/*EditBoxes are declared */
+		//EditBoxes are declared 
     	EditText dispName = (EditText) findViewById(R.id.updatedispname);
     	EditText brodDist = (EditText) findViewById(R.id.broddist);
     	
-		/* Spinners are declared */
+		// Spinners are declared 
 		Spinner currencyOption = (Spinner) findViewById(R.id.preferredcurrency);
 		Spinner langOption = (Spinner) findViewById(R.id.preferredlanguage);
 		
 		dispName.setText(prefs.getString(DISPLAY_NAME, "")); // Sending the value of Display Name to the Layout Textbox
 		
-		/* Getting the value of BroadcastDistance and sending it to Layout Textbox */
-		int defBrodDist = prefs.getInt(BROADCAST_DISTANCE, 50);
+		// Getting the value of BroadcastDistance and sending it to Layout Textbox
+		String defBrodDist = String.valueOf(prefs.getInt(BROADCAST_DISTANCE, 50));
 		brodDist.setText(defBrodDist);
 		
-		/* Getting the value of Preferred Language and sending it to Layout Spinner */
+		// Getting the value of Preferred Language and sending it to Layout Spinner 
 		String defLang = prefs.getString(PREFERRED_LANG, "en");
 		if(defLang == "" || defLang == "en") {
 			defLang = "ENGLISH";
@@ -131,7 +131,7 @@ public class UpdateProfile extends FragmentActivity {
 		int spinnerPosition1 = myAdap1.getPosition(defLang);
 		langOption.setSelection(spinnerPosition1);
 		
-		/* Getting the value of Preferred Currency and sending it to Layout Spinner */
+		// Getting the value of Preferred Currency and sending it to Layout Spinner 
 		String defCurr = prefs.getString(PREFERRED_CURRENCY, "USD");
 		defCurr = defCurr.toUpperCase();
 		if(defCurr == "") {
@@ -146,7 +146,6 @@ public class UpdateProfile extends FragmentActivity {
 		ArrayAdapter myAdap2 = (ArrayAdapter) currencyOption.getAdapter();
 		int spinnerPosition2 = myAdap2.getPosition(defCurr);
 		currencyOption.setSelection(spinnerPosition2);
-		
 	}
 	
     public void clickUpdatePref(View v) {
