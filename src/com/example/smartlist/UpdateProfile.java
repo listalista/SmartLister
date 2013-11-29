@@ -44,13 +44,7 @@ public class UpdateProfile extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_profile);  /*Retrieving the contents of the layout update_user_profile*/
         
-        /*EditBoxes are declared */
-    	EditText dispName = (EditText) findViewById(R.id.updatedispname);
-    	EditText brodDist = (EditText) findViewById(R.id.broddist);
-    	
-		/* Spinners are declared */
-		Spinner currencyOption = (Spinner) findViewById(R.id.preferredcurrency);
-		Spinner langOption = (Spinner) findViewById(R.id.preferredlanguage);
+        retrieveDetails();
         
         
     }
@@ -95,6 +89,15 @@ public class UpdateProfile extends FragmentActivity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		
+		//retrieveDetails();
+		
+	}
+
+	// LifeCycle end
+	
+	public void retrieveDetails() {
+		
 		myCookieStore = new PersistentCookieStore(this);
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
 		prefsEditor = prefs.edit();
@@ -144,10 +147,7 @@ public class UpdateProfile extends FragmentActivity {
 		int spinnerPosition2 = myAdap2.getPosition(defCurr);
 		currencyOption.setSelection(spinnerPosition2);
 		
-		super.onResume();
 	}
-
-	// LifeCycle end
 	
     public void clickUpdatePref(View v) {
     	
