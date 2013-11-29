@@ -34,7 +34,7 @@ public class UpdateProfile extends FragmentActivity {
 	public static final String PREFERRED_CURRENCY = "currency";
 	public static final String PREFERRED_LANG = "language";
 	public static final String AUTHORIZED = "authenticated";
-	private SharedPreferences prefs;
+	private SharedPreferences settings;
 	private SharedPreferences.Editor prefsEditor;
 	private PersistentCookieStore myCookieStore;
 	
@@ -99,8 +99,8 @@ public class UpdateProfile extends FragmentActivity {
 	public void retrieveDetails() {
 		
 		myCookieStore = new PersistentCookieStore(this);
-		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
-		prefsEditor = prefs.edit();
+		settings = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
+		prefsEditor = settings.edit();
 		
 		//EditBoxes are declared 
     	EditText dispName = (EditText) findViewById(R.id.updatedispname);
@@ -110,14 +110,14 @@ public class UpdateProfile extends FragmentActivity {
 		Spinner currencyOption = (Spinner) findViewById(R.id.preferredcurrency);
 		Spinner langOption = (Spinner) findViewById(R.id.preferredlanguage);
 		
-		dispName.setText(prefs.getString(DISPLAY_NAME, "")); // Sending the value of Display Name to the Layout Textbox
+		dispName.setText(settings.getString(DISPLAY_NAME, "")); // Sending the value of Display Name to the Layout Textbox
 		
 		// Getting the value of BroadcastDistance and sending it to Layout Textbox
-		String defBrodDist = String.valueOf(prefs.getInt(BROADCAST_DISTANCE, 50));
+		String defBrodDist = String.valueOf(settings.getInt(BROADCAST_DISTANCE, 50));
 		brodDist.setText(defBrodDist);
 		
 		// Getting the value of Preferred Language and sending it to Layout Spinner 
-		String defLang = prefs.getString(PREFERRED_LANG, "en");
+		String defLang = settings.getString(PREFERRED_LANG, "en");
 		if(defLang == "" || defLang == "en") {
 			defLang = "ENGLISH";
 		}
@@ -132,7 +132,7 @@ public class UpdateProfile extends FragmentActivity {
 		langOption.setSelection(spinnerPosition1);
 		
 		// Getting the value of Preferred Currency and sending it to Layout Spinner 
-		String defCurr = prefs.getString(PREFERRED_CURRENCY, "USD");
+		String defCurr = settings.getString(PREFERRED_CURRENCY, "USD");
 		defCurr = defCurr.toUpperCase();
 		if(defCurr == "") {
 			defCurr = "USD";
@@ -172,7 +172,7 @@ public class UpdateProfile extends FragmentActivity {
 
 	private void UpdatePreferrence(String aliasName, String broadDist,
 			String preferCurr, String preferLang, String pwdVerify) {
-		if (!prefs.getBoolean(AUTHORIZED, false)) {
+		if (!settings.getBoolean(AUTHORIZED, false)) {
 			startActivity(new Intent(UpdateProfile.this, MainLogon.class));
 			return;
 		}
@@ -216,7 +216,7 @@ public class UpdateProfile extends FragmentActivity {
 		       					//A] set preferences by iterating over json keys
 		       					//A] step 1: gain access to particular prefs
 		       					SharedPreferences settings = getSharedPreferences(USER_PREFS,MODE_PRIVATE);
-		       					SharedPreferences.Editor prefEditor = settings.edit();
+		       					prefsEditor = settings.edit();
 		       					//prefEditor.putBoolean(AUTHORIZED, true);
 		       					//A] step 2: create iterator of JSON keys
 		       					Iterator<?> jsonKeys = responseObj.keys();
@@ -227,13 +227,13 @@ public class UpdateProfile extends FragmentActivity {
 		       						//A] Step 4: set preference
 		       						String key = (String)jsonKeys.next();
 		       						if( responseObj.get(key) instanceof String ){
-		       							prefEditor.putString(key, responseObj.getString(key));
+		       							prefsEditor.putString(key, responseObj.getString(key));
 		       						}else if(responseObj.get(key) instanceof Boolean){
-		       							prefEditor.putBoolean(key, responseObj.getBoolean(key));
+		       							prefsEditor.putBoolean(key, responseObj.getBoolean(key));
 		       						}else if(responseObj.get(key) instanceof Float){
-		       							prefEditor.putFloat(key, (float)responseObj.getDouble(key));
+		       							prefsEditor.putFloat(key, (float)responseObj.getDouble(key));
 		       						}else if(responseObj.get(key) instanceof Integer){
-		       							prefEditor.putInt(key, responseObj.getInt(key));
+		       							prefsEditor.putInt(key, responseObj.getInt(key));
 		       						}else{
 		       							Log.v("UPDATE PREFERRENCE","JSON response not added to pref: " + responseObj.get(key).toString());
 		       							continue;
@@ -241,7 +241,7 @@ public class UpdateProfile extends FragmentActivity {
 		       						Log.v("PREF-SENSE",responseObj.getString(key));
 		       					}
 		       					//A] Step 4: commit 
-		       					prefEditor.commit();
+		       					prefsEditor.commit();
 		       				} catch (JSONException e) {
 		       					// TODO Auto-generated catch block
 		       					Log.v("ERROR",e.toString());
