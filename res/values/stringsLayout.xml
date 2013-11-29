@@ -34,6 +34,10 @@
     <string name="currency_eur">EUR</string>
     <string name="currency_gbp">GBP</string>
     <!-- PREFERRED CURRENCY STRINGS stOP -->
+    <!-- PREFERRED LANGUAGE STRINGS start -->
+    <string name="lang_eng">ENGLISH</string>
+    <string name="lang_esp">ESPANOL</string>
+    <!-- PREFERRED LANGUAGE STRINGS stOP -->
     <!-- LOGON_REGISTER STRING start -->
 	<string name="logon_register_email">Email Address</string>
 	<string name="logon_register_password">Password</string>

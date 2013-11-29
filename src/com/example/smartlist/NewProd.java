@@ -124,16 +124,25 @@ public class NewProd extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_Prod_cam:
-			startActivity(new Intent(NewProd.this, AddImageToProd.class));
+			if(!prefs.getBoolean(AUTHORIZED,false)){
+        		startActivity(new Intent(NewProd.this, MainLogon.class));
+        	}else{
+        		startActivity(new Intent(NewProd.this, AddImageToProd.class));
+        	}
 			break;
 		case R.id.action_prod_setting:
-			startActivity(new Intent(NewProd.this, UpdateProfile.class));
+			if(!prefs.getBoolean(AUTHORIZED,false)){
+        		startActivity(new Intent(NewProd.this, MainLogon.class));
+        	}else{
+        		startActivity(new Intent(NewProd.this, UpdateProfile.class));
+        	}
 			break;
 		case R.id.action_go_home:
 			if(!prefs.getBoolean(AUTHORIZED,false)){
         		startActivity(new Intent(NewProd.this, MainLogon.class));
         	}else{
         		startActivity(new Intent(NewProd.this, SmartlisterHome.class));
+        		finish();
         	}
             break;
 		default:
@@ -222,6 +231,7 @@ public class NewProd extends FragmentActivity {
 												+ response);
 
 								startActivity(new Intent(NewProd.this, MainLogon.class));
+								finish();
 							} catch (UnsupportedEncodingException e) {
 								// TODO Auto-generated catch block
 								Log.v("ERROR", e.toString());

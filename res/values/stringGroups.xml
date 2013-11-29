@@ -52,6 +52,11 @@
 		<item>@string/currency_gbp</item>
 	</string-array>
 	
+	<string-array name="Preferred_Language">
+		<item>@string/lang_eng</item>
+		<item>@string/lang_esp</item>
+	</string-array>
+	
 	<string-array name="Temp_Prod_List">
 		<item>Product 1</item>
 		<item>Product 2</item>
