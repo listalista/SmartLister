@@ -198,7 +198,7 @@ public class UpdateProdTitle extends FragmentActivity {
 		try {
 			JSONObject jsonParams = new JSONObject();
 			JSONObject jsonLocParams = new JSONObject();
-			jsonParams.put(SALE_ID, this.prefs.getInt(SALE_ID, 1));
+			jsonParams.put(SALE_ID, this.prefs.getInt(SALE_ID, -1));
 			jsonParams.put(CATEG, category.toLowerCase());
 			jsonParams.put(TITLE, title);
 			jsonParams.put(DESCR, description);
