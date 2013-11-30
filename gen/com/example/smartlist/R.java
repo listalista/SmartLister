@@ -243,15 +243,15 @@ containing a value of this type.
         public static final int smartlisterlogo=0x7f02002f;
     }
     public static final class id {
-        public static final int action_Prod_cam=0x7f050064;
-        public static final int action_go_home=0x7f05005f;
-        public static final int action_new_prod=0x7f050062;
-        public static final int action_new_schedule=0x7f05005e;
-        public static final int action_prod_setting=0x7f050065;
-        public static final int action_search=0x7f050061;
-        public static final int action_settings=0x7f050063;
-        public static final int action_user_home=0x7f050060;
-        public static final int broddist=0x7f050059;
+        public static final int action_Prod_cam=0x7f050065;
+        public static final int action_go_home=0x7f050060;
+        public static final int action_new_prod=0x7f050063;
+        public static final int action_new_schedule=0x7f05005f;
+        public static final int action_prod_setting=0x7f050066;
+        public static final int action_search=0x7f050062;
+        public static final int action_settings=0x7f050064;
+        public static final int action_user_home=0x7f050061;
+        public static final int broddist=0x7f05005a;
         public static final int canceldeleteprod=0x7f050028;
         public static final int cancelprod=0x7f050011;
         public static final int cancelsch=0x7f050045;
@@ -294,9 +294,9 @@ containing a value of this type.
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int pageHeader=0x7f050005;
-        public static final int passwordvalid=0x7f05005c;
-        public static final int preferredcurrency=0x7f05005a;
-        public static final int preferredlanguage=0x7f05005b;
+        public static final int passwordvalid=0x7f05005d;
+        public static final int preferredcurrency=0x7f05005b;
+        public static final int preferredlanguage=0x7f05005c;
         public static final int proddesc=0x7f050039;
         public static final int prodtitle=0x7f050038;
         public static final int productgallery=0x7f05000f;
@@ -336,13 +336,14 @@ containing a value of this type.
         public static final int tileText=0x7f05002a;
         public static final int tracklocation=0x7f050044;
         public static final int trackloctoggle=0x7f050043;
-        public static final int updatedispname=0x7f050058;
+        public static final int updatedispname=0x7f050059;
         public static final int updatepass=0x7f050040;
         public static final int updateprodbutton=0x7f05004a;
-        public static final int updateprodconfirm=0x7f050057;
+        public static final int updateprodconfirm=0x7f050058;
         public static final int updateprodlist=0x7f050054;
-        public static final int updateprof=0x7f05005d;
-        public static final int upexpPrice=0x7f050056;
+        public static final int updateprof=0x7f05005e;
+        public static final int upexpPrice=0x7f050057;
+        public static final int upproddescrip=0x7f050056;
         public static final int upprodtitle=0x7f050055;
         public static final int viewexistingsch=0x7f050048;
     }
