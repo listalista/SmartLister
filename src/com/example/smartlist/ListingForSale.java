@@ -6,10 +6,19 @@ public class ListingForSale extends Listing{
 	private int fee;
 	private boolean  obo;
 	
-	public ListingForSale(String category, String creationTimeStamp,String currency,
+	public ListingForSale(String id, String category, String creationTimeStamp,String currency,
 			String description, int fee,double locLat, double locLon, boolean obo,int radius,
 			String title) {
-		super(category, creationTimeStamp, description, locLat, locLon, radius, title);
+		super(id,category, creationTimeStamp, description, locLat, locLon, radius, title);
+		setCurrency(currency);
+		setFee(fee);
+		setObo(obo);
+		
+	}
+	public ListingForSale(int id, String category, String creationTimeStamp,String currency,
+			String description, int fee,double locLat, double locLon, boolean obo,int radius,
+			String title) {
+		super(id,category, creationTimeStamp, description, locLat, locLon, radius, title);
 		setCurrency(currency);
 		setFee(fee);
 		setObo(obo);

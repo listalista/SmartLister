@@ -125,6 +125,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
        					    JSONObject curListing = listingsJson.getJSONObject(i);
        					    if(!curListing.getString("listing_type").equals("listingforsale")){ continue;
        					    }//skip listings that are not for sale....for now
+       					    int id = curListing.getInt("listing_for_sale_id");
    					    	String newCategory = curListing.getString("category");
    					    	String newCreated = curListing.getString("created");
    					    	String newCurrency = curListing.getString("currency");
@@ -135,7 +136,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
    					    	boolean newObo = curListing.getBoolean("obo");
    					    	int newRadius = curListing.getInt("radius");
    					    	String newTitle = curListing.getString("title");
-   					    	listingAdapter.add(new ListingForSale(newCategory,newCreated,newCurrency,newDescription,newFee,newLocLat,newLocLon,newObo,newRadius,newTitle));   
+   					    	listingAdapter.add(new ListingForSale(id,newCategory,newCreated,newCurrency,newDescription,newFee,newLocLat,newLocLon,newObo,newRadius,newTitle));   
    	       					listingAdapter.notifyDataSetChanged();
        					}
 

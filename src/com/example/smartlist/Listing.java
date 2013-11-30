@@ -2,6 +2,7 @@ package com.example.smartlist;
 
 
 public abstract class Listing {
+	private String id;
 	private String category;
 	private String creationTimeStamp;
 	private String description;
@@ -10,7 +11,18 @@ public abstract class Listing {
 	private int radius;
 	private String title;
 	
-	public Listing( String category, String creationTimeStamp, String description, double locLat,double locLon,int radius,String title){
+	public Listing( String id, String category, String creationTimeStamp, String description, double locLat,double locLon,int radius,String title){
+		setId(id);
+		setCategory(category);
+		setCreationTimeStamp(creationTimeStamp);
+		setDescription(description);
+		setLocLat(locLat);
+		setLocLon(locLon);
+		setRadius(radius);
+		setTitle(title);
+    }
+	public Listing( int id, String category, String creationTimeStamp, String description, double locLat,double locLon,int radius,String title){
+		setId(id);
 		setCategory(category);
 		setCreationTimeStamp(creationTimeStamp);
 		setDescription(description);
@@ -20,6 +32,9 @@ public abstract class Listing {
 		setTitle(title);
     }
 	//setters
+	public void setId(String newId){ this.id = newId;}
+	public void setId(int newId){ this.id = String.valueOf(newId);}
+	public String getId(){ return this.id;}
 	public void setCategory(String category){ this.category = category;}
 	public String getCategory(){ return this.category;}
 	public void setCreationTimeStamp(String creationTimeStamp){ this.creationTimeStamp = creationTimeStamp;}
