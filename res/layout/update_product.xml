@@ -16,7 +16,7 @@
             android:text="Update Product Details"
             android:textAppearance="?android:attr/textAppearanceMedium" />
    
-   <TableLayout 
+   	<TableLayout 
     	android:layout_width="match_parent" 
     	android:layout_height="match_parent" 
    	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
@@ -108,7 +108,7 @@
                     android:textSize="15sp" />
                 
                 <EditText
-                    android:id="@+id/upprodtitle"
+                    android:id="@+id/upproddescrip"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:ems="5"
@@ -165,8 +165,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:text="Update" />
+            android:text="Update"
+            android:onClick="clickUpdateProd" />
         
-    </LinearLayout>
-    
+  </LinearLayout>
+
 </ScrollView>
