@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    
+        
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Schedule Details"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+   <TableLayout 
+    	android:layout_width="match_parent" 
+    	android:layout_height="match_parent" 
+   	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    	<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </TableRow>
+        
+    		<TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/delprodqual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Product Title] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+        
+    		<TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proposed Amount"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/propamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Amount] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proposed Date"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/propdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Date] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+          
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proposed Time"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/proptime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Time] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proposed Location"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/proplocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Location] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Description] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            
+        </TableLayout>
+
+        
+   		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If you are okay with the proposal, go ahead and accept that and create a schedule" />
+   		
+   		<LinearLayout
+		  	android:orientation="vertical"
+		  	android:layout_width="match_parent"
+		  	android:layout_height="match_parent">
+
+   			<RadioGroup
+   			    android:id="@+id/propstatus"
+   			    android:layout_width="wrap_content"
+   			    android:layout_height="wrap_content"
+   			    android:layout_weight="1" >
+
+   			    <RadioButton
+   			        android:id="@+id/propaccept"
+   			        android:layout_width="wrap_content"
+   			        android:layout_height="wrap_content"
+   			        android:checked="true"
+   			        android:text="Accept" />
+
+   			    <RadioButton
+   			        android:id="@+id/propdecline"
+   			        android:layout_width="wrap_content"
+   			        android:layout_height="wrap_content"
+   			        android:text="Decline" />
+   			    
+   			    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="Please enter the Comment:" />
+		        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content" />
+		        
+		        <EditText
+		            android:id="@+id/propresultdesc"
+		            android:layout_width="match_parent"
+		            android:layout_height="77dp"
+		            android:inputType="textLongMessage"
+		            android:ems="10" />
+		        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content" />
+
+   			 
+   			</RadioGroup>
+   		    
+   		</LinearLayout>
+   		
+   		<Button
+	            android:id="@+id/confirmprop"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:text="Confirm" />
+        
+    </LinearLayout>
+    
+
+</ScrollView>

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="Product_Category">
-		<item>@string/product_category_Cars</item>
-		<item>@string/product_category_Bikes</item>
-		<item>@string/product_category_Computers</item>
-		<item>@string/product_category_Mobile_Phones</item>
-		<item>@string/product_category_Books</item>
+		<item>@string/product_category_Vehicles</item>
 		<item>@string/product_category_Furniture</item>
-		<item>@string/product_category_Appliances</item>
 		<item>@string/product_category_Electronics</item>
 	</string-array>
 

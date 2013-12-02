@@ -25,9 +25,6 @@ public class SellerMenu extends Activity implements OnClickListener  {
         Button up = (Button) findViewById(R.id.updateprodbutton);
         up.setOnClickListener(this);
         
-        /*Delete Existing button in Seller Menu is declared for onClickListener*/
-        Button dp = (Button) findViewById(R.id.deleteprodbutton);
-        dp.setOnClickListener(this);
         
     }
 
@@ -39,10 +36,7 @@ public class SellerMenu extends Activity implements OnClickListener  {
 			startActivity(new Intent(SellerMenu.this, NewProd.class)); /*New Intent is called*/
 		}
 		else if(v.getId() == R.id.updateprodbutton) {  /*Calling the update_list_view when List New Product is clicked*/
-			startActivity(new Intent(SellerMenu.this, UpdateProdView.class)); /*New Intent is called*/
-		}
-		else if(v.getId() == R.id.deleteprodbutton) {  /*Calling the delete_list_view when List New Product is clicked*/
-			startActivity(new Intent(SellerMenu.this, DeleteProdView.class)); /*New Intent is called*/
+			startActivity(new Intent(SellerMenu.this, MyListings.class)); /*New Intent is called*/
 		}
     }
     

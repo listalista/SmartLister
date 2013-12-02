@@ -94,6 +94,8 @@
          <activity android:name="com.example.smartlist.TrackLocation" />
          <activity android:name="com.example.smartlist.MainLogon" />
          
+         <activity android:name="com.example.smartlist.MyListings" />
+         
          
         
         <!-- Goolge API Key -->

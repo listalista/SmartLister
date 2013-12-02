@@ -19,14 +19,9 @@
 	<string name="app_ml_register">Create an account</string>
 	<!-- main_login.xml STRINGS end -->
     <!-- PRODUCT CATEGORY STRINGS start -->
-    <string name="product_category_Cars">VEHICLES</string>
-    <string name="product_category_Bikes">BIKES</string>
-    <string name="product_category_Computers">COMPUTERS</string>
+    <string name="product_category_Vehicles">VEHICLES</string>
     <string name="product_category_Electronics">ELECTRONICS</string>
-    <string name="product_category_Mobile_Phones">MOBILE PHONES</string>
-    <string name="product_category_Books">BOOKS</string>
     <string name="product_category_Furniture">FURNITURE</string>
-    <string name="product_category_Appliances">APPLIANCES</string>
     <!-- PRODUCT CATEGORY STRINGS stop -->
     <!-- PREFERRED CURRENCY STRINGS start -->
     <string name="currency_usd">USD</string>

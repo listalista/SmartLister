@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -229,9 +230,11 @@ public class NewProd extends FragmentActivity {
 												+ "] headers:"
 												+ headers.toString() + " body:"
 												+ response);
+								
+								Toast.makeText(NewProd.this, "Product Creation Failed. Try Again Later.!", Toast.LENGTH_SHORT).show();
 
-								startActivity(new Intent(NewProd.this, MainLogon.class));
-								finish();
+								//startActivity(new Intent(NewProd.this, MainLogon.class));
+								//finish();
 							} catch (UnsupportedEncodingException e) {
 								// TODO Auto-generated catch block
 								Log.v("ERROR", e.toString());

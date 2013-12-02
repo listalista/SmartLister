@@ -26,15 +26,15 @@ import com.loopj.android.http.PersistentCookieStore;
 public class UpdateProdTitle extends FragmentActivity {
 	
 	public static final String USER_PREFS = "UserPrefs";
-	public static final String SALE_ID = "listing_for_sale_id";
-	public static final String OBO_IND = "obo_ind";
 	public static final String P_RADIUS = "radius";
 	//public static final String P_LANG = "lang";
 	public static final String P_CURRENCY = "currency";
+	public static final String OBO_IND = "obo_ind";
 	public static final String FEE = "fee";
 	public static final String DESCR = "description";
 	public static final String TITLE = "title";
 	public static final String CATEG = "category";
+	public static final String SALE_ID = "listing_for_sale_id";
 	public static final String AUTHORIZED = "authenticated";
 	private SharedPreferences prefs;
 	private SharedPreferences.Editor prefsEditor;
@@ -63,6 +63,14 @@ public class UpdateProdTitle extends FragmentActivity {
 		this.UpdateProduct(categoryOption.getSelectedItem().toString(),
 				prodTitle.getText().toString(), prodDesc.getText().toString(),
 				expPrice.getText().toString());
+        
+    }
+    
+    public void clickDeleteProd(View v) {
+        
+
+		/* Calling a method based on the input */
+		this.DeleteProduct();
         
     }
 
@@ -126,18 +134,28 @@ public class UpdateProdTitle extends FragmentActivity {
 		EditText prodDesc = (EditText) findViewById(R.id.upproddescrip);
 		EditText expPrice = (EditText) findViewById(R.id.upexpPrice);
 		
+		/* Retrieving the values from Lisings.java and storing it in variables */
+        Intent intent = getIntent();
+		
+		String title = intent.getStringExtra("title");
+		String description = intent.getStringExtra("description");
+		int fee = intent.getIntExtra("fee", 0);
+		String category = intent.getStringExtra("category");
+
+		
 		// Getting the value of Category and sending it to Layout Spinner 
-				String defCateg = prefs.getString(CATEG, "VEHICLES");
-				ArrayAdapter myAdap1 = (ArrayAdapter) categoryOption.getAdapter();
-				int spinnerPosition1 = myAdap1.getPosition(defCateg);
-				categoryOption.setSelection(spinnerPosition1);
+		String defCateg = category;
+		defCateg = defCateg.toUpperCase();
+		ArrayAdapter myAdap1 = (ArrayAdapter) categoryOption.getAdapter();
+		int spinnerPosition1 = myAdap1.getPosition(defCateg);
+		categoryOption.setSelection(spinnerPosition1);
 		
-		prodTitle.setText(prefs.getString(TITLE, "")); // Sending the value of Product Title to the Layout Textbox
+		prodTitle.setText(title); // Sending the value of Product Title to the Layout Textbox
 		
-		prodDesc.setText(prefs.getString(DESCR, "")); // Sending the value of Product Description to the Layout Textbox
+		prodDesc.setText(description); // Sending the value of Product Description to the Layout Textbox
 		
 		// Getting the value of Expected Price and sending it to Layout Textbox
-		String expectedPrice = String.valueOf(prefs.getInt(FEE, 0));
+		String expectedPrice = String.valueOf(fee);
 		expPrice.setText(expectedPrice);
 		
 	}
@@ -195,10 +213,15 @@ public class UpdateProdTitle extends FragmentActivity {
 		}catch(Error e){
 			fee = 0;
 		}
+		/* Retrieving the values from Lisings.java and storing it in variables */
+        Intent intent = getIntent();
+		
+		String saleid = intent.getStringExtra("listing_for_sale_id");
+		
 		try {
 			JSONObject jsonParams = new JSONObject();
 			JSONObject jsonLocParams = new JSONObject();
-			jsonParams.put(SALE_ID, this.prefs.getInt(SALE_ID, -1));
+			jsonParams.put(SALE_ID, saleid);
 			jsonParams.put(CATEG, category.toLowerCase());
 			jsonParams.put(TITLE, title);
 			jsonParams.put(DESCR, description);
@@ -216,6 +239,7 @@ public class UpdateProdTitle extends FragmentActivity {
 					"application/json", new AsyncHttpResponseHandler() {
 						@Override
 						public void onSuccess(String response) {
+							startActivity(new Intent(UpdateProdTitle.this, SellerMenu.class));
 							finish();
 						}
 						@Override
@@ -233,6 +257,69 @@ public class UpdateProdTitle extends FragmentActivity {
 												+ response);
 								
 								Toast.makeText(UpdateProdTitle.this, "Product Update Failed. Try Again.!", Toast.LENGTH_SHORT).show();
+
+								//startActivity(new Intent(UpdateProdTitle.this, MainLogon.class));
+								//finish();
+							} catch (UnsupportedEncodingException e) {
+								// TODO Auto-generated catch block
+								Log.v("ERROR", e.toString());
+								Log.v("ERROR-MESSAGE", e.getMessage());
+							}
+						}
+					});
+		} catch (JSONException e) {
+			Log.v("CAUGHT", e.toString());
+			Log.v("CAUGHT", e.getMessage());
+
+		} catch (UnsupportedEncodingException e) {
+			Log.v("CAUGHT", e.toString());
+			Log.v("CAUGHT", e.getMessage());
+		}
+	}
+    
+    
+    private void DeleteProduct() {
+		if (!prefs.getBoolean(AUTHORIZED, false)) {
+			startActivity(new Intent(UpdateProdTitle.this, MainLogon.class));
+			return;
+		}
+		
+		/* Retrieving the values from Lisings.java and storing it in variables */
+        Intent intent = getIntent();
+		
+		String saleid = intent.getStringExtra("listing_for_sale_id");
+		
+		try {
+			JSONObject jsonParams = new JSONObject();
+			JSONObject jsonLocParams = new JSONObject();
+			jsonParams.put(SALE_ID, saleid);
+
+			StringEntity entity = new StringEntity(jsonParams.toString());
+			AsyncHttpClient client = new AsyncHttpClient();
+			client.setCookieStore(myCookieStore);
+			client.put(getApplicationContext(),
+					"http://www.marcstreeter.com/sl/deletelisting", entity,
+					"application/json", new AsyncHttpResponseHandler() {
+						@Override
+						public void onSuccess(String response) {
+							startActivity(new Intent(UpdateProdTitle.this, SellerMenu.class));
+							finish();
+						}
+						@Override
+						public void onFailure(int statusCode,
+								org.apache.http.Header[] headers,
+								byte[] responseBody, Throwable error) {
+							try {
+								String response = new String(responseBody,"UTF-8");
+								Log.v("RESPONSE",
+										"code["
+												+ Integer.valueOf(statusCode)
+														.toString()
+												+ "] headers:"
+												+ headers.toString() + " body:"
+												+ response);
+								
+								Toast.makeText(UpdateProdTitle.this, "Deleting Failed. Try Again Later.!", Toast.LENGTH_SHORT).show();
 
 								//startActivity(new Intent(UpdateProdTitle.this, MainLogon.class));
 								//finish();

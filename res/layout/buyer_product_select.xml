@@ -185,10 +185,10 @@
 		  	android:layout_height="match_parent">
             
    		    <Button
-	            android:id="@+id/startchat"
+	            android:id="@+id/makeoffer"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="@string/buyer_select_start_chat" />
+	            android:text="Make Offer" />
    		    
    		    <TextView
                     android:layout_width="wrap_content"

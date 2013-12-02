@@ -25,7 +25,7 @@ public class SelectedProduct extends Activity implements OnClickListener {
         setContentView(R.layout.buyer_product_select);  /*Retrieving the contents of the layout buyer_product_select*/
     
         /*Start Chat button in Product Select page is declared for onClickListener*/
-        Button dp = (Button) findViewById(R.id.startchat);
+        Button dp = (Button) findViewById(R.id.makeoffer);
         dp.setOnClickListener(this);
         
         /*Cancel button in Product Select page is declared for onClickListener*/
@@ -61,8 +61,8 @@ public class SelectedProduct extends Activity implements OnClickListener {
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.startchat) {  /*Calling the seller_menu when Submit is clicked*/
-			startActivity(new Intent(SelectedProduct.this, ChatApplication.class)); /*New Intent is called*/
+		if(v.getId() == R.id.makeoffer) {  /*Calling the seller_menu when Submit is clicked*/
+			//startActivity(new Intent(SelectedProduct.this, ChatApplication.class)); /*New Intent is called*/
 		}
 		else if(v.getId() == R.id.cancelprod) {  /*Calling the seller_menu when Submit is clicked*/
 			startActivity(new Intent(SelectedProduct.this, RefinedProdList.class)); /*New Intent is called*/

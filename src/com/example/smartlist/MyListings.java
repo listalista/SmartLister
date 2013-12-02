@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.smartlist.Listings;
+import com.example.smartlist.MyListings;
 import com.example.smartlist.R;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -33,7 +33,7 @@ import android.widget.GridView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.Toast;
 
-public class Listings extends FragmentActivity implements OnScrollListener{
+public class MyListings extends FragmentActivity implements OnScrollListener{
 	private int listingsPerPage = 50;
 	private int currentPage=1;
 	private SharedPreferences prefs;
@@ -42,13 +42,14 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	GridView gridview;
 	private static final String USER_PREFS = "UserPrefs";
 	public static final String AUTHORIZED = "authenticated";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.listings);
+	    setContentView(R.layout.mylistings);
 	    prefs = this.getSharedPreferences(USER_PREFS, Context.MODE_PRIVATE);
 	    listings = new ArrayList<Listing>();
-	    gridview = (GridView) findViewById(R.id.gridview);
+	    gridview = (GridView) findViewById(R.id.mygridview);
 	    listingAdapter = new ListingAdapter(this,listings);
 	    gridview.setAdapter(listingAdapter);
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
@@ -58,9 +59,8 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	        		//look at this later http://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-android-activity-to-another-using-intents
 	        		//Listing listing = (Listing) parent.getAdapter().getItem(position);
 	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
-	        		Intent listingDetail = new Intent(Listings.this, SelectedProduct.class);
-	        		listingDetail.putExtra("lat", (float)listing.getLocLat());
-	        		listingDetail.putExtra("lon", (float)listing.getLocLon());
+	        		Intent listingDetail = new Intent(MyListings.this, UpdateProdTitle.class);
+	        		listingDetail.putExtra("listing_for_sale_id", listing.getId());
 	        		listingDetail.putExtra("title", listing.getTitle());
 	        		listingDetail.putExtra("description", listing.getDescription());
 	        		listingDetail.putExtra("fee", listing.getFee());
@@ -80,7 +80,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 		(new CurrentLocation(this,this, new ResponseHandler(){
 	    	@Override
 	    	public void callBack(){
-	    		getListings((double)prefs.getFloat("lat",0),(double)prefs.getFloat("lon",0),prefs.getInt("dist", 50));
+	    		getMyListings();
 	    	}
 	    })).execute();
 	}
@@ -88,22 +88,22 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
 		// TODO Auto-generated method stub
-		Toast.makeText(Listings.this, "smartlister", Toast.LENGTH_SHORT).show();
+		Toast.makeText(MyListings.this, "smartlister", Toast.LENGTH_SHORT).show();
 		Log.v("smartlister","GOT HERE!");
 	}
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
 		// TODO Auto-generated method stub
-		Toast.makeText(Listings.this, "GOT onScroll HERE", Toast.LENGTH_SHORT).show();
+		Toast.makeText(MyListings.this, "GOT onScroll HERE", Toast.LENGTH_SHORT).show();
 		Log.v("smartlister","GOT HERE!");
 		
 	}
-	private void getListings(double lat, double lon, int dist){
+	private void getMyListings(){
     	try{
     		JSONObject jsonParams = new JSONObject();
-    		jsonParams.put("lat",lat);
-    		jsonParams.put("lon",lon);
-    		jsonParams.put("dist",dist);
+    		//jsonParams.put("lat",lat);
+    		//jsonParams.put("lon",lon);
+    		//jsonParams.put("dist",dist);
     		jsonParams.put("listings_per_page",getListingsPerPage());
     		jsonParams.put("current_page",getCurrentPage());
     		
@@ -111,13 +111,13 @@ public class Listings extends FragmentActivity implements OnScrollListener{
     		AsyncHttpClient client = new AsyncHttpClient();
     		PersistentCookieStore myCookieStore = new PersistentCookieStore(this);
     		client.setCookieStore(myCookieStore);
-   			client.put(getApplicationContext(),"http://www.marcstreeter.com/sl/listings", entity, "application/json",new AsyncHttpResponseHandler() {
+   			client.put(getApplicationContext(),"http://www.marcstreeter.com/sl/mylistings", entity, "application/json",new AsyncHttpResponseHandler() {
        			@Override
        			public void onSuccess(String response) {
        				try {
        					JSONObject responseObj = new JSONObject(response);
        					if(!responseObj.has("listing")){
-       						Toast.makeText(Listings.this, "No listings in your area. Post one!", Toast.LENGTH_SHORT).show();
+       						Toast.makeText(MyListings.this, "You have not listed any project. Post one!", Toast.LENGTH_SHORT).show();
        						return;
        					}
        					JSONArray listingsJson = responseObj.getJSONArray("listing");
@@ -173,24 +173,18 @@ public class Listings extends FragmentActivity implements OnScrollListener{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_action, menu);
+        getMenuInflater().inflate(R.menu.go_home, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-        case R.id.action_new_prod:
-        	startActivity(new Intent(Listings.this, NewProd.class));
-            break;
-        case R.id.action_search:
-        	startActivity(new Intent(Listings.this, SearchProduct.class));
-        	break;
-        case R.id.action_user_home:
+          case R.id.action_user_home:
         	if(!prefs.getBoolean(AUTHORIZED,false)){
-        		startActivity(new Intent(Listings.this, MainLogon.class));
+        		startActivity(new Intent(MyListings.this, MainLogon.class));
         	}else{
-        		startActivity(new Intent(Listings.this, SmartlisterHome.class));
+        		startActivity(new Intent(MyListings.this, SmartlisterHome.class));
         	}
             break;
         default:

@@ -2,7 +2,7 @@ package com.example.smartlist;
 
 
 public abstract class Listing {
-	private String id;
+	private String listing_for_sale_id;
 	private String category;
 	private String creationTimeStamp;
 	private String description;
@@ -32,9 +32,9 @@ public abstract class Listing {
 		setTitle(title);
     }
 	//setters
-	public void setId(String newId){ this.id = newId;}
-	public void setId(int newId){ this.id = String.valueOf(newId);}
-	public String getId(){ return this.id;}
+	public void setId(String newId){ this.listing_for_sale_id = newId;}
+	public void setId(int newId){ this.listing_for_sale_id = String.valueOf(newId);}
+	public String getId(){ return this.listing_for_sale_id;}
 	public void setCategory(String category){ this.category = category;}
 	public String getCategory(){ return this.category;}
 	public void setCreationTimeStamp(String creationTimeStamp){ this.creationTimeStamp = creationTimeStamp;}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Create New Proposal"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Propose a Meeting Date:" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        <DatePicker
+            android:id="@+id/propdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Propose a Meeting Time:" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TimePicker
+            android:id="@+id/proptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Propose a Meeting Location:" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/proplocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interested Price:" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/propprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please enter the Comment:" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <EditText
+            android:id="@+id/propdesc"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:inputType="textLongMessage"
+            android:ems="10" />
+        
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+        <Button
+            android:id="@+id/sendproposal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="Send" />
+                
+        
+    </LinearLayout>
+    
+
+</ScrollView>
