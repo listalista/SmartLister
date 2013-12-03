@@ -26,7 +26,6 @@ public class SearchProduct extends FragmentActivity {
 	public static final String P_LATITUDE = "lat";
 	public static final String P_LONGITUDE = "lon";
 	public static final String LOCATION = "location";
-	public static final String LAT_LON_TS = "lat_lon_ts";
 	public static final String P_RADIUS = "dist";
 	public static final String CRITERIA = "criteria";
 	public static final String FEEMIN = "fee_min";
@@ -127,13 +126,11 @@ public class SearchProduct extends FragmentActivity {
 		}
 		try {
 			JSONObject jsonParams = new JSONObject();
-			JSONObject jsonLocParams = new JSONObject();
 			JSONObject jsonCritParams = new JSONObject();
 			jsonParams.put("listings_per_page",50);
     		jsonParams.put("current_page",1);
-			jsonLocParams.put(P_LATITUDE, this.prefs.getFloat(P_LATITUDE,(float) 0.0));
-			jsonLocParams.put(P_LONGITUDE, this.prefs.getFloat(P_LONGITUDE,(float) 0.0));
-			jsonParams.put(LOCATION, jsonLocParams);
+    		jsonParams.put(P_LATITUDE, this.prefs.getFloat(P_LATITUDE,(float) 0.0));
+    		jsonParams.put(P_LONGITUDE, this.prefs.getFloat(P_LONGITUDE,(float) 0.0));
 			jsonParams.put(P_RADIUS, this.prefs.getInt(P_RADIUS, 50));
 			jsonCritParams.put(CATEG, category.toLowerCase());
 			jsonCritParams.put(FEEMIN, minamount);
