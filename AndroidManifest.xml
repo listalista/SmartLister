@@ -96,6 +96,8 @@
          
          <activity android:name="com.example.smartlist.MyListings" />
          
+         <activity android:name="com.example.smartlist.CreateProposal" />
+         
          
         
         <!-- Goolge API Key -->

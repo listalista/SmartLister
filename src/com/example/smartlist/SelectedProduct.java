@@ -37,6 +37,7 @@ public class SelectedProduct extends Activity implements OnClickListener {
 
 		float lat = intent.getFloatExtra("lat", 0);
 		float lon = intent.getFloatExtra("lon", 0);
+		String saleid = intent.getStringExtra("listing_for_sale_id");
 		String title = intent.getStringExtra("title");
 		String description = intent.getStringExtra("description");
 		String currency = intent.getStringExtra("currency");

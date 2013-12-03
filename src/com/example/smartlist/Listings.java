@@ -59,6 +59,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	        		//Listing listing = (Listing) parent.getAdapter().getItem(position);
 	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
 	        		Intent listingDetail = new Intent(Listings.this, SelectedProduct.class);
+	        		listingDetail.putExtra("listing_for_sale_id", listing.getId());
 	        		listingDetail.putExtra("lat", (float)listing.getLocLat());
 	        		listingDetail.putExtra("lon", (float)listing.getLocLon());
 	        		listingDetail.putExtra("title", listing.getTitle());

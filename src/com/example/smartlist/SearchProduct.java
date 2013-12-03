@@ -57,7 +57,7 @@ public class SearchProduct extends FragmentActivity {
 		EditText maxPrice = (EditText) findViewById(R.id.exppriceto);
 
 		/* Calling a method based on the input */
-		this.SearchProduct(categoryOption.getSelectedItem().toString(),
+		this.SearchProducts(categoryOption.getSelectedItem().toString(),
 				keyWord.getText().toString(), minPrice.getText().toString(),
 				maxPrice.getText().toString());
 
@@ -110,20 +110,20 @@ public class SearchProduct extends FragmentActivity {
 
 	// LifeCycle end
     
-	private void SearchProduct(String category, String keyword,
-			String minprice, String maxprice) {
+	private void SearchProducts(String category, String keywords,
+			String minprices, String maxprices) {
 		int minamount, maxamount;
-		if(minprice == "") {
+		if(minprices == "") {
 			minamount = -1;
 		}
 		else {
-			minamount = (int)Double.parseDouble(minprice);
+			minamount = (int)Double.parseDouble(minprices);
 		}
-		if(maxprice == "") {
+		if(maxprices == "") {
 			maxamount = -1;
 		}
 		else {
-			maxamount = (int)Double.parseDouble(maxprice);
+			maxamount = (int)Double.parseDouble(maxprices);
 		}
 		try {
 			JSONObject jsonParams = new JSONObject();
@@ -138,7 +138,7 @@ public class SearchProduct extends FragmentActivity {
 			jsonCritParams.put(CATEG, category.toLowerCase());
 			jsonCritParams.put(FEEMIN, minamount);
 			jsonCritParams.put(FEEMAX, maxamount);
-			jsonCritParams.put(KEYWORDS, keyword);
+			jsonCritParams.put(KEYWORDS, keywords);
 			jsonParams.put(CRITERIA, jsonCritParams);
 			
 
