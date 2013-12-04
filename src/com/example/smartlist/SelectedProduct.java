@@ -18,26 +18,28 @@ public class SelectedProduct extends Activity implements OnClickListener {
 	private SharedPreferences.Editor prefsEditor;
 	public static final String USER_PREFS = "UserPrefs";
 	public static final String AUTHORIZED = "authenticated";
+	public String saleid;
+	
 	/*Default Method which will run first*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buyer_product_select);  /*Retrieving the contents of the layout buyer_product_select*/
+        
+        /* Retrieving the Details from the calling method */
+        retrieveDetails();
+		
+    }
     
-        /*Start Chat button in Product Select page is declared for onClickListener*/
-        Button dp = (Button) findViewById(R.id.makeoffer);
-        dp.setOnClickListener(this);
-        
-        /*Cancel button in Product Select page is declared for onClickListener*/
-        Button cdp = (Button) findViewById(R.id.cancelprod);
-        cdp.setOnClickListener(this);
-        
-        /* Retrieving the values from Lisings.java and storing it in variables */
+    /* On Page Loading Default actions are declared in this method */
+    public void retrieveDetails() {
+    	
+    	/* Retrieving the values from Lisings.java and storing it in variables */
         Intent intent = getIntent();
 
 		float lat = intent.getFloatExtra("lat", 0);
 		float lon = intent.getFloatExtra("lon", 0);
-		String saleid = intent.getStringExtra("listing_for_sale_id");
+		saleid = intent.getStringExtra("listing_for_sale_id");
 		String title = intent.getStringExtra("title");
 		String description = intent.getStringExtra("description");
 		String currency = intent.getStringExtra("currency");
@@ -55,25 +57,40 @@ public class SelectedProduct extends Activity implements OnClickListener {
 		/* Sending the Intent Values to the TextView */
 		prodTitle.setText(title);
 		prodDesc.setText(description);
-		expPrice.setText(fee + " " + currency);	
+		expPrice.setText(fee + " " + currency);
+		
+		/*Start Chat button in Product Select page is declared for onClickListener*/
+        Button dp = (Button) findViewById(R.id.makeoffer);
+        dp.setOnClickListener(this);
+        
+        /*Cancel button in Product Select page is declared for onClickListener*/
+        Button cdp = (Button) findViewById(R.id.cancelprod);
+        cdp.setOnClickListener(this);
     }
 
 
     /*Executing the onClick listener method when a button is clicked*/
     @Override
     public void onClick(View v) {	
-		if(v.getId() == R.id.makeoffer) {  /*Calling the seller_menu when Submit is clicked*/
-			//startActivity(new Intent(SelectedProduct.this, ChatApplication.class)); /*New Intent is called*/
+		if(v.getId() == R.id.makeoffer) {  /*Calling the proposal_request when Submit is clicked*/
+			
+			Intent makeOffer = new Intent(SelectedProduct.this, CreateProposal.class);
+			makeOffer.putExtra("listing_for_sale_id", saleid); /* Value sent to New Intent */
+    		
+			startActivity(makeOffer); /*New Intent is called*/
 		}
 		else if(v.getId() == R.id.cancelprod) {  /*Calling the seller_menu when Submit is clicked*/
-			startActivity(new Intent(SelectedProduct.this, RefinedProdList.class)); /*New Intent is called*/
+			finish(); /*New Intent is called*/
 		}
     }
     @Override 
     public void onResume(){
     	super.onResume();
 		prefs = getSharedPreferences(USER_PREFS, MODE_PRIVATE);
-		super.onResume();
+		
+		/* Retrieving the Details from the calling method */
+        retrieveDetails();
+
     }
     
     /* Inflating the Menu options */
