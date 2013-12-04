@@ -5,22 +5,36 @@ import java.util.Date;
 
 public class Transaction {
 
+	int trans_id;
 	boolean cancelled;
 	Date created;
 	int expires_in_days;
 	String description;
 	Offer offer;
+	Listing listing;
 	Schedule schedule;
-	public Transaction(boolean cxl, Date cr, int eID, String d, Offer o, Schedule s){
+	public Transaction(int tid, boolean cxl, Date cr, int eID, String d, Offer o, Listing l, Schedule s){
+		setId(tid);
 		setCancelled(cxl);
 		setCreated(cr);
 		setDescription(d);
 		setOffer(o);
+		setListing(l);
 		setSchedule(s);
+	}
+	public int getId() {
+		return trans_id;
+	}
+	public void setId(int trans_id) {
+		this.trans_id = trans_id;
 	}
 	public Offer getOffer() { return offer;
 	}
 	public void setOffer(Offer offer) { this.offer = offer;
+	}
+	public Listing getListing() { return listing;
+	}
+	public void setListing(Listing listing) { this.listing = listing;
 	}
 	public Schedule getSchedule() { return schedule;
 	}

@@ -4,55 +4,73 @@ package com.example.smartlist;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 
 public class Offer {
-<<<<<<< HEAD
-	private boolean accepted;
-	private boolean cancelled;
-	private String comment;
-=======
 	private Boolean accepted;
->>>>>>> 85fb370d0649f09c81c01ea86b39fb6131c5512f
-	private Offer counterOffer;
-	private Date created;
+	private Boolean cancelled;
+	private Boolean buyerind;
+	private String comment;
+	private Integer counterofferid;
+	//private Offer counterOffer;
 	private Integer expiresInDays;
 	private Integer fee;
 	private Listing listing;
 	private String message;
-	private Date modified;
 	private Integer offerid;
-	private Offer prevOffer;
-<<<<<<< HEAD
-	private boolean viewed;
-	public Offer(boolean a, boolean cxl, String cmt, Offer cO, Date cr, int eID, int f, Listing l, String m, Date mo, Offer pO, int oI, boolean v){
-=======
+	//private Offer prevOffer;
 	private Boolean viewed;
-	public Offer(Boolean a, Offer cO, Date cr, Integer eID, Integer f, Listing l, String m, Date mo, Offer pO, Integer oI, Boolean v){
->>>>>>> 85fb370d0649f09c81c01ea86b39fb6131c5512f
+
+	public Offer(Boolean a, Boolean cxl, Boolean byi, String cmt, Integer eID, Integer coi, Integer f, Listing l, String m, Integer oI, Boolean v){
 		setAccepted(a);
 		setCancelled(cxl);
+		setBuyerind(byi);
 		setComment(cmt);
-		setCounterOffer(cO);
-		setCreated(cr);
+		//setCounterOffer(cO);
 		setExpiresInDays(eID);
+		setCounterofferid(coi);
 		setFee(f);
 		setListing(l);
 		setMessage(m);
-		setPrevOffer(pO);
+		//setPrevOffer(pO);
 		setViewed(v);
 		setId(oI);
 	}
+	
+	
+	public Boolean isBuyer() {
+		return buyerind;
+	}
+
+
+	public void setBuyerind(Boolean buyerind) {
+		this.buyerind = buyerind;
+	}
+
+
+	public Integer getCounterofferid() {
+		return counterofferid;
+	}
+
+
+	public void setCounterofferid(Integer counterofferid) {
+		this.counterofferid = counterofferid;
+	}
+
+
 	public Integer getId(){return offerid;
 	}
 	public void setId(Integer newId){offerid = newId;
 	}
-	public boolean isAccepted(){ return this.accepted;
+	public Boolean isAccepted(){ return accepted;
 	}
-	public boolean isCancelled() {
+	public Boolean isCancelled() {
 		return cancelled;
 	}
-	public void setCancelled(boolean cancelled) {
+	public void setCancelled(Boolean cancelled) {
 		this.cancelled = cancelled;
 	}
 	public String getComment() {
@@ -63,11 +81,11 @@ public class Offer {
 	}
 	public void setAccepted(Boolean ind){ this.accepted = ind;
 	}
-	public Offer getCounterOffer(){ return this.counterOffer;
+	/*public Offer getCounterOffer(){ return this.counterOffer;
 	}
 	public void setCounterOffer(Offer offer){this.counterOffer = offer;
-	}
-	public Date getCreated(){ return created;
+	} */
+	/*public Date getCreated(){ return created;
 	}
 	public void setCreated(String dateString){
 		try{
@@ -78,7 +96,7 @@ public class Offer {
 		}
 	}
 	public void setCreated(Date created) { this.created = created;
-	}
+	}*/
 	public Integer getExpiresInDays() { return expiresInDays;
 	}
 	public void setExpiresInDays(Integer expiresInDays) {this.expiresInDays = expiresInDays;
@@ -95,7 +113,7 @@ public class Offer {
 	}
 	public void setMessage(String message) { this.message = message;
 	}
-	public Date getModified(){ return modified; // http://developer.android.com/reference/java/text/DateFormat.html
+	/*public Date getModified(){ return modified; // http://developer.android.com/reference/java/text/DateFormat.html
 	}
 	public void setModified(String dateString){
 		try{
@@ -110,11 +128,11 @@ public class Offer {
 		}
 	}
 	public void setModified(Date modified) { this.modified = modified;
-	}
-	public Offer getPrevOffer() { return prevOffer;
+	}*/
+	/*public Offer getPrevOffer() { return prevOffer;
 	}
 	public void setPrevOffer(Offer prevOffer) { this.prevOffer = prevOffer;
-	}
+	}*/
 	public boolean isViewed() { return viewed;
 	}
 	public void setViewed(Boolean viewed) { this.viewed = viewed;
