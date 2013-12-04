@@ -117,6 +117,7 @@ public class SearchProduct extends FragmentActivity {
 		}else {
 			minamount = Integer.parseInt(minprices);
 		}
+
 		if(maxprices.equals("")) {
 			maxamount = -1;
 		}else {

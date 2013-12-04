@@ -45,7 +45,7 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	public static final String CATEGORY = "category";
 	public static final String KEY_WORDS = "key_words";
 	public static final String FEE_MIN = "fee_min";
-	public static final String FEE_MAX = "fee_min";
+	public static final String FEE_MAX = "fee_max";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
