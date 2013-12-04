@@ -144,13 +144,26 @@ public class Offers extends FragmentActivity implements OnScrollListener{
        					    	countid = 0;
        					    }
        					    Integer fee = curListing.getInt("fee");
-       					    //Listing listing = curListing.getJSONObject("listing");
+       					    JSONObject listingJSON = curListing.getJSONObject("listing");
+       					    int v_id = listingJSON.getInt("listing_for_sale_id");
+       					    String v_currency = listingJSON.getString("currency");
+       					    String v_category = listingJSON.getString("category");
+       					    String v_creationTimeStamp = listingJSON.getString("creationTimeStamp");
+       					    String v_description = listingJSON.getString("descr");
+       					    Integer v_fee = listingJSON.getInt("fee");
+       					    Double v_locLat = listingJSON.getDouble("loc_lat");
+       					    Double v_locLon = listingJSON.getDouble("loc_lon");
+       					    boolean v_obo = listingJSON.getBoolean("obo");
+       					    int v_radius = listingJSON.getInt("radius");
+       					    String v_title =listingJSON.getString("title");
+       					    						
+       					    Listing listing = new ListingForSale( v_id,  v_category,  v_creationTimeStamp,  v_currency, v_description, v_fee, v_locLat, v_locLon,v_obo, v_radius, v_title);
        					    String message = curListing.getString("message");
        					    Integer offerid = curListing.getInt("offer_id");
        					    Boolean viewed = curListing.getBoolean("viewed");
    					    	
    					    	
-   					    	//offerAdapter.add(new Offer(acceptedInd,cancelledInd,buyerInd,comment,expDays, countid, fee,listing,message,offerid,viewed));   
+   					    	offerAdapter.add(new Offer(acceptedInd,cancelledInd,buyerInd,comment,expDays, countid, fee,listing,message,offerid,viewed));   
    	       					offerAdapter.notifyDataSetChanged();
        					}
 
