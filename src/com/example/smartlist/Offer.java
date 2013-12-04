@@ -7,18 +7,18 @@ import java.util.Date;
 
 
 public class Offer {
-	private boolean accepted;
+	private Boolean accepted;
 	private Offer counterOffer;
 	private Date created;
-	private int expiresInDays;
-	private int fee;
+	private Integer expiresInDays;
+	private Integer fee;
 	private Listing listing;
 	private String message;
 	private Date modified;
-	private int offerid;
+	private Integer offerid;
 	private Offer prevOffer;
-	private boolean viewed;
-	public Offer(boolean a, Offer cO, Date cr, int eID, int f, Listing l, String m, Date mo, Offer pO, int oI, boolean v){
+	private Boolean viewed;
+	public Offer(Boolean a, Offer cO, Date cr, Integer eID, Integer f, Listing l, String m, Date mo, Offer pO, Integer oI, Boolean v){
 		setAccepted(a);
 		setCounterOffer(cO);
 		setCreated(cr);
@@ -30,9 +30,9 @@ public class Offer {
 		setViewed(v);
 		setId(oI);
 	}
-	public int getId(){return offerid;
+	public Integer getId(){return offerid;
 	}
-	public void setId(int newId){offerid = newId;
+	public void setId(Integer newId){offerid = newId;
 	}
 	public boolean isAccepted(){ return this.accepted;
 	}
@@ -54,13 +54,13 @@ public class Offer {
 	}
 	public void setCreated(Date created) { this.created = created;
 	}
-	public int getExpiresInDays() { return expiresInDays;
+	public Integer getExpiresInDays() { return expiresInDays;
 	}
-	public void setExpiresInDays(int expiresInDays) {this.expiresInDays = expiresInDays;
+	public void setExpiresInDays(Integer expiresInDays) {this.expiresInDays = expiresInDays;
 	}
-	public int getFee() { return fee;
+	public Integer getFee() { return fee;
 	}
-	public void setFee(int fee) { this.fee = fee;
+	public void setFee(Integer fee) { this.fee = fee;
 	}
 	public Listing getListing() { return listing;
 	}
@@ -92,6 +92,6 @@ public class Offer {
 	}
 	public boolean isViewed() { return viewed;
 	}
-	public void setViewed(boolean viewed) { this.viewed = viewed;
+	public void setViewed(Boolean viewed) { this.viewed = viewed;
 	}
 }
