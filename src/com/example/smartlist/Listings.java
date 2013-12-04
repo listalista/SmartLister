@@ -42,6 +42,10 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	GridView gridview;
 	private static final String USER_PREFS = "UserPrefs";
 	public static final String AUTHORIZED = "authenticated";
+	public static final String CATEGORY = "category";
+	public static final String KEY_WORDS = "key_words";
+	public static final String FEE_MIN = "fee_min";
+	public static final String FEE_MAX = "fee_min";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -101,13 +105,29 @@ public class Listings extends FragmentActivity implements OnScrollListener{
 	}
 	private void getListings(double lat, double lon, int dist){
     	try{
+    		
     		JSONObject jsonParams = new JSONObject();
+    		JSONObject jsonParamsCriteria = new JSONObject();
     		jsonParams.put("lat",lat);
     		jsonParams.put("lon",lon);
     		jsonParams.put("dist",dist);
     		jsonParams.put("listings_per_page",getListingsPerPage());
     		jsonParams.put("current_page",getCurrentPage());
+    		jsonParams.put("criteria", jsonParamsCriteria);
+    		Intent intent = getIntent();
     		
+    		if(intent.hasExtra(CATEGORY)){
+    			jsonParamsCriteria.put(CATEGORY,intent.getStringExtra(CATEGORY));
+    		}
+    		if(intent.hasExtra(KEY_WORDS)){
+    			jsonParamsCriteria.put(KEY_WORDS,intent.getStringExtra(KEY_WORDS));
+    		}
+    		if(intent.hasExtra(FEE_MIN)){
+    			jsonParamsCriteria.put(FEE_MIN,intent.getIntExtra(FEE_MIN, -1));
+    		}
+    		if(intent.hasExtra(FEE_MAX)){
+    			jsonParamsCriteria.put(FEE_MAX,intent.getIntExtra(FEE_MAX, -1));
+    		}
     		StringEntity entity = new StringEntity(jsonParams.toString());
     		AsyncHttpClient client = new AsyncHttpClient();
     		PersistentCookieStore myCookieStore = new PersistentCookieStore(this);

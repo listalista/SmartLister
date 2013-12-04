@@ -117,77 +117,20 @@ public class SearchProduct extends FragmentActivity {
 		}else {
 			minamount = Integer.parseInt(minprices);
 		}
-<<<<<<< HEAD
-=======
-		else {
-			minamount = (int)Double.parseDouble(minprices);
-		}
->>>>>>> bfd3cfc4e5c16da985e236287951e0ed849f538c
 		if(maxprices.equals("")) {
 			maxamount = -1;
 		}else {
 			maxamount = Integer.parseInt(maxprices);
 		}
-		try {
-			JSONObject jsonParams = new JSONObject();
-			JSONObject jsonCritParams = new JSONObject();
-			jsonParams.put("listings_per_page",50);
-    		jsonParams.put("current_page",1);
-    		jsonParams.put(P_LATITUDE, this.prefs.getFloat(P_LATITUDE,(float) 0.0));
-    		jsonParams.put(P_LONGITUDE, this.prefs.getFloat(P_LONGITUDE,(float) 0.0));
-			jsonParams.put(P_RADIUS, this.prefs.getInt(P_RADIUS, 50));
-			jsonCritParams.put(CATEG, category.toLowerCase());
-			jsonCritParams.put(FEEMIN, minamount);
-			jsonCritParams.put(FEEMAX, maxamount);
-			jsonCritParams.put(KEYWORDS, keywords);
-			jsonParams.put(CRITERIA, jsonCritParams);
 			
-
-			StringEntity entity = new StringEntity(jsonParams.toString());
-			AsyncHttpClient client = new AsyncHttpClient();
-			client.setCookieStore(myCookieStore);
-			client.put(getApplicationContext(),
-					"http://www.marcstreeter.com/sl/listings", entity,
-					"application/json", new AsyncHttpResponseHandler() {
-						@Override
-						public void onSuccess(String response) {
-							startActivity(new Intent(SearchProduct.this, Listings.class));
-							finish();
-						}
-						@Override
-						public void onFailure(int statusCode,
-								org.apache.http.Header[] headers,
-								byte[] responseBody, Throwable error) {
-							try {
-								String response = new String(responseBody,"UTF-8");
-								Log.v("RESPONSE",
-										"code["
-												+ Integer.valueOf(statusCode)
-														.toString()
-												+ "] headers:"
-												+ headers.toString() + " body:"
-												+ response);
-								
-								Toast.makeText(SearchProduct.this, "Search Failed. Try Again Later.!", Toast.LENGTH_SHORT).show();
-
-								//startActivity(new Intent(NewProd.this, MainLogon.class));
-								//finish();
-							} catch (UnsupportedEncodingException e) {
-								// TODO Auto-generated catch block
-								Log.v("ERROR", e.toString());
-								Log.v("ERROR-MESSAGE", e.getMessage());
-							}
-						}
-					});
-		} catch (JSONException e) {
-			Log.v("CAUGHT", e.toString());
-			Log.v("CAUGHT", e.getMessage());
-
-		} catch (UnsupportedEncodingException e) {
-			Log.v("CAUGHT", e.toString());
-			Log.v("CAUGHT", e.getMessage());
-		}
+			Intent intent = new Intent(SearchProduct.this, Listings.class);
+			intent.putExtra("category", category.toLowerCase());
+			intent.putExtra("key_words", keywords);
+			intent.putExtra("fee_min", minamount);
+			intent.putExtra("fee_max", maxamount);
+			
+			startActivity(intent);
+			finish();
 	}
-
 }
 
