@@ -15,10 +15,10 @@
             android:layout_height="fill_parent"
             android:gravity="center_horizontal"
             android:padding="@dimen/activity_horizontal_margin"
-            android:text="Schedule Details"
+            android:text="Offer Details"
             android:textAppearance="?android:attr/textAppearanceMedium" />
    
-   <TableLayout 
+   	<TableLayout 
     	android:layout_width="match_parent" 
     	android:layout_height="match_parent" 
    	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
@@ -50,6 +50,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" [Product Title] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+        
+    		<TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original Amount"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/orgamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Amount] "
                     android:textSize="15sp" />
 
             </TableRow>
@@ -116,130 +157,7 @@
             </TableRow>
 
 
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Proposed Date"
-                    android:textSize="15sp" />
-                
-                <TextView
-                    android:id="@+id/propdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" [Date] "
-                    android:textSize="15sp" />
-
-            </TableRow>
-          
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
             
-            
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
-            
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Proposed Time"
-                    android:textSize="15sp" />
-                
-                <TextView
-                    android:id="@+id/proptime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" [Time] "
-                    android:textSize="15sp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
-            
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
-            
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Proposed Location"
-                    android:textSize="15sp" />
-                
-                <TextView
-                    android:id="@+id/proplocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" [Location] "
-                    android:textSize="15sp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </TableRow>
             
             <TableRow
                 android:id="@+id/tableRow7"
@@ -282,6 +200,37 @@
 
             </TableRow>
             
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offer Status"
+                    android:textSize="15sp" />
+                
+                <TextView
+                    android:id="@+id/offerstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" [Status] "
+                    android:textSize="15sp" />
+
+            </TableRow>
+            
+    		<TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
             
         </TableLayout>
 
@@ -289,7 +238,7 @@
    		<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="If you are okay with the proposal, go ahead and accept that and create a schedule" />
+                    android:text="If you are okay with the proposal, go ahead and accept that and create a schedule or else make a counter offer" />
    		
    		<LinearLayout
 		  	android:orientation="vertical"
@@ -315,6 +264,39 @@
    			        android:layout_height="wrap_content"
    			        android:text="Decline" />
    			    
+   			    <RadioButton
+   			        android:id="@+id/propcounter"
+   			        android:layout_width="wrap_content"
+   			        android:layout_height="wrap_content"
+   			        android:text="Counter Offer" />
+   			    
+   			</RadioGroup>
+   			    
+   			    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="Counter Offer:" />
+		        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content" />
+		        
+		        <EditText
+		            android:id="@+id/counteroffer"
+		            android:layout_width="164dp"
+		            android:layout_height="wrap_content"
+		            android:ems="10"
+		            android:inputType="number"
+		            android:editable="false" />
+		        
+		        <TextView
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content" />
+   			    
    			    <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -330,17 +312,15 @@
 		        
 		        <EditText
 		            android:id="@+id/propresultdesc"
-		            android:layout_width="match_parent"
+		            android:layout_width="308dp"
 		            android:layout_height="77dp"
-		            android:inputType="textLongMessage"
-		            android:ems="10" />
+		            android:ems="10"
+		            android:inputType="textLongMessage" />
 		        
 		        <TextView
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content" />
 
-   			 
-   			</RadioGroup>
    		    
    		</LinearLayout>
    		

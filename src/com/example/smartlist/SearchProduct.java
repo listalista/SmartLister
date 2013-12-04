@@ -112,13 +112,13 @@ public class SearchProduct extends FragmentActivity {
 	private void SearchProducts(String category, String keywords,
 			String minprices, String maxprices) {
 		int minamount, maxamount;
-		if(minprices == "") {
+		if(minprices.equals("")) {
 			minamount = -1;
 		}
 		else {
 			minamount = (int)Double.parseDouble(minprices);
 		}
-		if(maxprices == "") {
+		if(maxprices.equals("")) {
 			maxamount = -1;
 		}
 		else {
