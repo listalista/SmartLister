@@ -1,6 +1,5 @@
 package com.example.smartlist;
 
-
 public abstract class Listing {
 	private String listing_for_sale_id;
 	private String category;

@@ -61,9 +61,9 @@
          
          <activity android:name="com.example.smartlist.SellerMenu" />
          
-         <activity android:name="com.example.smartlist.NewProd" />
-         
-         <activity android:name="com.example.smartlist.UpdateProdTitle" />
+         <activity android:name="com.example.smartlist.NewProd"/>
+
+		<activity android:name="com.example.smartlist.UpdateProdTitle" />
          
          <activity android:name="com.example.smartlist.UpdateProdView" />
          

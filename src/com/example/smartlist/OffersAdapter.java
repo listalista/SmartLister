@@ -3,7 +3,6 @@ package com.example.smartlist;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,25 +10,21 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListingAdapter extends ArrayAdapter<Listing>{
-	List<Listing> items;
-    public ListingAdapter(Context context, List<Listing> listings){
-    	super(context, 0,listings);
-    	this.items = listings;
-    }
-
+public class OffersAdapter extends ArrayAdapter<Offer>{
+	 // references to our images
+    private Integer[] mThumbIds = {
+            R.drawable.sample_2, R.drawable.sample_3,
+            R.drawable.sample_4, R.drawable.sample_5,
+            R.drawable.sample_6, R.drawable.sample_7
+    };
+	List<Offer> items;
+	public OffersAdapter(Context context,List<Offer> items) {
+		super(context, 0, items);
+		this.items = items;
+	}
 	@Override
 	public int getCount() {
         return items.size();
-	}
-
-	@Override
-	public ListingForSale getItem(int position) {
-        return null;
-	}
-	@Override
-	public long getItemId(int position) {
-		return 0;
 	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -47,9 +42,9 @@ public class ListingAdapter extends ArrayAdapter<Listing>{
             //imageView = (ImageView) convertView;
         }
         TextView tv = (TextView)listingView.findViewById(R.id.tileText);
-        Listing item = items.get(position);
+        Offer item = items.get(position);
         if(item != null){
-        	tv.setText(item.getTitle());
+        	tv.setText(item.getListing().getTitle());
         }
         /*if(item instanceof ListingForSale){
         	((ListingForSale) item).getFee();
@@ -65,12 +60,12 @@ public class ListingAdapter extends ArrayAdapter<Listing>{
         //return imageView;
         return listingView;
 	}
-
-    // references to our images
-    private Integer[] mThumbIds = {
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
-    };
-
+	@Override
+	public long getItemId(int position) {
+		return getItem(position).getId();
+	}
+	@Override
+	public Offer getItem(int position) {
+        return items.get(position);
+	}
 }
