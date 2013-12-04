@@ -8,6 +8,8 @@ import java.util.Date;
 
 public class Offer {
 	private boolean accepted;
+	private boolean cancelled;
+	private String comment;
 	private Offer counterOffer;
 	private Date created;
 	private int expiresInDays;
@@ -18,8 +20,10 @@ public class Offer {
 	private int offerid;
 	private Offer prevOffer;
 	private boolean viewed;
-	public Offer(boolean a, Offer cO, Date cr, int eID, int f, Listing l, String m, Date mo, Offer pO, int oI, boolean v){
+	public Offer(boolean a, boolean cxl, String cmt, Offer cO, Date cr, int eID, int f, Listing l, String m, Date mo, Offer pO, int oI, boolean v){
 		setAccepted(a);
+		setCancelled(cxl);
+		setComment(cmt);
 		setCounterOffer(cO);
 		setCreated(cr);
 		setExpiresInDays(eID);
@@ -35,6 +39,18 @@ public class Offer {
 	public void setId(int newId){offerid = newId;
 	}
 	public boolean isAccepted(){ return this.accepted;
+	}
+	public boolean isCancelled() {
+		return cancelled;
+	}
+	public void setCancelled(boolean cancelled) {
+		this.cancelled = cancelled;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public void setAccepted(Boolean ind){ this.accepted = ind;
 	}
