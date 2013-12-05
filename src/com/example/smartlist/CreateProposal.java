@@ -127,7 +127,7 @@ public class CreateProposal extends FragmentActivity {
 				jsonParams.put(DESCR, offerdesc);
 				jsonParams.put(EXPIRY, expiry);
 
-
+				Log.v("SENT",jsonParams.toString());
 				StringEntity entity = new StringEntity(jsonParams.toString());
 				AsyncHttpClient client = new AsyncHttpClient();
 				client.setCookieStore(myCookieStore);

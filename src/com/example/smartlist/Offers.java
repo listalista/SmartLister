@@ -2,6 +2,7 @@ package com.example.smartlist;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.apache.http.entity.StringEntity;
 import org.json.JSONArray;
@@ -131,24 +132,68 @@ public class Offers extends FragmentActivity implements OnScrollListener{
        					offerAdapter.clear();
        					for (int i = 0; i < offersJson.length(); ++i) {
        					    JSONObject curListing = offersJson.getJSONObject(i);
-       					
+       					    Iterator<String> iter = curListing.keys();
+    					    while (iter.hasNext()) {
+    					    	String key = iter.next();
+    					    	Object value = curListing.get(key);
+    					    	if(value==null){ curListing.remove(key);}
+    					    	//else{ Log.v("NOT DELETED",String.valueOf(value));}
+    					    }
+    					    Boolean acceptedInd;
+       					    if(curListing.has("accepted_ind")){
+       					    	try{
+           					    	acceptedInd = curListing.getBoolean("accepted_ind");
+       					    	}catch(Exception e){
+       					    		acceptedInd = null;
+       					    	}
+       					    }else{acceptedInd = null;}
        					    
-       					    Boolean acceptedInd = curListing.getBoolean("accepted_ind");
-       					    Boolean cancelledInd = curListing.getBoolean("cancelled_ind");
-       					    Boolean buyerInd = curListing.getBoolean("buyer_ind");
+       					    Boolean cancelledInd;
+    					    if(curListing.has("cancelled_ind")){
+    					    	cancelledInd = curListing.getBoolean("cancelled_ind");
+    					    }else{cancelledInd = null;}
+
+       					    Boolean buyerInd;
+    					    if(curListing.has("buyer_ind")){
+    					    	buyerInd = curListing.getBoolean("buyer_ind");
+    					    }else{buyerInd = null;}
+      
+       					    
        					    String comment = curListing.getString("comment");
        					    //JSONArray counteroffer = curListing.getJSONArray("previous_offer");
-       					    Integer expDays = curListing.getInt("expires_in_days");
-       					    Integer countid = curListing.getInt("counter_offer_id");
-       					    if (countid == null) {
-       					    	countid = 0;
+       					    Integer expDays;
+       					    
+       					    if(curListing.has("expires_in_days")){
+       					    	//Log.v("WHUT",curListing.toString());
+           					   expDays = curListing.getInt("expires_in_days");   
+       					    }else{
+       					    	expDays = null;
        					    }
-       					    Integer fee = curListing.getInt("fee");
+       					    Integer countid;
+       					    if (curListing.has("counter_offer_id")){
+       					    	countid= curListing.getInt("counter_offer_id");
+       					    }else{
+       					    	countid= null;
+       					    }
+       					    //if (countid == null) {
+       					    //	countid = 0;
+       					    //}
+       					    Integer fee;
+       					    if(curListing.has("fee")){
+       					    	fee = curListing.getInt("fee");
+       					    }else{
+       					    	fee= null;
+       					    }
+       			
        					    JSONObject listingJSON = curListing.getJSONObject("listing");
        					    int v_id = listingJSON.getInt("listing_for_sale_id");
        					    String v_currency = listingJSON.getString("currency");
        					    String v_category = listingJSON.getString("category");
-       					    String v_creationTimeStamp = listingJSON.getString("creationTimeStamp");
+       					    String v_creationTimeStamp;
+       					    if(listingJSON.has("creationTimeStamp")){
+       					    	v_creationTimeStamp = listingJSON.getString("creationTimeStamp");
+       					    }else{v_creationTimeStamp = null;}
+       					    
        					    String v_description = listingJSON.getString("descr");
        					    Integer v_fee = listingJSON.getInt("fee");
        					    Double v_locLat = listingJSON.getDouble("loc_lat");
