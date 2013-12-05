@@ -4,37 +4,30 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Schedule {
-	Date created;
-	Date dateTime;
+	String dateTime;
 	String description;
-	double lon;
-	double lat;
-	Date modified;
-	public Schedule(Date cr, Date dT, String d, double lon, double lat, Date mo){
-		setCreated(cr);
+
+	public Schedule(String dT, String d){
 		setDateTime(dT);
 		setDescription(d);
-		setLon(lon);
-		setLat(lat);
-		setModified(mo);
 	}
 	public String getDescription() { return description;
 	}
 	public void setDescription(String description) { this.description = description;
 	}
-	public double getLon() { return lon;
+	/*public double getLon() { return lon;
 	}
 	public void setLon(double lon) { this.lon = lon;
 	}
 	public double getLat() { return lat;
 	}
 	public void setLat(double lat) { this.lat = lat;
+	}*/
+	public String getDateTime() { return dateTime;
 	}
-	public Date getDateTime() { return dateTime;
+	public void setDateTime(String time) { this.dateTime = time;
 	}
-	public void setDateTime(Date time) { this.dateTime = time;
-	}
-	public Date getModified() { return modified;
+	/*public Date getModified() { return modified;
 	}
 	public void setModified(Date modified) { this.modified = modified;
 	}
@@ -57,5 +50,5 @@ public class Schedule {
 		}
 	}
 	public void setCreated(Date created) { this.created = created;
-	}
+	}*/
 }

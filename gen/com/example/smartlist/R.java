@@ -283,17 +283,17 @@ containing a value of this type.
         public static final int gotocamera=0x7f050017;
         public static final int gridview=0x7f05002b;
         public static final int gridviewoffer=0x7f05003d;
-        public static final int help=0x7f050066;
+        public static final int gridviewtrans=0x7f05006a;
         public static final int hybrid=0x7f050004;
         public static final int imageprodlist=0x7f05001b;
         public static final int keyword=0x7f050013;
         public static final int listnewprodbutton=0x7f050061;
-        public static final int locinfo=0x7f05006a;
+        public static final int locinfo=0x7f050069;
         public static final int logon=0x7f050065;
         public static final int logonemail=0x7f050063;
         public static final int logonpswd=0x7f050064;
         public static final int makeoffer=0x7f050010;
-        public static final int map=0x7f050069;
+        public static final int map=0x7f050068;
         public static final int mygridview=0x7f050038;
         public static final int newpassword=0x7f050030;
         public static final int newprodconfirm=0x7f05003c;
@@ -322,7 +322,7 @@ containing a value of this type.
         public static final int propstatus=0x7f050046;
         public static final int refinedlist=0x7f050050;
         public static final int registeredemail=0x7f050051;
-        public static final int registeruser=0x7f050067;
+        public static final int registeruser=0x7f050066;
         public static final int retrievesecques=0x7f05002c;
         public static final int retypenewpswd=0x7f050053;
         public static final int satellite=0x7f050002;
@@ -339,7 +339,7 @@ containing a value of this type.
         public static final int sendimageoption=0x7f050019;
         public static final int sendpicture=0x7f05001a;
         public static final int sendproposal=0x7f05004f;
-        public static final int slmenu=0x7f050068;
+        public static final int slmenu=0x7f050067;
         public static final int submitsec=0x7f05002e;
         public static final int tableRow1=0x7f050006;
         public static final int tableRow2=0x7f050009;
@@ -402,9 +402,10 @@ containing a value of this type.
         public static final int smart_login=0x7f030018;
         public static final int smartlister_main_menu=0x7f030019;
         public static final int tracking_map=0x7f03001a;
-        public static final int update_list_view=0x7f03001b;
-        public static final int update_product=0x7f03001c;
-        public static final int update_user_profile=0x7f03001d;
+        public static final int transactions=0x7f03001b;
+        public static final int update_list_view=0x7f03001c;
+        public static final int update_product=0x7f03001d;
+        public static final int update_user_profile=0x7f03001e;
     }
     public static final class menu {
         public static final int chat_options=0x7f0b0000;

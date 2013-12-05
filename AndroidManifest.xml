@@ -98,6 +98,12 @@
          
          <activity android:name="com.example.smartlist.CreateProposal" />
          
+         <activity android:name="com.example.smartlist.RespondProposal" />
+         
+         <activity android:name="com.example.smartlist.Transactions" />
+         
+         <activity android:name="com.example.smartlist.Offers" />
+         
          
         
         <!-- Goolge API Key -->

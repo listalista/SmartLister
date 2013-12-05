@@ -65,12 +65,12 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	Intent intent = new Intent(SmartlisterHome.this, SellerMenu.class);
    	     	startActivity(intent);             
     	}
-    	else if (GetLabel.toString().equals("Active Chat History")) {
-   	     	Intent intent = new Intent(SmartlisterHome.this, ChatList.class);
+    	else if (GetLabel.toString().equals("Make Offers")) {
+   	     	Intent intent = new Intent(SmartlisterHome.this, Offers.class);
    	     	startActivity(intent);             
     	}
     	else if (GetLabel.toString().equals("Scheduled Transactions")) {
-   	     	Intent intent = new Intent(SmartlisterHome.this, ScheduleList.class);
+   	     	Intent intent = new Intent(SmartlisterHome.this, Transactions.class);
    	     	startActivity(intent);             
     	}
     	else if (GetLabel.toString().equals("Sign Out")) {

@@ -7,16 +7,16 @@ public class Transaction {
 
 	int trans_id;
 	boolean cancelled;
-	Date created;
+	//Date created;
 	int expires_in_days;
 	String description;
 	Offer offer;
 	Listing listing;
 	Schedule schedule;
-	public Transaction(int tid, boolean cxl, Date cr, int eID, String d, Offer o, Listing l, Schedule s){
+	public Transaction(int tid, boolean cxl, int eID, String d, Offer o, Listing l, Schedule s){
 		setId(tid);
 		setCancelled(cxl);
-		setCreated(cr);
+		//setCreated(cr);
 		setDescription(d);
 		setOffer(o);
 		setListing(l);
@@ -52,7 +52,7 @@ public class Transaction {
 	}
 	public void setCancelled(boolean cancelled) { this.cancelled = cancelled;
 	}
-	public Date getCreated(){ return created;
+	/*public Date getCreated(){ return created;
 	}
 	public void setCreated(String dateString){
 		try{
@@ -63,5 +63,5 @@ public class Transaction {
 		}
 	}
 	public void setCreated(Date created) { this.created = created;
-	}
+	} */
 }

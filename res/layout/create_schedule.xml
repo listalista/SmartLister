@@ -87,7 +87,7 @@
         <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Please enter the Product Name:" />
+                    android:text="Please enter the Description:" />
         
         <TextView
                     android:layout_width="wrap_content"
@@ -96,7 +96,8 @@
         <EditText
             android:id="@+id/sellproduct"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:inputType="textLongMessage"
             android:ems="10" />
         
         <TextView
@@ -108,7 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:text="Create" />
+            android:text="Create"
+            android:onClick="clickCreateSchedule" />
                 
         
     </LinearLayout>

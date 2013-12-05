@@ -30,17 +30,13 @@ import com.loopj.android.http.PersistentCookieStore;
 public class RespondProposal extends FragmentActivity {
 	
 	public static final String USER_PREFS = "UserPrefs";
-
-	
-	public static final String SALE_ID = "listing_for_sale_id";
-	public static final String OFFERFEE = "offer_fee";
-	public static final String DESCR = "description";
-	public static final String EXPIRY = "expires_in_days";
 	
 	public static final String AUTHORIZED = "authenticated";
 	private SharedPreferences prefs;
 	private SharedPreferences.Editor prefsEditor;
 	private PersistentCookieStore myCookieStore;
+	public String status = "", description = "";
+	public boolean scheduleIndicator = false;
 	
 	/* Default Method which will run first */
 	@Override
@@ -71,25 +67,43 @@ public class RespondProposal extends FragmentActivity {
 		String cancelInd = String.valueOf(intent.getBooleanExtra("cancelled_ind", false));
 		String acceptInd = String.valueOf(intent.getBooleanExtra("accepted_ind", false));
 		String buyerInd = String.valueOf(intent.getBooleanExtra("buyer_ind", false));
-		String commentOffer = intent.getStringExtra("comment");
-		String messageOffer = intent.getStringExtra("message");
 		int fee = intent.getIntExtra("fee", 0); 
 		int expiry = intent.getIntExtra("expires_in_days", 30);
 		
-		String status = "";
+		
 		if( group.getCheckedRadioButtonId() == R.id.propaccept) {
 			status = "accept";
+			cancelInd = "true";
+			acceptInd = "true";
+			description = comment.getText().toString();
 		} else if( group.getCheckedRadioButtonId() == R.id.propdecline) {
 			status = "reject";
+			cancelInd = "true";
+			acceptInd = "false";
+			description = comment.getText().toString();
 		} else if( group.getCheckedRadioButtonId() == R.id.propcounter) {
 			status = "counter";
+			cancelInd = "false";
+			acceptInd = "false";
+			fee = Integer.parseInt(countoffer.getText().toString());
+			description = comment.getText().toString();
 		}
 		
-		// CODE YET TO BE COMPLETED
-
-		/* Calling a method based on the input */
-		/*this.CreateOffer(propPrice.getText().toString(),
-				propDesc.getText().toString());*/
+		if (buyerInd == "false" && status == "accept") {
+			Intent offerDetail = new Intent(RespondProposal.this, RespondProposal.class);
+    		offerDetail.putExtra("offer_id", offerid);
+    		offerDetail.putExtra("cancelled_ind", cancelInd);
+    		offerDetail.putExtra("accepted_ind", acceptInd);
+    		offerDetail.putExtra("buyer_ind", buyerInd);
+    		offerDetail.putExtra("status", status);
+    		offerDetail.putExtra("comment", description);
+    		offerDetail.putExtra("indicator", scheduleIndicator);
+    		
+    		startActivity(offerDetail);
+		}
+		else {
+			this.OfferResponse(offerid, cancelInd, acceptInd, description, fee, status, buyerInd, expiry);
+		}
 
 	}
 	
@@ -237,26 +251,30 @@ public class RespondProposal extends FragmentActivity {
 				
 		}
 		
-		private void CreateOffer(String offerprice, String offerdesc) {
+		private void OfferResponse(int offerid, String cancelInd, String acceptInd, String description, int fee, String status, String buyerInd, int expiry) {
 			if (!prefs.getBoolean(AUTHORIZED, false)) {
 				startActivity(new Intent(RespondProposal.this, MainLogon.class));
 				return;
 			}
 			
-			/* Retrieving the values from SelectedProduct.java and storing it in variables */
-	        Intent intent = getIntent();
-	        String saleid = intent.getStringExtra("listing_for_sale_id");
-	        int sid = Integer.parseInt(saleid);
-	        
-	        int expiry = 30;
+			boolean canInd = Boolean.valueOf(cancelInd);
+			boolean accInd = Boolean.valueOf(acceptInd);
 	        
 			try {
 				JSONObject jsonParams = new JSONObject();
+				JSONObject jsonCounterParams = new JSONObject();
 				
-				jsonParams.put(SALE_ID, sid);
-				jsonParams.put(OFFERFEE, offerprice);
-				jsonParams.put(DESCR, offerdesc);
-				jsonParams.put(EXPIRY, expiry);
+				jsonParams.put("offer_id", offerid);
+				jsonParams.put("accepted_ind", acceptInd);
+				jsonParams.put("cancelled_ind", cancelInd);
+				
+				if(status == "counter"){
+				  jsonParams.put("counter_offer", jsonCounterParams);
+				  jsonCounterParams.put("message", description);
+				  jsonCounterParams.put("fee", fee);
+				} else {
+					jsonParams.put("comment", description);
+				}
 
 
 				StringEntity entity = new StringEntity(jsonParams.toString());
@@ -283,7 +301,7 @@ public class RespondProposal extends FragmentActivity {
 													+ headers.toString() + " body:"
 													+ response);
 									
-									Toast.makeText(RespondProposal.this, "Offer Creation Failed. Try Again Later.!", Toast.LENGTH_SHORT).show();
+									Toast.makeText(RespondProposal.this, "Offer Response Failed. Try Again Later.!", Toast.LENGTH_SHORT).show();
 
 									//startActivity(new Intent(NewProd.this, MainLogon.class));
 									//finish();
@@ -308,7 +326,7 @@ public class RespondProposal extends FragmentActivity {
 	    @Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
 	        // Inflate the menu; this adds items to the action bar if it is present.
-	        getMenuInflater().inflate(R.menu.go_home, menu);
+	        getMenuInflater().inflate(R.menu.chat_options, menu);
 	        return true;
 	    }
 	    
@@ -317,6 +335,33 @@ public class RespondProposal extends FragmentActivity {
 	    @Override
 	    public boolean onOptionsItemSelected(MenuItem item) {
 	        switch(item.getItemId()) {
+	        case R.id.action_new_schedule:
+	        	/* Retrieving the values from Lisings.java and storing it in variables */
+	            Intent intent = getIntent();
+	    		
+	            int offerid = intent.getIntExtra("offer_id", -1);
+	    		String buyerInd = String.valueOf(intent.getBooleanExtra("buyer_ind", false));
+	    		String cancelInd = String.valueOf(intent.getBooleanExtra("cancelled_ind", false));
+	    		String acceptInd = String.valueOf(intent.getBooleanExtra("accepted_ind", false));
+	    		
+	    		if (buyerInd == "true") {
+	    			Toast.makeText(RespondProposal.this, "You are a Buyer, You cannot initiate a Transaction", Toast.LENGTH_SHORT).show();
+	    		} else if (cancelInd == "true" && acceptInd == "true") {
+	    			scheduleIndicator = true;
+	    			Intent offerDetail = new Intent(RespondProposal.this, RespondProposal.class);
+	        		offerDetail.putExtra("offer_id", offerid);
+	        		offerDetail.putExtra("cancelled_ind", cancelInd);
+	        		offerDetail.putExtra("accepted_ind", acceptInd);
+	        		offerDetail.putExtra("buyer_ind", buyerInd);
+	        		offerDetail.putExtra("status", status);
+	        		offerDetail.putExtra("comment", description);
+	        		offerDetail.putExtra("indicator", scheduleIndicator);
+	    			
+	        		startActivity(offerDetail);
+	    		} else {
+	    			Toast.makeText(RespondProposal.this, "Offer Still Incomplete..!!", Toast.LENGTH_SHORT).show();
+	    		}
+	            break;
 	        case R.id.action_go_home:
 	        	boolean autStatus = prefs.getBoolean(AUTHORIZED,false);
 	        	Log.v("Authentication", String.valueOf(autStatus));
