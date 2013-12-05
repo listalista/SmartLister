@@ -163,6 +163,7 @@ public static final String USER_PREFS = "UserPrefs";
 					
 					jsonParams.put("offer_id", offerid);
 					jsonParams.put("transaction_details", jsonTransParams);
+					jsonParams.put("accepted_ind", acceptInd);
 					jsonTransParams.put("expires_in_days", 30);
 					jsonTransParams.put("description", n_desc);
 					jsonTransParams.put("schedule", jsonSchParams);
@@ -191,7 +192,7 @@ public static final String USER_PREFS = "UserPrefs";
 				AsyncHttpClient client = new AsyncHttpClient();
 				client.setCookieStore(myCookieStore);
 				client.put(getApplicationContext(),
-						"http://www.marcstreeter.com/sl/transaction", entity,
+						"http://www.marcstreeter.com/sl/offerresponse", entity,
 						"application/json", new AsyncHttpResponseHandler() {
 							@Override
 							public void onSuccess(String response) {

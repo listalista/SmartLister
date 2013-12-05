@@ -132,7 +132,7 @@ public class CreateProposal extends FragmentActivity {
 				AsyncHttpClient client = new AsyncHttpClient();
 				client.setCookieStore(myCookieStore);
 				client.put(getApplicationContext(),
-						"http://www.marcstreeter.com/sl/propose", entity,
+						"http://www.marcstreeter.com/sl/offer", entity,
 						"application/json", new AsyncHttpResponseHandler() {
 							@Override
 							public void onSuccess(String response) {
