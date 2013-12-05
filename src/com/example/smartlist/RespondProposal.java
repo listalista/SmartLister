@@ -48,7 +48,7 @@ public class RespondProposal extends FragmentActivity {
 		
 
 	}
-	public void clickmakeOffer(View v) {
+	public void clickRespondOffer(View v) {
 		
 
 		/* Edit Textboxes are declared */
