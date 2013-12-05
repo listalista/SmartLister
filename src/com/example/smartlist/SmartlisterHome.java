@@ -65,7 +65,7 @@ public class SmartlisterHome extends Activity implements OnItemClickListener {
    	     	Intent intent = new Intent(SmartlisterHome.this, SellerMenu.class);
    	     	startActivity(intent);             
     	}
-    	else if (GetLabel.toString().equals("Make Offers")) {
+    	else if (GetLabel.toString().equals("Available Offers")) {
    	     	Intent intent = new Intent(SmartlisterHome.this, Offers.class);
    	     	startActivity(intent);             
     	}

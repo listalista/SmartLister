@@ -28,7 +28,7 @@ public class CreateProposal extends FragmentActivity {
 
 	
 	public static final String SALE_ID = "listing_for_sale_id";
-	public static final String OFFERFEE = "offer_fee";
+	public static final String OFFERFEE = "fee";
 	public static final String DESCR = "description";
 	public static final String EXPIRY = "expires_in_days";
 	
@@ -114,7 +114,7 @@ public class CreateProposal extends FragmentActivity {
 			
 			/* Retrieving the values from SelectedProduct.java and storing it in variables */
 	        Intent intent = getIntent();
-	        String saleid = intent.getStringExtra("listing_for_sale_id");
+	        String saleid = String.valueOf(intent.getStringExtra("listing_for_sale_id"));
 	        int sid = Integer.parseInt(saleid);
 	        
 	        int expiry = 30;
