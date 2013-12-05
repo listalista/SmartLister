@@ -42,9 +42,9 @@ public class RespondProposal extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.proposal_request);
+		setContentView(R.layout.proposal_details);
 		
-		fieldValidation();
+		//fieldValidation();
 		
 
 	}
@@ -192,7 +192,6 @@ public class RespondProposal extends FragmentActivity {
 			if(acceptInd == "null") {
 				acceptInd = "false";
 			}
-			
 			String status = "";
 			if(cancelInd == "true" && acceptInd == "true") {
 				status = "Accepted";
@@ -203,6 +202,9 @@ public class RespondProposal extends FragmentActivity {
 			} 
 			else if(cancelInd == "true" && acceptInd == "false") {
 				status = "Declined";
+
+				Log.v("ERRORS HAPPiness","GOT HERE!!!!!");
+				Log.v("WHUT",String.valueOf(group));
 				group.setEnabled(false);
 				countoffer.setEnabled(false);
 				comment.setEnabled(false);
@@ -213,7 +215,7 @@ public class RespondProposal extends FragmentActivity {
 			}
 			
 			ptitle.setText(prodTitle);
-			offee.setText(fee);
+			offee.setText(String.valueOf(fee));
 			offstatus.setText(status);
 			if(status == "NewOffer") {
 				offdesc.setText(messageOffer);
