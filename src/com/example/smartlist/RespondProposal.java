@@ -90,7 +90,7 @@ public class RespondProposal extends FragmentActivity {
 		}
 		
 		if (buyerInd == "false" && status == "accept") {
-			Intent offerDetail = new Intent(RespondProposal.this, RespondProposal.class);
+			Intent offerDetail = new Intent(RespondProposal.this, CreateSchedule.class);
     		offerDetail.putExtra("offer_id", offerid);
     		offerDetail.putExtra("cancelled_ind", cancelInd);
     		offerDetail.putExtra("accepted_ind", acceptInd);
@@ -267,8 +267,8 @@ public class RespondProposal extends FragmentActivity {
 				JSONObject jsonCounterParams = new JSONObject();
 				
 				jsonParams.put("offer_id", offerid);
-				jsonParams.put("accepted_ind", acceptInd);
-				jsonParams.put("cancelled_ind", cancelInd);
+				jsonParams.put("accepted_ind", accInd);
+				jsonParams.put("cancelled_ind", canInd);
 				
 				if(status == "counter"){
 				  jsonParams.put("counter_offer", jsonCounterParams);
@@ -278,7 +278,7 @@ public class RespondProposal extends FragmentActivity {
 					jsonParams.put("comment", description);
 				}
 
-
+				Log.v("JSON Sending",String.valueOf(jsonParams));
 				StringEntity entity = new StringEntity(jsonParams.toString());
 				AsyncHttpClient client = new AsyncHttpClient();
 				client.setCookieStore(myCookieStore);
