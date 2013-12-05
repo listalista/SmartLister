@@ -63,13 +63,28 @@ public class Offers extends FragmentActivity implements OnScrollListener{
 	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
 	        		Intent offerDetail = new Intent(Offers.this, RespondProposal.class);
 	        		offerDetail.putExtra("offer_id", offer.getId());
-	        		offerDetail.putExtra("counter_offer_id", offer.getCounterofferid());
-	        		offerDetail.putExtra("cancelled_ind", offer.isCancelled());
-	        		offerDetail.putExtra("accepted_ind", offer.isAccepted());
-	        		offerDetail.putExtra("buyer_ind", offer.isBuyer());
+	        		if(offer.getCounterofferid() != null){
+	        			offerDetail.putExtra("counter_offer_id", offer.getCounterofferid());
+	        		}
+	        		if(offer.isCancelled() != null){
+	        			offerDetail.putExtra("cancelled_ind", offer.isCancelled());
+	        		}
+	        		if(offer.isAccepted() != null){
+	        			offerDetail.putExtra("accepted_ind", offer.isAccepted());
+	        		}
+	        		if(offer.isBuyer() != null){
+	        			offerDetail.putExtra("buyer_ind", offer.isBuyer());
+	        		}
+	        		if(offer.getFee() != null){
+	        			offerDetail.putExtra("fee", offer.getFee());
+	        		}
+	        		//offerDetail.putExtra("counter_offer_id", offer.getCounterofferid());
+	        		//offerDetail.putExtra("cancelled_ind", offer.isCancelled());
+	        		//offerDetail.putExtra("accepted_ind", offer.isAccepted());
+	        		//offerDetail.putExtra("buyer_ind", offer.isBuyer());
 	        		offerDetail.putExtra("comment", offer.getComment());
 	        		offerDetail.putExtra("message", offer.getMessage());
-	        		offerDetail.putExtra("fee", offer.getFee());
+	        		//offerDetail.putExtra("fee", offer.getFee());
 	        		offerDetail.putExtra("expires_in_days", offer.getExpiresInDays());
 	        		
 	        		offerDetail.putExtra("title", offer.getListing().getTitle());
