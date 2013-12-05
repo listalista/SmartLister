@@ -287,6 +287,8 @@ public class RespondProposal extends FragmentActivity {
 						"application/json", new AsyncHttpResponseHandler() {
 							@Override
 							public void onSuccess(String response) {
+								Intent offerDetail = new Intent(RespondProposal.this, Offers.class);
+								startActivity(offerDetail);
 								finish();
 							}
 							@Override
