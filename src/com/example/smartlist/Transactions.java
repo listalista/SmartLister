@@ -62,8 +62,10 @@ public class Transactions extends FragmentActivity implements OnScrollListener{
 	        		//Toast.makeText(Listings.this, listing.getTitle().toLowerCase(), Toast.LENGTH_SHORT).show();
 	        		Intent offerDetail = new Intent(Transactions.this, ScheduleDetails.class);
 	        		offerDetail.putExtra("trans_id", transaction.getId());
+	        		offerDetail.putExtra("location", transaction.getSchedule().getDescription());
 	        		offerDetail.putExtra("description", transaction.getDescription());
 	        		offerDetail.putExtra("time", transaction.getSchedule().getDateTime());
+	        		offerDetail.putExtra("buyer_ind", transaction.getOffer().isBuyer());
 
 	        		
 	        		offerDetail.putExtra("title", transaction.getListing().getTitle());

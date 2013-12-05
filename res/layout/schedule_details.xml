@@ -18,7 +18,7 @@
             android:text="Schedule Details"
             android:textAppearance="?android:attr/textAppearanceMedium" />
    
-   <TableLayout 
+   	<TableLayout 
     	android:layout_width="match_parent" 
     	android:layout_height="match_parent" 
    	    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
@@ -33,28 +33,26 @@
 
         </TableRow>
 
-
-            <TableRow
-                android:id="@+id/tableRow1"
+			<TableRow
+                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Schedule Date"
+                    android:text="Product Title"
                     android:textSize="15sp" />
                 
                 <TextView
-                    android:id="@+id/scheduledate"
+                    android:id="@+id/schprodtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" [Date] "
+                    android:text=" [Product Title] "
                     android:textSize="15sp" />
 
             </TableRow>
-          
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -66,7 +64,6 @@
 
             </TableRow>
             
-            
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
@@ -76,6 +73,7 @@
                     android:layout_height="wrap_content" />
 
             </TableRow>
+            
             
             <TableRow
                 android:id="@+id/tableRow2"
@@ -150,22 +148,32 @@
             </TableRow>
             
             <TableRow
-                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Product Title"
+                    android:text="Schedule Description"
                     android:textSize="15sp" />
                 
                 <TextView
-                    android:id="@+id/delprodqual"
+                    android:id="@+id/schdesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" [Product Title] "
+                    android:text=" [Description] "
                     android:textSize="15sp" />
 
             </TableRow>
