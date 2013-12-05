@@ -127,12 +127,12 @@ public class CreateProposal extends FragmentActivity {
 				jsonParams.put(DESCR, offerdesc);
 				jsonParams.put(EXPIRY, expiry);
 
-
+				Log.v("SENT",jsonParams.toString());
 				StringEntity entity = new StringEntity(jsonParams.toString());
 				AsyncHttpClient client = new AsyncHttpClient();
 				client.setCookieStore(myCookieStore);
 				client.put(getApplicationContext(),
-						"http://www.marcstreeter.com/sl/propose", entity,
+						"http://www.marcstreeter.com/sl/offer", entity,
 						"application/json", new AsyncHttpResponseHandler() {
 							@Override
 							public void onSuccess(String response) {
